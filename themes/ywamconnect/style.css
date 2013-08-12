@@ -1,0 +1,45 @@
+/*
+Theme Name: Ywam Connect 
+Theme URI:  http://konahaven.com
+Author: Paulo Vieira
+Author URI: http://agenciavivavida.com.br
+Description: Ywam Connect Wordpress Theme
+Version: 3.2
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: ywamconnect
+*/
+
+
+#wpadminbar {
+ 	top: 52px;
+}
+
+
+body {
+	background-color: #fff;
+	 padding-top: 70px;
+	 padding-bottom: 70px;
+	 color: #222;
+}
+
+h2,h3,h4 {
+	color: #f60;	
+	text-shadow: none;
+}
+/* BOOTSTRAP YWAMCONNECT */
+
+.navbar {
+	background-image:  none;
+	background: rgba(0,0,0,0.5);
+}
+
+ 
+#widebarwrapper {
+    padding: 7% 0;
+}
+
+#widebarinside {
+	background: #222;
+    padding: 14% 0;
+}
