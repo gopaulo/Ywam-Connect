@@ -18,23 +18,100 @@ Text Domain: ywamconnect
 
 body {
 	background-color: #fff;
-	 padding-top: 70px;
+	 padding-top: 80px;
 	 padding-bottom: 70px;
 	 color: #222;
+}
+
+a { 
+-o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  /* ...and now for the proper property */
+  transition:.5s;
 }
 
 h2,h3,h4 {
 	color: #f60;	
 	text-shadow: none;
 }
-/* BOOTSTRAP YWAMCONNECT */
 
+a:hover, a:focus {
+  color: #f60;
+  text-decoration: none;
+}
+a {color: #6cbfd3; }
+
+/* BASE Sidebar */
+h4.basetitle {
+  font-weight: 400;
+  padding-top: 0px;
+  margin-top: 0px;
+}
+#countryFlag {
+  float:right;
+  display: inline;
+  position: relative;
+}
+/* BOOTSTRAP YWAMCONNECT */
+.navbar-brand {
+  	border: none;
+}
+a.accordion-toggle {
+  color: #6cbfd3;
+}
+a.collapsed {
+    color: #444;
+
+}
+a.accordion-toggle > i {
+    color: #6cbfd3;
+}
+hr {
+  border-top: 1px solid #ccc;
+}
+.accordion-heading .accordion-toggle {
+  padding: 1px 15px;
+}
+.accordion-group,.accordion-inner {
+  border: none;
+}
+#logo {
+	margin-top: -10px;
+	width: 100%;
+}
 .navbar {
 	background-image:  none;
-	background: rgba(0,0,0,0.5);
+	background: rgba(0,0,0,0.8);
 }
 
- 
+#menu-top-menu >li>a {
+ 	border: none;
+ 	color: #ededed;
+ }
+
+ #menu-top-menu >li>a:hover,  #menu-top-menu >li.current-menu-item >a {
+ 	background: none;
+ 	color: #6cbfd3;
+ }
+
+  #menu-top-menu >li>a:hover:after,  #menu-top-menu >li.current-menu-item >a:after {
+  width: 0;
+  height: 0;
+  position: absolute;
+  content:"";
+  display:block;
+  /* Ads an arrow effect exploiting the way that browsers join borders together */
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid #6cbfd3;
+  /* centers relative to parent */
+  left: 50%;
+  /* Compensates for width of border (arrow) */
+  margin-left: -8px;
+ }
+
 #widebarwrapper {
     padding: 7% 0;
 }

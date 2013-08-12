@@ -3,6 +3,7 @@
   ...
 </div>
 </footer>
+<?php get_template_part('templates/modals/all');?>
 <?php wp_footer(); ?> 
 </body>
 </html>

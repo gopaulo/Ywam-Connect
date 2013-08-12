@@ -2,9 +2,11 @@
 // Load controllers (js)
 
 ?>
-<div class="container_home">
+<div class="container">
 <div class="col-lg-2" > 
-  <?php get_sidebar('page-left'); ?>
+	<div  class="sidebar" data-spy="affix" data-offset-top="200">
+	  <?php get_sidebar ('page-left'); ?>
+  </div>
   </div>
 <div class="col-lg-8"> 
 	<div class="container">
@@ -20,7 +22,9 @@ endif;
 ?>
 	</div> 
 </div>
-<div class="col-lg-2" > 
-<?php dynamic_sidebar('page-right');?>
+<div class="col-lg-2" >
+	<div  class="sidebar" data-spy="affix" data-offset-top="200">
+		<?php dynamic_sidebar('page-right');?>
  	</div>
+	</div>
 </div>

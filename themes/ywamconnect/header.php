@@ -68,16 +68,17 @@
      <?php wp_head(); ?>
      
 </head>
-<body>
+<body <?php body_class(); ?>>
 
 <header>
 <div class="navbar navbar-fixed-top navbar-inverse">
-  <a class="navbar-brand" href="#">Title</a>
-  <ul class="nav navbar-nav">
-    <li class="active"><a href="#">Home</a></li>
-    <li><a href="#">Link</a></li>
-    <li><a href="#">Link</a></li>
-  </ul>
+  <a class="navbar-brand" href="<?php bloginfo('siteurl');?>"><img id="logo" src="<?php bloginfo('template_url');?>/images/ywamconnect_logo.png"/></a>
+  <?php   
+  $params = array( 
+  	'container'=>false,
+  	'items_wrap'=> '<ul id="%1$s" class="nav navbar-nav %2$s">%3$s</ul>', 
+  	'theme_location' => 'header-menu' );
+   wp_nav_menu($params); ?>
   <ul class="nav navbar-nav pull-right">
               <li><a href="#">Link</a></li>
               <li class="dropdown">

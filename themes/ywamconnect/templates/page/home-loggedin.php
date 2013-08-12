@@ -2,16 +2,16 @@
 // Load controllers (js)
 
 ?>
-<div class="container_home">
-<div class="col-lg-2" > 
-		sidebar 1
+<div class="container">
+<div class="col-lg-3" > 
+	<?php get_sidebar('home'); ?>
  </div>
-<div class="col-lg-8"> 
+<div class="col-lg-6"> 
 	<div class="container">
-		main content
+		<?php get_template_part('templates/map/map');?>
 	</div> 
 </div>
-<div class="col-lg-2" > 
-	sidebar2
+<div class="col-lg-3" > 
+	 <?php get_sidebar('newsfeed');?>
 	</div>
 </div>
