@@ -18,4 +18,9 @@ if ( function_exists( 'register_nav_menus' ) ) {
     );
 }
 
+function get_markerlist($action) {
+	$output = array();
+
+	return $output;
+}
 ?>

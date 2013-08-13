@@ -1,11 +1,18 @@
 <div id="map-canvas"> </div>
 <?php
- $action =$_GET['action'];
+
+
+ //action exception: single location markers
  $location = $_GET['location'];
+ $locationdesc = $_GET['locationdesc'];
+ $locationdesc  = str_replace(array("\r","\n"),"",$locationdesc);
+ 
+
 ?>
 <script>
 $ = jQuery;
 	var map;
+	var mgr; 
 	function initialize() {
 		google.maps.visualRefresh = true;
 
@@ -24,18 +31,27 @@ $ = jQuery;
 
 				map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
-				<?php if ($location): ?>
+					var markerlist = [] ; 
+
 						mgr = new MarkerManager(map);
 						google.maps.event.addListener(mgr, 'loaded', function() {
 								//for (var i = 0; i < 1000; i++) {
+							var marker_test = false;
+							<?php if ($location): ?>
 									var marker = new google.maps.Marker({
 										position: new google.maps.LatLng(<?=$location ?>),
 										animation: google.maps.Animation.DROP,
 										// animation disabled because it slows down performance
-										title: "Random marker "
+										name: 'single location'
 									});
+									 marker_test = {
+										location: '<?=$location ?>',
+										name: 'single',
+										type: 'base'
+									};
+								markerlist.push(marker);
 								var infowindow = new google.maps.InfoWindow({
-									content: 'Testing	'
+									content: "<?= $locationdesc; ?>"
 								});
 								google.maps.event.addListener(marker, 'click', function() {
 									infowindow.open(map, marker);
@@ -44,12 +60,19 @@ $ = jQuery;
 									mgr.addMarker(marker, 0);
 								//}
 								mgr.refresh();
+							 <?php endif; ?>
+							 if(marker_test)
+							 	amplify.store('markers',marker_test);
+							 var eventmap = jQuery.Event("maploaded");
+							 $(document).trigger(eventmap)
+					
 			    });
-			 <?php endif; ?>
+			
 			});
 		}
 	}
-	jQuery(document).ready(function(e) {
+	jQuery('body').ready(function(e) {
+		console.log('loaded');
 		$('#map-canvas').height($(document).height()-122);
 		initialize();
  

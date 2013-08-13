@@ -9,6 +9,7 @@ $location = $basepods->display('latlong');
 $country =  $basepods->field('country');
 
 $_GET['location'] = $location;
+$_GET['locationdesc'] = '<h4><a href=\''.get_bloginfo('siteurl').'/base/'.$base->post_name.'\'>'.$base->post_title.'</a></h4>'.apply_filters('the_content', $base->post_content);
  
 ?>
 <? if($country): ?> <div id="countryFlag"> <img src="<?php bloginfo('template_url');?>/images/flags/flat/48/<?= $country;?>.png"/> </div> <?php endif; ?>

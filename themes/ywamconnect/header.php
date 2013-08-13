@@ -70,13 +70,28 @@
 </head>
 <body <?php body_class(); ?>>
 <div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=490359931029564";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+<script>
+  window.fbAsyncInit = function() {
+    // init the FB JS SDK
+    FB.init({
+      appId      : '490359931029564',                        // App ID from the app dashboard
+    //  channelUrl : '//WWW.YOUR_DOMAIN.COM/channel.html', // Channel file for x-domain comms
+      status     : true,                                 // Check Facebook Login status
+      xfbml      : true                                  // Look for social plugins on the page
+    });
+
+    // Additional initialization code such as adding Event Listeners goes here
+  };
+
+  // Load the SDK asynchronously
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/all.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
 
 <header>
 <div class="navbar navbar-fixed-top navbar-inverse">
@@ -99,9 +114,9 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user"></i> <b class="caret"></b></a>
                 <ul class="dropdown-menu">
                   <li><a href="<?php bloginfo('siteurl');?>/your-profile">My Profile</a></li>
-                  <li><a href="<?php bloginfo('siteurl');?>/login/?loggedout=true">Change Password</a></li>
+                  <li><a href="<?php bloginfo('siteurl');?>/lostpassword">Change Password</a></li>
                   <li class="divider"></li>
-                  <li><a href="<?php bloginfo('siteurl');?>/lostpassword">Logout</a></li>
+                  <li><a href="<?= wp_logout_url(); ?>">Logout</a></li>
                 </ul>
               </li>
               <li>
