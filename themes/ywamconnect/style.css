@@ -32,6 +32,17 @@ a {
   transition:.5s;
 }
 
+.modal-dialog {
+right: auto;
+left: auto;
+width: 80%;
+max-width: 960px;
+padding-top: 30px;
+padding-bottom: 30px;
+margin: 0 auto;
+
+}
+
 h2,h3,h4 {
 	color: #f60;	
 	text-shadow: none;
