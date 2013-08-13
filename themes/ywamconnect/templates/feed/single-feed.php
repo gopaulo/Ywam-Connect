@@ -1,6 +1,10 @@
 <li class="feed_single">
   <div class="row">
- 	<div class="col-lg-3"> II </div>
+ 	<div class="col-lg-3 feeduser"> 
+ 	 	<a href="<?php bloginfo('siteurl');?>/profile/"> 
+ 	 		<img src="<?php bloginfo('template_url');?>/images/default_user.jpg">
+	 	</a>
+	 </div>
  	<div class="col-lg-9"> 
  	   <div class="row"> 
 	 	   <div class="col-lg-12 feed_user"> YWAM 

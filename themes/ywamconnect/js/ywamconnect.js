@@ -1,3 +1,7 @@
+jQuery(document).ready(function(ev){
+  jQuery('[rel="tooltip"]').tooltip();
+  
+});
 jQuery('.sidebar').affix({
     offset: {
       top: 50

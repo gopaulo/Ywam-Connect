@@ -1,3 +1,10 @@
+ <script src=""></script>
+ <?php 
+
+  wp_enqueue_script('gmaps', 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false', array(), '3', true); 
+  wp_enqueue_script('markermanager', 'http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markermanager/src/markermanager.js"', array('gmaps'), '3', true); 
+
+  ?> 
 <div id="map-canvas"> </div>
 <?php
 

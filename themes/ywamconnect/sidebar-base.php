@@ -1,6 +1,22 @@
 <?php
-$base = $_GET['base'];
-$basepods = pods('base',$base->ID);
+if(isset($_GET['bid'])) { 
+  $bid = $_GET['bid'];
+  $base = get_post($bid);
+}
+else { 
+  $base = $_GET['base'];
+  $bid = $base->ID;
+}
+
+if(is_tax('event_category'))
+  $collapsed = 1;
+else if(is_tax('video_category'))
+ $collapsed =2;
+else if(is_page('followers'))
+  $collapsed = 3;
+else $collapsed = 0;
+
+$basepods = pods('base',$bid);
 $email = $basepods->display('email');
 $phone = $basepods->display('phone');
 $website = $basepods->display('website');
@@ -13,8 +29,8 @@ $_GET['locationdesc'] = '<h4><a href=\''.get_bloginfo('siteurl').'/base/'.$base-
  
 ?>
 <? if($country): ?> <div id="countryFlag"> <img src="<?php bloginfo('template_url');?>/images/flags/flat/48/<?= $country;?>.png"/> </div> <?php endif; ?>
-
-<h4 class="basetitle"> <?=$base->post_title; ?> </h4>
+<?=  $_SESSION['collapsed'];?>
+<h4 class="basetitle"><a href="<?php bloginfo('siteurl');?>/base/<?= $base->post_name;?>"><?=$base->post_title; ?></a> </h4>
 <?=  apply_filters('the_content', $base->post_content); ?>
 <p>
 <? if($email): ?> Email: <a href="mailto:<?= $email; ?>"> <?= $email; ?> </a> <br/> <?php endif;?> 
@@ -31,11 +47,11 @@ $_GET['locationdesc'] = '<h4><a href=\''.get_bloginfo('siteurl').'/base/'.$base-
 <div class="accordion" id="accordion2">
   <div class="accordion-group">
     <div class="accordion-heading">
-      <a class="accordion-toggle " data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+      <a class="accordion-toggle <?php if($collapsed!=0) echo 'collapsed';?>" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
         <i class="icon-chevron-sign-right"> </i> Courses
       </a>
     </div>
-    <div id="collapseOne" class="accordion-body collapse in">
+    <div id="collapseOne" class="accordion-body collapse <?php if($collapsed==0) echo 'in';?>">
       <div class="accordion-inner">
          <ul class="sidebarbase_list">
           <li> DTS </li>
@@ -46,46 +62,66 @@ $_GET['locationdesc'] = '<h4><a href=\''.get_bloginfo('siteurl').'/base/'.$base-
   </div>
   <div class="accordion-group">
     <div class="accordion-heading">
-      <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+      <a class="accordion-toggle <?php if($collapsed!=1) echo 'collapsed';?>" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
         <i class="icon-chevron-sign-right"> </i> Events
       </a>
     </div>
-    <div id="collapseTwo" class="accordion-body collapse">
+    <div id="collapseTwo" class="accordion-body collapse  <?php if($collapsed==1) echo 'in';?>">
       <div class="accordion-inner">
-        ...
+          <ul class="sidebarbase_list">
+           <?php 
+           $categories = get_event_categories_for_base($base->ID);
+           if(sizeof($categories) == 0): ?>
+            <li> <a href="#addeventmodal" data-toggle="modal">Add Event</a></li>
+          <?php 
+           endif;  
+           foreach($categories as $category): ?>
+              <li><a href="<?php bloginfo('siteurl');?>/event-category/<?= $category->slug;?>/?bid=<?= $base->ID; ?>"><?= $category->name;?> (<?= $category->total;?>)</a></li>
+           <?php endforeach; ?>
+         </ul>
       </div>
     </div>
   </div>
   <div class="accordion-group">
     <div class="accordion-heading">
-      <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
+      <a class="accordion-toggle <?php if($collapsed!=2) echo 'collapsed';?>" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
        <i class="icon-chevron-sign-right"> </i> Videos
       </a>
     </div>
-    <div id="collapseThree" class="accordion-body collapse">
+    <div id="collapseThree" class="accordion-body collapse  <?php if($collapsed==2) echo 'in';?>">
       <div class="accordion-inner">
-        ...
+        <ul class="sidebarbase_list">
+        <?php 
+           $categories = get_video_categories_for_base($base->ID);
+           if(sizeof($categories) == 0): ?>
+            <li> <a href="#addvideomodal" data-toggle="modal">Add Video</a></li>
+          <?php 
+           endif;  
+           foreach($categories as $category): ?>
+              <li><a href="<?php bloginfo('siteurl');?>/video-category/<?= $category->slug;?>/?bid=<?= $base->ID; ?>"><?= $category->name;?> (<?= $category->total;?>)</a></li>
+           <?php endforeach; ?>
+           </ul>
       </div>
     </div>
   </div>
    <div class="accordion-group">
     <div class="accordion-heading">
-      <a class="accordion-toggle collapsed " data-toggle="collapse" data-parent="#accordion2" href="#collapseFour">
+      <a class="accordion-toggle <?php if($collapsed!=3) echo 'collapsed';?>" data-toggle="collapse" data-parent="#accordion2" href="#collapseFour">
         <i class="icon-chevron-sign-right"> </i> People
       </a>
     </div>
-    <div id="collapseFour" class="accordion-body collapse">
+    <div id="collapseFour" class="accordion-body collapse  <?php if($collapsed==3) echo 'in';?>">
       <div class="accordion-inner">
         <ul class="sidebarbase_list">
-          <li> Followers </li>
-          <li> In the Area </li>
+          <li><a class="accordion-toggle collapsed " href="<?php bloginfo('siteurl');?>/followers/?bid=<?= $base->ID; ?>"> Followers</a> </li>
+          <li> In the Area [dev]</li>
          </ul>
       </div>
     </div>
   </div>
    <div class="accordion-group">
     <div class="accordion-heading">
-      <a class="accordion-toggle collapsed " href="#collapseTwo">
+      <a class="accordion-toggle collapsed " href="<?php bloginfo('siteurl');?>/ministries/?bid=<?= $base->ID; ?>">
         <i class="icon-chevron-sign-right"> </i> Ministries
       </a>
     </div>

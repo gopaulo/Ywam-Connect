@@ -61,11 +61,17 @@ h4.basetitle {
 }
 /* BOOTSTRAP YWAMCONNECT */
 
+.tooltip-inner {
+   background-color: #6cbfd3;
+}
 .btn, .btn:hover {
   border:none;
   border-radius: 0px;
 }
 
+.addbtn {
+  float: right;
+}
 .btn-info {
   background-image: none;
    background-color: #49b4bf;
@@ -73,6 +79,18 @@ h4.basetitle {
 .navbar-brand {
   	border: none;
     padding:10px 15px;
+}
+.locationusercaption {
+   font-size: 0.8em;
+   padding-top: 19px;
+   color: #666;
+}
+.userdatacaption {
+  padding-left:0px;
+}
+.usernamecaption {
+  top: 10px;
+position: relative
 }
 a.accordion-toggle {
   color: #6cbfd3;
@@ -93,6 +111,68 @@ a.accordion-toggle > i {
 }
 ul.sidebarbase_list {
   list-style: none;
+  padding-left: 20px;
+margin-bottom: 0px;
+}
+ul.sidebarbase_list a {
+  color: #333;
+}
+ul.sidebarbase_list a:hover {
+  color: #6cbfd3;
+}
+div.imagecaption {
+  position:relative;
+  width: 100%;
+  background: rgba(255,255,255,0.9);
+ 
+}
+.totalusers { 
+  font-weight: bold;
+  color: #f60;
+}
+
+.addfriend {
+  float: right;
+margin-top: 20px;
+}
+p.datecaption {
+  font-size: 0.9em;
+   color: #666;
+   margin-bottom: 3px;
+}
+div.imagecaption h4 { 
+  font-weight: 200;
+  padding: 2px;
+  margin:0px;
+}
+ul#eventlist {
+  padding: 0px;
+   list-style: none;
+   margin-top: 25px;
+}
+li.singleevent img {
+   width: 100%;
+}
+.feeduser {
+  padding:5px;
+}
+.feeduser img {
+  width: 100%;
+}
+li.singleevent { margin-bottom: 10px;}
+li.singlefollower { 
+ 
+ padding-top: 5px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #ccc;
+}
+li.singlefollower img {
+  width: 100%;
+}
+
+li.singlevideo { margin-bottom: 10px;}
+li.singlevideo img {
+  width: 100%;
 }
 .well {
    background-image: none;
@@ -119,6 +199,7 @@ li.feed_single {
   padding-left: 0px;
 }
 #newsfeed_list {
+  margin-top: 7px;
   padding-left: 0px;
    list-style: none;
 }
