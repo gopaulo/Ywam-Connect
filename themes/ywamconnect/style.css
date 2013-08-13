@@ -54,9 +54,25 @@ h4.basetitle {
   display: inline;
   position: relative;
 }
+#map-canvas {
+  width: 100%;
+  min-height: 500px;
+
+}
 /* BOOTSTRAP YWAMCONNECT */
+
+.btn, .btn:hover {
+  border:none;
+  border-radius: 0px;
+}
+
+.btn-info {
+  background-image: none;
+   background-color: #49b4bf;
+}
 .navbar-brand {
   	border: none;
+    padding:10px 15px;
 }
 a.accordion-toggle {
   color: #6cbfd3;
@@ -68,18 +84,83 @@ a.collapsed {
 a.accordion-toggle > i {
     color: #6cbfd3;
 }
+.feed_user {
+   font-weight: bold;
+}
+.feed_user small {
+  font-weight: normal;
+  color: #888;
+}
+ul.sidebarbase_list {
+  list-style: none;
+}
+.well {
+   background-image: none;
+   background:  #ccc;
+   border:0px;
+   padding: 10px;
+   margin:3px;
+   text-align: center;
+}
+.well a{
+  color: #333;
+}
+.well a:hover {
+  color: #fff;
+}
 hr {
   border-top: 1px solid #ccc;
 }
+input {
+  height: 30px;
+  padding:2px;
+}
+li.feed_single {
+  padding-left: 0px;
+}
+#newsfeed_list {
+  padding-left: 0px;
+   list-style: none;
+}
+textarea#postfeed {
+  width: 95%;
+  border: 1px solid #ccc;
+  resize: none;
+  height: 80px;
+  margin-bottom: 10px;  
+}
+#newsfeed_post {
+   width: 100%;
+}
 .accordion-heading .accordion-toggle {
   padding: 1px 15px;
+}
+
+.newsfeedh4 {
+  color: #444;
 }
 .accordion-group,.accordion-inner {
   border: none;
 }
 #logo {
-	margin-top: -10px;
+	margin-top: 0px;
 	width: 100%;
+}
+
+input.searchbox-header  {
+  width: 100%;
+  height: 38px;
+
+}
+.search-header {
+  width: 250px;
+  margin-top: 5px;
+
+}
+.search-header .input-group-addon {
+     background-image: none;
+  background-color: #fff;
+  color: #333;
 }
 .navbar {
 	background-image:  none;
@@ -90,7 +171,33 @@ hr {
  	border: none;
  	color: #ededed;
  }
+ .login {
+  text-align: center;
+ }
+ #loginbtn {
+  width: 200px !important;
+ }
 
+ #world {
+  height: 45px;
+  padding-top:5px;
+  padding-right:5px;
+  padding-left: 5px;
+  margin:0px;
+ }
+ #loginform {
+  display: inline-block;
+  width: 300px;
+ }
+
+#rememberme { 
+width: 24px;
+display: inline;
+}
+ #loginform input[type=text],  #loginform input[type=password] {
+  width: 100%;
+  display: inline-block;;
+ }
  #menu-top-menu >li>a:hover,  #menu-top-menu >li.current-menu-item >a {
  	background: none;
  	color: #6cbfd3;
@@ -113,10 +220,10 @@ hr {
  }
 
 #widebarwrapper {
-    padding: 7% 0;
+    padding: 4% 0;
 }
 
 #widebarinside {
-	background: #222;
-    padding: 14% 0;
+	background: rgba(255,255,255,0.8);
+    padding: 4% 0;
 }

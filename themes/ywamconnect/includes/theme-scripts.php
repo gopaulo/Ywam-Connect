@@ -6,10 +6,11 @@ add_action('wp_enqueue_scripts', 'init_scripts');
 function init_scripts() {
   wp_enqueue_script( 'jquery' );		
   wp_enqueue_script('boostrap3', 'http://netdna.bootstrapcdn.com/bootstrap/3.0.0-rc1/js/bootstrap.min.js"', array(), '3', true);
+  wp_enqueue_script('markermanager', 'http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markermanager/src/markermanager.js"', array(), '3', true);
 
   wp_enqueue_script('ywamconnect', get_bloginfo('template_url').'/js/ywamconnect.js', array(), '3', true);
 
-
+ 
 }
 
 add_action('wp_head', 'init_styles');

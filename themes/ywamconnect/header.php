@@ -69,10 +69,18 @@
      
 </head>
 <body <?php body_class(); ?>>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=490359931029564";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
 <header>
 <div class="navbar navbar-fixed-top navbar-inverse">
-  <a class="navbar-brand" href="<?php bloginfo('siteurl');?>"><img id="logo" src="<?php bloginfo('template_url');?>/images/ywamconnect_logo.png"/></a>
+  <a class="navbar-brand" href="<?php bloginfo('siteurl');?>" style="padding:0px;margin:0px;"><img id="logo" src="<?php bloginfo('template_url');?>/images/ywamconnect_logo.png"/></a>
   <?php   
   $params = array( 
   	'container'=>false,
@@ -80,17 +88,30 @@
   	'theme_location' => 'header-menu' );
    wp_nav_menu($params); ?>
   <ul class="nav navbar-nav pull-right">
-              <li><a href="#">Link</a></li>
+  			<?php if(!is_user_logged_in()): ?>
+              <li><a href="<?php bloginfo('siteurl');?>/login">Login</a></li>
+               <li><a href="<?php bloginfo('siteurl');?>/register">Register</a></li>
+           <?php else: ?>
+           	<li style="padding:0px;margin:0px;">
+           	 <a href="<?php bloginfo('siteurl');?>/locations" style="padding:0px;margin:0px;"><img id="world" src="<?php bloginfo('template_url'); ?>/images/world.png"/></a>
+           	</li>
               <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user"></i> <b class="caret"></b></a>
                 <ul class="dropdown-menu">
-                  <li><a href="#">Action</a></li>
-                  <li><a href="#">Another action</a></li>
-                  <li><a href="#">Something else here</a></li>
+                  <li><a href="<?php bloginfo('siteurl');?>/your-profile">My Profile</a></li>
+                  <li><a href="<?php bloginfo('siteurl');?>/login/?loggedout=true">Change Password</a></li>
                   <li class="divider"></li>
-                  <li><a href="#">Separated link</a></li>
+                  <li><a href="<?php bloginfo('siteurl');?>/lostpassword">Logout</a></li>
                 </ul>
               </li>
+              <li>
+             	 <div class="input-group search-header">
+					  <input type="text" class="searchbox-header" placeholder="Search">
+					  <span class="input-group-addon"><i class="icon-search"></i></span>
+					</div>
+
+              </li>
+          <?php endif; ?>
             </ul>
             
 </div>

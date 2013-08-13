@@ -3,7 +3,8 @@
 /* Template Name: Home */
 
 get_header();
-?>
+$_GET['base'] = $post;
+ ?>
 
 
 <div class="container">

@@ -1,21 +1,29 @@
-<div id="countryFlag"> FLAG </div>
+<?php
+$base = $_GET['base'];
+$basepods = pods('base',$base->ID);
+$email = $basepods->display('email');
+$phone = $basepods->display('phone');
+$website = $basepods->display('website');
+$facebook = $basepods->display('facebook');
+$location = $basepods->display('latlong');
+$country =  $basepods->field('country');
 
-<h4 class="basetitle"> Ywam Base </h4>
+$_GET['location'] = $location;
+ 
+?>
+<? if($country): ?> <div id="countryFlag"> <img src="<?php bloginfo('template_url');?>/images/flags/flat/48/<?= $country;?>.png"/> </div> <?php endif; ?>
+
+<h4 class="basetitle"> <?=$base->post_title; ?> </h4>
+<?=  apply_filters('the_content', $base->post_content); ?>
 <p>
-University of the Nations <br/>
-75-5681 Kuakini HWy<br/>
-Kailua-Kona <br/>
-HI-USA 
+<? if($email): ?> Email: <a href="mailto:<?= $email; ?>"> <?= $email; ?> </a> <br/> <?php endif;?> 
+<? if($website): ?> Web: <a href="<?= $website;?>"> <?= $website; ?> </a> <br/> <?php endif;?> 
+<? if($phone): ?> Phone:  <?= $phone; ?>  <br/> <?php endif;?> 
 </p>
-
-<p>
-Email: <a href="#"> em@mail.com </a> <br/>
-Web: <a href="#"> website.com </a> <br/>
-Phone: 
-</p>
-
-<p> Follow us on Facebook </p>
-
+<? if($facebook): ?>
+<p> Follow us on Facebook: <br/>
+<div class="fb-follow" data-href="<?=$facebook;?>" data-width="250" data-show-faces="true"></div> </p>
+<?php endif;?> 
 <hr/>
 
 
@@ -28,7 +36,10 @@ Phone:
     </div>
     <div id="collapseOne" class="accordion-body collapse in">
       <div class="accordion-inner">
-        ...
+         <ul class="sidebarbase_list">
+          <li> DTS </li>
+          <li> Schools </li>
+         </ul>
       </div>
     </div>
   </div>
@@ -58,13 +69,16 @@ Phone:
   </div>
    <div class="accordion-group">
     <div class="accordion-heading">
-      <a class="accordion-toggle collapsed " data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+      <a class="accordion-toggle collapsed " data-toggle="collapse" data-parent="#accordion2" href="#collapseFour">
         <i class="icon-chevron-sign-right"> </i> People
       </a>
     </div>
-    <div id="collapseTwo" class="accordion-body collapse">
+    <div id="collapseFour" class="accordion-body collapse">
       <div class="accordion-inner">
-        ...
+        <ul class="sidebarbase_list">
+          <li> Followers </li>
+          <li> In the Area </li>
+         </ul>
       </div>
     </div>
   </div>
