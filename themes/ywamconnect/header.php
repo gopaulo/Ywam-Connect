@@ -88,9 +88,9 @@
            	 <a href="<?php bloginfo('siteurl');?>/locations" style="padding:0px;margin:0px;"><img id="world" src="<?php bloginfo('template_url'); ?>/images/world.png"/></a>
            	</li>
               <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user"></i> <b class="caret"></b></a>
+                <a href="#" class="dropdown-toggle headerprofile" data-toggle="dropdown"><img  src="<?php bloginfo('template_url');?>/images/default_user.jpg"><b class="caret"></b></a>
                 <ul class="dropdown-menu">
-                  <li><a href="<?php bloginfo('siteurl');?>/your-profile">My Profile</a></li>
+                  <li><a href="<?php bloginfo('siteurl');?>/profile">My Profile</a></li>
                   <li><a href="<?php bloginfo('siteurl');?>/lostpassword">Change Password</a></li>
                   <li class="divider"></li>
                   <li><a href="<?= wp_logout_url(); ?>">Logout</a></li>

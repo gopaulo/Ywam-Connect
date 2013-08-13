@@ -85,6 +85,9 @@ h4.basetitle {
    padding-top: 19px;
    color: #666;
 }
+table {
+  background-color: #fff;
+}
 .userdatacaption {
   padding-left:0px;
 }
@@ -202,6 +205,15 @@ li.feed_single {
   margin-top: 7px;
   padding-left: 0px;
    list-style: none;
+}
+a.headerprofile {
+  padding: 2px !important;
+  margin: 2px !important;
+}
+a.headerprofile  img{
+  height: 32px;
+border: 1px solid #fff;
+margin-top: 5px;
 }
 textarea#postfeed {
   width: 95%;
