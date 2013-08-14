@@ -5,6 +5,8 @@ get_header();
 <style>
  body {
  	background: url(images/people_bg.jpg);
+ 	background-size: cover;
+
  }
 </style>
 <div id="widebarwrapper">

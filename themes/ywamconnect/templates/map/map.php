@@ -80,7 +80,7 @@ $ = jQuery;
 	}
 	jQuery('body').ready(function(e) {
 		console.log('loaded');
-		$('#map-canvas').height($(document).height()-122);
+		$('#map-canvas').height($(document).height()-140);
 		initialize();
  
 	});

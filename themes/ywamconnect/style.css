@@ -15,7 +15,22 @@ Text Domain: ywamconnect
  	top: 52px;
 }
 
+@media (min-width: 1200px) {
+  .container {
+    width: 90%;
+    max-width: none !important;
+  }
+}
 
+.popuptitle {
+  font-weight: bold !important;
+  font-size: 1em !important;
+}
+
+.popupmap {
+  width: 200px;
+
+}
 body {
 	background-color: #fff;
 	 padding-top: 80px;
@@ -32,6 +47,22 @@ a {
   transition:.5s;
 }
 
+/* PROFILE */
+
+p.profilep {
+  font-size: 0.9em;
+  margin:0px;
+  padding:0px;
+}
+span.profilelabel {
+  font-weight: bold;
+}
+div.profiledivider {
+  height: 25px;
+  width: 100%;
+  display: block;
+}
+/*END PROFILE */
 .modal-dialog {
 right: auto;
 left: auto;
@@ -86,6 +117,45 @@ h4.basetitle {
 .btn-info {
   background-image: none;
    background-color: #49b4bf;
+}
+ul#photolist {
+  padding-left: 0px;
+  list-style: none;
+}
+
+ul.profilelist {
+  list-style: none;
+  padding-left:0px;
+}
+ul.profilelist li {
+  font-size: 0.9em;
+    padding:0px;
+}
+ul#friendlist {
+  padding-left: 0px;
+  list-style: none;
+}
+
+#friendlist li {
+  padding: 3px;
+}
+
+#friendlist li div.pic {
+ background: #ccc;
+ padding: 3px;
+ height:25px;
+ width: 100%;
+}
+
+#photolist li {
+  padding:3px;
+
+}
+#photolist li div.pic {
+ background: #ccc;
+ padding: 3px;
+ height:65px;
+ width: 100%;
 }
 .navbar-brand {
   	border: none;

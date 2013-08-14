@@ -11,7 +11,7 @@
 
 <?php get_template_part('templates/modals/all');?>
 <?php wp_footer(); ?> 
-
+<?php /*
 <div id="fb-root"></div>
 <script>
   window.fbAsyncInit = function() {
@@ -36,6 +36,6 @@
    }(document, 'script', 'facebook-jssdk'));
 </script>
 
-
+*/ ?>
 </body>
 </html>

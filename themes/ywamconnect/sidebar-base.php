@@ -25,8 +25,11 @@ $location = $basepods->display('latlong');
 $country =  $basepods->field('country');
 
 $_GET['location'] = $location;
-$_GET['locationdesc'] = '<h4><a href=\''.get_bloginfo('siteurl').'/base/'.$base->post_name.'\'>'.$base->post_title.'</a></h4>'.apply_filters('the_content', $base->post_content);
- 
+$locationdesc = '<div class=\'popupmap\'> <h4><a class=\'popuptitle\' href=\''.get_bloginfo('siteurl').'/base/'.$base->post_name.'\'>';
+$locationdesc.= $base->post_title.'</a></h4>';
+$locationdesc.='<p class=\'profilep\'> <span class=\'profilelabel\'> Email: </span> '.$email.'</p><p class=\'profilep\'> <span class=\'profilelabel\'> Web: </span> '.$website.' </p><p class=\'profilep\'> <span class=\'profilelabel\'> Phone: </span> '.$phone.' </p>';
+$locationdesc.='</div>';
+ $_GET['locationdesc']  = $locationdesc;
 ?>
 <? if($country): ?> <div id="countryFlag"> <img src="<?php bloginfo('template_url');?>/images/flags/flat/48/<?= $country;?>.png"/> </div> <?php endif; ?>
 <?=  $_SESSION['collapsed'];?>
@@ -37,7 +40,7 @@ $_GET['locationdesc'] = '<h4><a href=\''.get_bloginfo('siteurl').'/base/'.$base-
 <? if($website): ?> Web: <a href="<?= $website;?>"> <?= $website; ?> </a> <br/> <?php endif;?> 
 <? if($phone): ?> Phone:  <?= $phone; ?>  <br/> <?php endif;?> 
 </p>
-<? if($facebook): ?>
+<? if(false): //$facebook): ?>
 <p> Follow us on Facebook: <br/>
 <div class="fb-follow" data-href="<?=$facebook;?>" data-width="250" data-show-faces="true"></div> </p>
 <?php endif;?> 
