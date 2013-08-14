@@ -22,7 +22,7 @@ $bases = pods('base',$params);
 
 	<script>
 	$ = jQuery;
-		$.wpapi = 'http://yc.dev/api/ywamconnect/';
+		
 
 		 jQuery(document).ready(function(ev){
 		 	$(document).on('maploaded',function(k){
@@ -44,6 +44,7 @@ $bases = pods('base',$params);
 						name: '<? $bases->display("post_title"); ?>',
 						type: 'base'
 					};
+					console.log('marker',marker);
 					//markerlist.push(marker_test);
 			 		 infowindow = new google.maps.InfoWindow({
 									content: '<h4><a href="<?= get_bloginfo('siteurl');?>/base/<?= $bases->display('post_name');?>"><?= $bases->display('post_title');?></a></h4><?= str_replace(array("\r","\n"),"",$bases->display("post_content")); ?>'
@@ -54,13 +55,15 @@ $bases = pods('base',$params);
 							left:'-350px'
 						},300,function(ok){
 							$.ajax({
-								url: $.wpapi + 'loadSidebar',
+								url: $wpapi + 'loadSidebar',
 								data: {
 									bid: marker.bid
 								}
 							}).done(function(res){
 								console.log('function',res);
 								$('#sidebar-left').html(res.html);
+								//load controller dynamically
+								$.getScript(res.script);
 								$('#sidebar-left').animate({
 								left:'0px'
 							},300);

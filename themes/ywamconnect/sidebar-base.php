@@ -1,5 +1,7 @@
 <?php 
 
+  wp_enqueue_script('basejs', get_bloginfo('template_url').'/js/controllers/base.js', 'jquery', '1.1', true);
+
  if(isset($_GET['bid'])) { 
   $bid = $_GET['bid'];
   $base = get_post($bid);
@@ -32,11 +34,19 @@ $locationdesc.= $base->post_title.'</a></h4>';
 $locationdesc.='<p class=\'profilep\'> <span class=\'profilelabel\'> Email: </span> '.$email.'</p><p class=\'profilep\'> <span class=\'profilelabel\'> Web: </span> '.$website.' </p><p class=\'profilep\'> <span class=\'profilelabel\'> Phone: </span> '.$phone.' </p>';
 $locationdesc.='</div>';
  $_GET['locationdesc']  = $locationdesc;
+
+ $current_user = wp_get_current_user();
+
 ?>
 <? if($country): ?> <div id="countryFlag"> <img src="<?php bloginfo('template_url');?>/images/flags/flat/48/<?= $country;?>.png"/> </div> <?php endif; ?>
 <?=  $_SESSION['collapsed'];?>
 <h4 class="basetitle"><a href="<?php bloginfo('siteurl');?>/base/<?= $base->post_name;?>"><?=$base->post_title; ?></a> </h4>
-<a href="#" class="followbtn follow btn btn-info btn-small" data-id="<?= $bid;?>"><i class="icon-heart"> </i> Follow Base </a>
+<?php if(!is_following('bases',$current_user->ID,$bid)): ?>
+<a href="#" class="followbtn btn btn-info btn-mini" data-follow='1' data-id="<?= $bid;?>"><i class="icon-heart"> </i><span> Follow Base </span></a>
+<?php else: ?>
+<a href="#" class="followbtn btn btn-default btn-mini" data-follow='0' data-id="<?= $bid;?>"><i class="icon-heart-empty"> </i> <span>Unfollow Base</span> </a>
+
+<?php endif; ?>
 <div style="height: 10px; width: 100%;"> </div>
 <?=  apply_filters('the_content', $base->post_content); ?>
 <p>

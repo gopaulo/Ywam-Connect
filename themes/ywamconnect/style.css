@@ -103,7 +103,7 @@ h4.basetitle {
   float:right;
   display: inline;
   position: relative;
-  margin-top: -5px;
+  margin-top: -8px;
 }
 #map-canvas {
   width: 100%;
@@ -116,12 +116,21 @@ p.quote {
 }
 /* BOOTSTRAP YWAMCONNECT */
 
+
+
 .tooltip-inner {
    background-color: #6cbfd3;
 }
 .btn, .btn:hover {
   border:none;
   border-radius: 0px;
+}
+
+.btn-mini {
+padding: 4px 8px !important;;
+font-size: 11px !important;
+line-height: 1 !important;;
+border-radius: 2px !important;;
 }
 
 .addbtn {
@@ -246,6 +255,12 @@ ul#eventlist {
   padding: 0px;
    list-style: none;
    margin-top: 25px;
+}
+ul#followerlist {
+  padding: 0px;
+   list-style: none;
+   margin-top: 25px;
+
 }
 li.singleevent img {
    width: 100%;

@@ -46,10 +46,37 @@ function get_template_part_withvars($slug = null, $name = null, array $params = 
  	$user->remove_from($type,$bid);	
  }
 
+function is_following($type,$uid,$bid) {
+   $query = "select count(umeta_id) as total from wp_usermeta as um
+		where um.meta_key='".$type."'
+		and um.meta_value=".$bid."
+		and um.user_id=".$uid;
+	$res = execute($query);
 
+	if($res[0]->total >0) return true;
+	else return false;
+}
+ 
+function is_friend($uid,$friend){
+	$query= "select count(um.user_id) as total from wp_usermeta as um
+		inner join wp_usermeta as ul on ul.meta_value = um.user_id
+		where um.meta_key='friends'
+		and um.meta_value=".$uid."
+		and ul.meta_key='friends'
+		and ul.meta_value=".$friend;
+	$res = execute($query);
+
+	if($res[0]->total >0) return true;
+	else return false;
+}
 function get_followers($bid) {
-	 $base = pods('base',$bid);
-	 return $base->field('followers');
+	$query = "select distinct(um.user_id), u.display_name from wp_usermeta as um
+		inner join wp_users as u on um.user_id = u.ID
+		inner join wp_usermeta as ul on ul.user_id = um.user_id
+		where um.meta_key='bases'
+		and um.meta_value=".$bid;
+
+  return execute($query); 
 }
 function get_list_for_base($base,$type,$category=false,$categoryvalue=false) {
 
