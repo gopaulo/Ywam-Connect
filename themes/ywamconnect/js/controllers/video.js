@@ -11,8 +11,18 @@ $(document).ready(function(ev) {
 
 	$('#addvideobtn').on('click', function(ev) {
 		var params = $('#addvideoform').formParams();
-
-		console.log('params',params);
+		if (params.headingvideo == '' || params.videolink == '') {
+			//error -> empty video
+		} else {
+			console.log('params', params);
+			$.ajax({
+				url: $wpapi + 'saveEditVideo',
+				data: params
+			}).done(function(res) {
+				console.log('add video res', res);
+				//window.location.reload();
+			});
+		}
 	})
 
 	$('input#videolink').on('blur', function(ev) {
@@ -28,7 +38,7 @@ $(document).ready(function(ev) {
 				url: $wpapi + 'oEmbedYC',
 				data: obj
 			}).done(function(res) {
-				console.log('res',res);
+				console.log('res', res);
 				$('div.previewevent').html(res.url);
 			})
 		}

@@ -17,10 +17,9 @@ if ( function_exists( 'register_nav_menus' ) ) {
         )
     );
 }
-
-function get_markerlist($action) {
-	$output = array();
-
-	return $output;
+if ( function_exists( 'add_theme_support' ) ) {
+	add_theme_support( 'post-thumbnails' );
+        set_post_thumbnail_size( 300, 170 ); // default Post Thumbnail dimensions   
 }
+
 ?>

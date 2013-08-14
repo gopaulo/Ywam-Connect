@@ -14,11 +14,12 @@
 <h3 style="padding-top: 0px;margin-top:0px;" >Videos - <?=$base->post_title;?> <small> <?= $termfull->name; ?></small></h3>
 <ul id="eventlist" class="row">
 <?php foreach($videos as $video):
-	$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large');
+	$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($video->ID), 'large');
 	$thumb= $thumb[0]; 
 	if($thumb == ''){
 		$thumb = get_bloginfo('template_url').'/imags/default_video.jpg';
 	}
+	$thumb = get_bloginfo('template_url').'/includes/timthumb.php?src='.$thumb.'&w=300&h=170';
  ?>
   <li class="singlevideo col-lg-3" data-id="<?= $video->ID; ?>"> 
    	<a href="javascript://" class="viewvideo" data-id="<?= $video->ID; ?>">

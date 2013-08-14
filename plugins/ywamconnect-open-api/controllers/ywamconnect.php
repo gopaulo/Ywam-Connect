@@ -53,8 +53,20 @@ function unfriend() {
 function saveEditVideo() {
   $output = array();
   global $json_api;
-  extract($json_api->query->get(array('url','width','height'))); 
+  extract($json_api->query->get(array('bid','category','headingvideo','videolink','description'))); 
+  $current_user = wp_get_current_user();
+  $uid = $current_user->ID;
 
+  $parms = array(
+  	'post_title'=> $headingvideo,
+  	'post_content'=>$description,
+  	'video_link'=>$videolink,
+  	'base'=>$bid);
+ 	 $pods = pods('video');
+   $new_video =  $pods->add($parms);
+   wp_publish_post($new_video);
+   wp_set_post_terms($new_video,$category,'video_category',true);
+   $output['id']= $new_video;
   return $output;
 }
 
@@ -63,7 +75,7 @@ function saveEditEvent() {
 }
 
 function saveEditMinistry() {
-	
+
 }
 function oEmbedYC(){
 global $json_api;
