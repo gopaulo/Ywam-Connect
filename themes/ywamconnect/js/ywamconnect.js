@@ -1,3 +1,6 @@
+$ = jQuery;
+
+
 jQuery(document).ready(function(ev){
   jQuery('[rel="tooltip"]').tooltip();
   

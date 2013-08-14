@@ -9,10 +9,10 @@ if(isset($_GET['bid'])) {
 
 
 <div class="container">
-<div class="col-lg-3" > 
+<div class="col-lg-2" > 
 	<?php get_sidebar('base'); ?>
  </div>
-<div class="col-lg-6"> 
+<div class="col-lg-8"> 
 	<div class="container">
 	<?php if($archive):
 		get_template_part('templates/events/base','list');
@@ -22,7 +22,7 @@ if(isset($_GET['bid'])) {
 		
 	</div> 
 </div>
-<div class="col-lg-3" > 
+<div class="col-lg-2" > 
 	 <?php get_sidebar('newsfeed');?>
 	</div>
 </div>

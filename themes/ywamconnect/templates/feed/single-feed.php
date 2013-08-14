@@ -8,7 +8,7 @@
  	<div class="col-lg-9"> 
  	   <div class="row"> 
 	 	   <div class="col-lg-12 feed_user"> YWAM 
-	 	   		<small> @location </small> 
+	 	   		<!--<small> @location </small> -->
 	 	   		<small class="feed_time pull-right"> 16h </small>
 		   	</div>
 	   	</div>

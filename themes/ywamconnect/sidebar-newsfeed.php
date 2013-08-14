@@ -7,8 +7,8 @@ wp_enqueue_script(
 ?>
 <h4 class="newsfeedh4"> News Feed</h4>
 <form id="newsfeed_post">
-<textarea id="postfeed" name="postfeed"> </textarea>
 <div class="row"> 
+<textarea id="postfeed" name="postfeed"> </textarea>
 	<div class="col-lg-2 well"><a href="#"><i class="icon-camera"> </i></a></div>
 	<div class="col-lg-2 well"><a href="#"><i class="icon-map-marker"></i></a></div>
 	<div class="col-lg-7"><a href="#" class="pull-right btn btn-info"> Post</a></div>

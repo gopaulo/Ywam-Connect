@@ -7,10 +7,10 @@ get_header();
 
 
 <div class="container">
-<div class="col-lg-3" > 
+<div class="col-lg-2" > 
 	<?php get_sidebar('user'); ?>
  </div>
-<div class="col-lg-6"> 
+<div class="col-lg-8"> 
 	<div class="container">
 			  <?php
 	  if ( have_posts() ) :
@@ -23,7 +23,7 @@ endif;
 ?>
 	</div> 
 </div>
-<div class="col-lg-3" > 
+<div class="col-lg-2" > 
 	 <?php get_sidebar('newsfeed');?>
 	</div>
 </div>

@@ -1,9 +1,11 @@
-<?php
-if(isset($_GET['bid'])) { 
+<?php 
+
+ if(isset($_GET['bid'])) { 
   $bid = $_GET['bid'];
   $base = get_post($bid);
 }
 else { 
+
   $base = $_GET['base'];
   $bid = $base->ID;
 }
@@ -34,6 +36,8 @@ $locationdesc.='</div>';
 <? if($country): ?> <div id="countryFlag"> <img src="<?php bloginfo('template_url');?>/images/flags/flat/48/<?= $country;?>.png"/> </div> <?php endif; ?>
 <?=  $_SESSION['collapsed'];?>
 <h4 class="basetitle"><a href="<?php bloginfo('siteurl');?>/base/<?= $base->post_name;?>"><?=$base->post_title; ?></a> </h4>
+<a href="#" class="followbtn follow btn btn-info btn-small" data-id="<?= $bid;?>"><i class="icon-heart"> </i> Follow Base </a>
+<div style="height: 10px; width: 100%;"> </div>
 <?=  apply_filters('the_content', $base->post_content); ?>
 <p>
 <? if($email): ?> Email: <a href="mailto:<?= $email; ?>"> <?= $email; ?> </a> <br/> <?php endif;?> 
