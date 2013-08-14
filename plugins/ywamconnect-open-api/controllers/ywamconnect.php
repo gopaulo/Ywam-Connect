@@ -50,8 +50,32 @@ function unfriend() {
 	 return $output;
 }
 
+function saveEditVideo() {
+  $output = array();
+  global $json_api;
+  extract($json_api->query->get(array('url','width','height'))); 
 
+  return $output;
+}
 
+function saveEditEvent() {
+
+}
+
+function saveEditMinistry() {
+	
+}
+function oEmbedYC(){
+global $json_api;
+  extract($json_api->query->get(array('url','width','height'))); 
+  return oEmbedYC($url,$width,$height);
+}
+
+function loadObject(){
+  global $json_api;
+  extract($json_api->query->get(array('type','id'))); 
+  return loadObject($type,$id);;
+}
 function unfollowBase(){
  global $json_api;
 	  extract($json_api->query->get(array('bid')));

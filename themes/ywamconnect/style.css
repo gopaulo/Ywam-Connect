@@ -26,10 +26,20 @@ Text Domain: ywamconnect
   font-weight: bold !important;
   font-size: 1em !important;
 }
-
+#videoframe {
+  text-align: center;
+width: 100%;
+background: #222;
+max-height: 360px;
+margin-bottom: 20px;
+}
 .popupmap {
   width: 200px;
 
+}
+
+.help-block {
+   color: #ccc;
 }
 
 div.labelform {
@@ -83,7 +93,9 @@ padding-bottom: 30px;
 margin: 0 auto;
 
 }
-
+.modal-title {
+  font-size: 1.7em;
+}
 h2,h3,h4 {
 	color: #f60;	
 	text-shadow: none;

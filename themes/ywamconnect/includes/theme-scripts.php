@@ -7,6 +7,7 @@ function init_scripts() {
   wp_enqueue_script( 'jquery' );		
   wp_enqueue_script('boostrap3', 'http://netdna.bootstrapcdn.com/bootstrap/3.0.0-rc1/js/bootstrap.min.js"', array(), '3', true);
   wp_enqueue_script('amplifyjs', get_bloginfo('template_url').'/js/amplify.min.js', 'jquery', '1.1', true);
+  wp_enqueue_script('formparams', get_bloginfo('template_url').'/js/jquery.formparams.js', 'jquery', '3', true);
 
   wp_enqueue_script('ywamconnect', get_bloginfo('template_url').'/js/ywamconnect.js', 'jquery', '3', true);
 

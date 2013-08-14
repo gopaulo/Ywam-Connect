@@ -12,6 +12,39 @@
 	return execute($query);
 }
 
+
+function loadObject($type,$id){
+	if($type == 'video'){
+		$pods = pods('video',$id);
+			//post_title
+		//post_content
+		//videolink
+		//base
+		//basename
+		$output = array(
+			'ID'=>$id,
+			'post_title'=> $pods->display('post_title'),
+			'post_content'=>$pods->field('post_content'),
+			 'video_link'=>$pods->display('video_link'),
+ 			 'base'=>$pods->display('base'),
+			 'basename'=>$pods->field('base.post_name')
+		);
+		return $output;
+
+		}
+	
+	return false;
+}
+
+
+function oEmbedYC($url,$width,$height=false){
+	global $wp_embed;
+	if(!$height) $height=0.6*$width;
+	$return = $wp_embed->run_shortcode('[embed width="'.$width.'" height="'.$height.'"]'.$url.'[/embed]');
+	
+	$output = array('url'=>$return);
+	return $output;
+}
 // file_get_contents(locate_template("template-file-name.php"));
 
 function get_template_part_withvars($slug = null, $name = null, array $params = array()) {

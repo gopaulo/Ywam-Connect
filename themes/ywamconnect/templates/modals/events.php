@@ -1,3 +1,5 @@
+<?php $current_user = wp_get_current_user(); ?>
+
   <!-- Add Event Modal -->
   <div class="modal fade" id="addeventmodal">
     <div class="modal-dialog">
@@ -28,10 +30,9 @@
           <label style="display:block" >Starting Date</label>
             <div class="col-lg-4">
              <div class="form-group">
-            <select class="form-control">
-            <?php 
-              $curmonth = date('M');
-              echo $curmonth;
+           <select class="form-control">
+           <?php
+            $curmonth = date('n');
                for ($i = $curmonth; $i <= 12; $i++) : 
                $mon = date("F", mktime(0, 0, 0, $i+1, 0, 0, 0));
                ?>
@@ -149,8 +150,9 @@
         </div>
         <div class="col-lg-4">
           <div class="form-group">
-              <label for="postedby">Posted by:</label>
-              <input type="text" class="form-control" name="postedby" id="postedby" disabled>
+           <label for="postedby">Posted by:</label>
+               <input type="hidden" name="uid" value="<?= $current_user->ID;?>">
+              <input type="text" class="form-control" name="postedby" id="postedby" value="<?=$current_user->display_name;?>" disabled>
            </div>
         </div>
       </div>
