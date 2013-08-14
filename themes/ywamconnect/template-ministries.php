@@ -2,6 +2,9 @@
 /* Template Name: Ministries */
 get_header(); 
 
+  wp_enqueue_script('ministryjs', get_bloginfo('template_url').'/js/controllers/ministry.js', 'jquery', '1.1', true);
+
+
 $archive = true;
 if(isset($_GET['bid'])) { 
   $archive = false;

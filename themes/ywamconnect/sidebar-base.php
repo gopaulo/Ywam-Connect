@@ -45,7 +45,6 @@ $locationdesc.='</div>';
 <a href="#" class="followbtn btn btn-info btn-mini" data-follow='1' data-id="<?= $bid;?>"><i class="icon-heart"> </i><span> Follow Base </span></a>
 <?php else: ?>
 <a href="#" class="followbtn btn btn-default btn-mini" data-follow='0' data-id="<?= $bid;?>"><i class="icon-heart-empty"> </i> <span>Unfollow Base</span> </a>
-
 <?php endif; ?>
 <div style="height: 10px; width: 100%;"> </div>
 <?=  apply_filters('the_content', $base->post_content); ?>

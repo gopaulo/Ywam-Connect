@@ -64,19 +64,19 @@ function unfollowBase(){
 
 function followMinistry() {
  global $json_api;
-  extract($json_api->query->get(array('bid')));
+  extract($json_api->query->get(array('mid')));
 	 $output = array();
 	 $current_user = wp_get_current_user();
-	 add_to_user('ministries',$current_user->ID,$bid);
+	 add_to_user('ministries',$current_user->ID,$mid);
 	 return $output;
 }
 
 function unfollowMinistry(){
  global $json_api;
-	  extract($json_api->query->get(array('uid')));
+	  extract($json_api->query->get(array('mid')));
 	 $output = array();
 	 $current_user = wp_get_current_user();
-	 remove_from_user('ministries',$current_user->ID,$uid);
+	 remove_from_user('ministries',$current_user->ID,$mid);
 	 return $output;
 }
 

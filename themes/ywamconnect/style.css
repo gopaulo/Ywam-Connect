@@ -31,6 +31,16 @@ Text Domain: ywamconnect
   width: 200px;
 
 }
+
+div.labelform {
+  width: 99%;
+  display: block;
+}
+
+.previewevent {
+   width: 100%;
+   
+}
 body {
 	background-color: #fff;
 	 padding-top: 80px;
