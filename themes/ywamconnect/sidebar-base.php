@@ -1,6 +1,9 @@
 <?php 
 
   wp_enqueue_script('basejs', get_bloginfo('template_url').'/js/controllers/base.js', 'jquery', '1.1', true);
+  wp_enqueue_script('eventjs', get_bloginfo('template_url').'/js/controllers/event.js', 'jquery', '1.1', true);
+  wp_enqueue_script('videojs', get_bloginfo('template_url').'/js/controllers/video.js', 'jquery', '1.1', true);
+
 
  if(isset($_GET['bid'])) { 
   $bid = $_GET['bid'];

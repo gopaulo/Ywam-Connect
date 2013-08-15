@@ -12,6 +12,36 @@
 	return execute($query);
 }
 
+ function set_thumb_by_url( $url, $title = null, $postid )
+    {
+        /* Following assets will already be loaded if in admin */
+        require_once ABSPATH . 'wp-admin/includes/file.php';
+        require_once ABSPATH . 'wp-admin/includes/media.php';
+        require_once ABSPATH . 'wp-admin/includes/image.php';
+
+        $temp = download_url( $url );
+
+        if ( ! is_wp_error( $temp ) && $info = @ getimagesize( $temp ) ) {
+            if ( ! strlen( $title ) )
+                $title = null;
+
+            if ( ! $ext = image_type_to_extension( $info[2] ) )
+                $ext = '.jpg';
+
+            $data = array(
+                'name'     => md5( $url ) . $ext,
+                'tmp_name' => $temp,
+            );
+
+            $id = media_handle_sideload( $data, $postid, $title );
+            if ( ! is_wp_error( $id ) )
+                return update_post_meta( $postid, '_thumbnail_id', $id );
+        }
+
+        if ( ! is_wp_error( $temp ) )
+            @ unlink( $temp );
+    }
+
 
 function loadObject($type,$id){
 	if($type == 'video'){

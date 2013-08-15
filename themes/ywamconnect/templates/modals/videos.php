@@ -50,7 +50,7 @@
                        <div class="form-group">
                         <select class="form-control" name="category">
                         <?php 
-                         $terms = get_terms('video_category');
+                         $terms = get_terms('video_category',array('hide_empty'=>false));
                          foreach ($terms as $term): 
                         ?>
                           <option value="<?=$term->term_id;?>" data-slug="<?=$term->slug;?>"><?=$term->name;?></option>

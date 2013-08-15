@@ -63,8 +63,14 @@ $bases = pods('base',$params);
 								console.log('function',res);
 								$('#sidebar-left').html(res.html);
 								//load controller dynamically
-								$.getScript(res.script);
-								$('#sidebar-left').animate({
+								for(var i=0;i<res.script.length;i++){ 
+									$.getScript(res.script[i]);
+								}
+								$('input[name="bid"]').each(function(k) {
+									$(this).val(marker.bid);
+									});
+ 
+ 								$('#sidebar-left').animate({
 								left:'0px'
 							},300);
 							});

@@ -2,8 +2,6 @@
 
   wp_enqueue_script('videojs', get_bloginfo('template_url').'/js/controllers/video.js', 'jquery', '1.1', true);
 
-
-
   $bid = $_GET['bid'];
   $base = get_post($bid);
   $termfull = get_term_by('slug',$term,'video_category');

@@ -12,8 +12,10 @@ class JSON_API_Query {
     // Register JSON API query vars
     add_filter('query_vars', array(&$this, 'query_vars'));
   }
-  
-  function get($key) {
+
+   
+
+   function get($key) {
     if (is_array($key)) {
       $result = array();
       foreach ($key as $k) {

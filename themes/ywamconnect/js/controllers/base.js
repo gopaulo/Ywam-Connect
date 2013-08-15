@@ -27,6 +27,22 @@ $(document).ready(function(ev) {
 				$(_this).find('i').addClass('icon-heart-empty');
 
 				$(_this).find('span').html('Unfollow Base');
+				//check if in followers page
+				if($('#followerlist').length >0){
+					//follower page
+					var html = '<li class="singlefollower col-lg-6" data-id="'+res.uid+'">'; 
+						html+='<div class="row">';
+						   html+='<div class="col-lg-4">';
+							html+='	<a href="'+res.userlink+'"><img src="'+res.useravatar+'"></a>';
+						 html+=' </div>';
+						   html+='<div class="col-lg-8 userdatacaption">';
+						    html+='<a href="'+res.userlink+'" class="usernamecaption">'+res.username+'</a> ';
+						   	  html+='<p class="locationusercaption"> Current Location:  </p>';
+						   html+='</div>';
+						html+='</li>';
+						$('#followerlist').prepend(html);
+				}
+				
 			} else {
 				$(_this).data('follow', '1');
 
@@ -40,6 +56,10 @@ $(document).ready(function(ev) {
 				$(_this).find('i').addClass('icon-heart');
 
 				$(_this).find('span').html('Follow Base');
+
+				var rem = $('li.singlefollower[data-id="'+ res.uid+'"]');
+				console.log('rem',rem);
+				if(rem.length > 0) rem.fadeOut();
 			}
 			$(_this).fadeIn('slow');
 		});
