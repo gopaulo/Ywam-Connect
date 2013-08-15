@@ -37,7 +37,8 @@ $bases = pods('base',$params);
 											//animation: google.maps.Animation.DROP,
 											// animation disabled because it slows down performance
 											name: '<?= $bases->display("post_title"); ?>',
-											bid: '<?= $bases->field("ID"); ?>'
+											bid: '<?= $bases->field("ID"); ?>',
+											icon: '<?= get_bloginfo("template_url")."/images/icons/blue.png"; ?>'
 										});
 					 marker_test = {
 						location: '<?=$bases->display("latlong"); ?>',

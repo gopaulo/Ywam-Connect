@@ -3,7 +3,6 @@
 /* Template Name: Ywam Locations */
 
 get_header();
-$_GET['bid'] = 22;
 ?>
 
 

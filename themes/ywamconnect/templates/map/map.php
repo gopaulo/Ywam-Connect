@@ -47,6 +47,7 @@ $ = jQuery;
 									var marker = new google.maps.Marker({
 										position: new google.maps.LatLng(<?=$location ?>),
 										animation: google.maps.Animation.DROP,
+										icon: '<?= get_bloginfo("template_url")."/images/icons/blue.png"; ?>'
 										// animation disabled because it slows down performance
 										name: 'single location'
 									});

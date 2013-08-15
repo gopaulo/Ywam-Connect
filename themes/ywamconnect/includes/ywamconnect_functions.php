@@ -42,7 +42,16 @@
             @ unlink( $temp );
     }
 
+function loadFutureEvents($uid){
+	$query = "select * from wp_posts as p
+			inner join wp_postmeta as pm on p.ID = pm.post_id
+			where p.post_author =".$uid."
+			and p.post_type ='event'
+			and pm.meta_key='starting_date'
+			and pm.meta_value >= CURDATE()";
 
+	return execute($query);
+}
 function loadObject($type,$id){
 	$output = false;
 	if($type == 'video'){
