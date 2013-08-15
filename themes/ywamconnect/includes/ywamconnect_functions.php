@@ -44,6 +44,7 @@
 
 
 function loadObject($type,$id){
+	$output = false;
 	if($type == 'video'){
 		$pods = pods('video',$id);
 			//post_title
@@ -59,14 +60,100 @@ function loadObject($type,$id){
  			 'base'=>$pods->display('base'),
 			 'basename'=>$pods->field('base.post_name')
 		);
-		return $output;
 
+	}else if($type=='event'){
+		$pods = pods('event',$id);
+		$uid = $pods->field('post_author');
+		$user = get_user_by('id',$uid);
+		$current_user = wp_get_current_user();
+		$is_attending = is_attending($current_user->ID,$id);
+		$total = $pods->field('attending');
+		$total = sizeof($total);
+		$attending = $pods->field('attending');
+
+		$html = '';
+		foreach($attending as $person):
+			$img = '';
+			$html .='<li class="col-lg-2 singleattending" data-id="'.$person['ID'].'" rel="tooltip" title="'.$person['display_name'].'"><a href="'.get_bloginfo('siteurl').'/profile/?yid='.$person['ID'].'">'.$img.'</a></li>';
+		endforeach;
+		$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($id), 'large');
+		$thumb= $thumb[0]; 
+		if($thumb == ''){
+			$thumb = get_bloginfo('template_url').'/images/default_event.jpg';
 		}
+		$thumb = get_bloginfo('template_url').'/includes/timthumb.php?src='.$thumb.'&w=570&h=250';
+
+		$output = array(
+			'ID'=>$id,
+			'post_title'=> $pods->display('post_title'),
+			'post_content'=>$pods->field('post_content'),
+			 'video_link'=>oEmbedYC($pods->display('video_link'),270),
+ 			 'base'=>$pods->display('base'),
+			 'basename'=>$pods->field('base.post_name'),
+			 'cost'=>$pods->field('cost')==''?'This event is free':$pods->field('cost'),
+			 'userlink'=>get_bloginfo('siteurl').'/profile?yid='.$user->ID,
+			 'username'=>$user->display_name,
+			 'website'=>$pods->field('website'),
+			 'image'=>$thumb,
+			 'current_attending'=>$is_attending,
+			 'total'=> $total,
+			 'attending'=>$html,
+			 'date' => date('F jS, Y - g a',strtotime($pods->field('starting_date').' '.$pods->field('time_event')))
+		);
+
+	}else if($type = 'ministry'){
+		$pods = pods('ministry',$id);
+		$uid = $pods->field('post_author');
+		$user = get_user_by('id',$uid);
+		$current_user = wp_get_current_user();
+		$is_attending = is_attending($current_user->ID,$id);
+		$total = $pods->field('followers');
+		if($total=='') $total = 0;
+		else $total = sizeof($total);
+		$following = $pods->field('followers');
+
+		$html = '';
+		foreach($following as $person):
+			$img = '';
+			$html .='<li class="col-lg-2 singlefollowing" data-id="'.$person['ID'].'" rel="tooltip" title="'.$person['display_name'].'"><a href="'.get_bloginfo('siteurl').'/profile/?yid='.$person['ID'].'">'.$img.'</a></li>';
+		endforeach;
+		$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($id), 'large');
+		$thumb= $thumb[0]; 
+		if($thumb == ''){
+			$thumb = get_bloginfo('template_url').'/images/default_ministry.jpg';
+		}
+		$thumb = get_bloginfo('template_url').'/includes/timthumb.php?src='.$thumb.'&w=570&h=250';
+
+		$output = array(
+			'ID'=>$id,
+			'post_title'=> $pods->display('post_title'),
+			'post_content'=>$pods->field('post_content'),
+			 'video_link'=>oEmbedYC($pods->display('video_link'),270),
+ 			 'base'=>$pods->display('base'),
+			 'basename'=>$pods->field('base.post_name'),
+			 'email'=>$pods->field('email'),
+			 'userlink'=>get_bloginfo('siteurl').'/profile?yid='.$user->ID,
+			 'username'=>$user->display_name,
+			 'website'=>$pods->field('website'),
+			 'phone'=>$pods->field('phone'),
+			 'facebook'=>$pods->field('facebook'),
+			 'twitter'=>$pods->field('facebook'),
+			 'image'=>$thumb,
+			 'total'=> $total,
+			 'following'=>$html,
+			 'date' => date('F jS, Y',strtotime($pods->field('starting_date')))
+		);
+	}
 	
-	return false;
+	return $output;
 }
 
 
+function totalPeopleAttending($eid){
+	$event = pods('event',$id);
+	$attending = $event->field('attending');
+	return sizeof($attending);
+}
 function oEmbedYC($url,$width,$height=false){
 	global $wp_embed;
 	if(!$height) $height=0.6*$width;
@@ -120,6 +207,18 @@ function is_following($type,$uid,$bid) {
 	else return false;
 }
  
+ function is_attending($uid,$eid){
+	$query= "select count(um.user_id) as total from wp_usermeta as um
+		where um.meta_key='attending'
+		and um.meta_value=".$eid."
+ 		and um.user_id=".$uid;
+
+	$res = execute($query);
+
+	if($res[0]->total >0) return true;
+	else return false;
+}
+
 function is_friend($uid,$friend){
 	$query= "select count(um.user_id) as total from wp_usermeta as um
 		inner join wp_usermeta as ul on ul.meta_value = um.user_id

@@ -99,6 +99,34 @@ function saveEditVideo() {
   return $output;
 }
 
+function saveEditMinistry() {
+ $output = array();
+  global $json_api;
+  extract($json_api->query->get(array('uid','bid','videolink','description','facebook','twitter','heading','website','start_day','start_month','start_year','email','phone'))); 
+  $params = array(
+  	'base'=>$bid,
+  	'post_title'=>$heading,
+  	'facebook'=>$facebook,
+  	'twitter'=>$twitter,
+  	'post_content'=>$description,
+  	'phone'=>$phone,
+  	'email'=>$email,
+  	'video_link'=>$videolink,
+  	'starting_date'=> $start_month.'/'.$start_day.'/'.$start_year,
+  	'website'=>$website,
+  	'post_author'=>$uid
+  );
+  $pods = pods('ministry');
+  $new_ministry = $pods->add($params);
+  wp_publish_post($new_ministry);
+
+  $output['eid'] = $new_ministry;
+
+  return $output;
+}
+
+
+
 function saveEditEvent() {
  $output = array();
   global $json_api;
@@ -126,9 +154,7 @@ function saveEditEvent() {
   return $output;
 }
 
-function saveEditMinistry() {
-
-}
+ 
 function oEmbedYC(){
 global $json_api;
   extract($json_api->query->get(array('url','width','height'))); 
@@ -176,6 +202,7 @@ function attendEvent() {
 	 $output = array();
 	 $current_user = wp_get_current_user();
 	 add_to_user('attending',$current_user->ID,$eid);
+	 $output['uid'] = $current_user->ID;
 	 return $output;
 }
 
@@ -185,6 +212,9 @@ function unAttendEvent(){
 	 $output = array();
 	 $current_user = wp_get_current_user();
 	 remove_from_user('attending',$current_user->ID,$eid);
+	  $output['uid'] = $current_user->ID;
+	  $img =  '';
+	 $output['html'] ='<li class="col-lg-2 singleattending" data-id="'.$current_user->ID.'" rel="tooltip" title="'.$current_user->display_name.'">'.$img.'</li>';
 	 return $output;
 }
 }

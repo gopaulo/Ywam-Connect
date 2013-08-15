@@ -36,16 +36,22 @@ margin-bottom: 20px;
 
 #promovideo {
   width: 100%;
-  height: 250px;
-  background: #222;
+  background: #ededed;
 }
-#peopleAttending {
+#peopleAttending, #peopleFollowing {
   width: 100%;
   background: #ededed;
   height: 200px;
   overflow: hidden;
+  padding:0px;
+  list-style: none;
 }
-#imageevent {
+
+li.singleattending, li.singlefollowing {
+ height: 35px;
+ background: #ccc;
+}
+#imageevent, #imageministry {
   background: #222;
   height: 250px;
   margin-bottom: 10px;

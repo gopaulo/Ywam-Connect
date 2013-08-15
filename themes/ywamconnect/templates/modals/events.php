@@ -177,10 +177,32 @@
           <h4 class="modal-title">@Event Name</h4>
         </div>
         <div class="modal-body">
-          ...
+            <div class="col-lg-8">
+                <div id="imageevent"> </div>
+                  <p class="profilep"> <span class="profilelabel"> Time & Date: </span><span id="date">  </span></p>  
+                  <p class="profilep"> <span class="profilelabel"> Location: </span> <span id="location">  </span> </p>
+                  <p class="profilep"> <span class="profilelabel"> Cost: </span> <span id="cost">  </span> </p>
+                  <p class="profilep"> <span class="profilelabel"> Posted By: </span> <span id="postedby">  </span> </p>
+                  <p class="profilep"> <span class="profilelabel"> More Info: </span> <span id="website">  </span> </p>
+                  <p class="profilep" id="description"> </p>
+               </div>
+               <div class="col-lg-4">
+                <h4> People Attending this event <small> (<span id="number">100</span>)</small></h4>
+                <ul id="peopleAttending">
+
+                </ul>
+                <p> Will you attend this event ? 
+                <span id="attendbtn">
+                  <a href="#" class="btn btn-small btn-success attend" data-action="attendEvent" data-id="0"> Yes </a>
+                  <a href="#" class="btn btn-small btn-danger attend" data-action="unAttendEvent" data-id="0"> No </a>
+                </span>  
+                </p>
+                <h4> Promo Video </h4>
+                <div id="promovideo">
+                </div>
+               </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
         </div>
       </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
