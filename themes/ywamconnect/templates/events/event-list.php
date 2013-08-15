@@ -16,7 +16,7 @@
   $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($event->ID), 'large');
   $thumb= $thumb[0]; 
   if($thumb == ''){
-    $thumb = get_bloginfo('template_url').'/imags/default_event.jpg';
+    $thumb = get_bloginfo('template_url').'/images/default_event.jpg';
   }
   $thumb = get_bloginfo('template_url').'/includes/timthumb.php?src='.$thumb.'&w=300&h=170';
   ?>

@@ -115,7 +115,10 @@ max-width: 960px;
 padding-top: 30px;
 padding-bottom: 30px;
 margin: 0 auto;
+}
 
+.delete > .modal-dialog {
+  width: 350px !important;
 }
 .modal-title {
   font-size: 1.7em;

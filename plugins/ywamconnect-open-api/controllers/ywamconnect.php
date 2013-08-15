@@ -45,6 +45,13 @@ function uploadBanner() {
 	 
 }
 
+function deleteObject() {
+  global $json_api;
+  extract($json_api->query->get(array('type','id')));
+  $output = array();
+  deleteObject($type,$id);
+  return $output;
+}
 function followBase() {
  global $json_api;
   extract($json_api->query->get(array('bid')));

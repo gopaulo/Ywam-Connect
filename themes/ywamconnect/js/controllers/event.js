@@ -103,10 +103,30 @@ $(document).ready(function(ev) {
 
 	})
 
-	$('#deleteevent').on('click',function(ev){
-		var id = $(this).data('id');
+	$('#deleteeventbtn').on('click', function(ev) {
+		var id = $('#deleteevent').data('id');
+		$.ajax({
+			url: $wpapi + 'deleteObject',
+			data: {
+				type: 'event',
+				id: id
+			}
+		}).done(function(res) {
+			//console.log('res', res);
+			window.location.reload();
+		});
+	});
 
-		console.log('delete',id);
+	$('#nodeleteevent').on('click', function(ev) {
+		$('#vieweventmodal').modal('show');
+	});
+	$('#deleteevent').on('click', function(ev) {
+		var id = $(this).data('id');
+		$('#vieweventmodal').modal('hide');
+		$('#eventnamedelete').html($('#vieweventmodal').find('.modal-title').html());
+		$('#deleteeventmodal').modal('show');
+
+		console.log('delete', id);
 		return false;
 
 	});

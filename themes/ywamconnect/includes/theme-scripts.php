@@ -9,6 +9,7 @@ function init_scripts() {
   wp_enqueue_script('amplifyjs', get_bloginfo('template_url').'/js/amplify.min.js', 'jquery', '1.1', true);
   wp_enqueue_script('formparams', get_bloginfo('template_url').'/js/jquery.formparams.js', 'jquery', '3', true);
   wp_enqueue_script('ajaxfileupload', get_bloginfo('template_url').'/js/jquery.ajaxfileupload.js', 'jquery', '3', true);
+  wp_enqueue_script('modernizr-yc', get_bloginfo('template_url').'/js/modernizr.custom.js', 'jquery', '3', true);
 
   wp_enqueue_script('ywamconnect', get_bloginfo('template_url').'/js/ywamconnect.js', 'jquery', '3', true);
 

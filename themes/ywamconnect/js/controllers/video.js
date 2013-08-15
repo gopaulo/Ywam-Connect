@@ -9,6 +9,36 @@ $(document).ready(function(ev) {
 
 	});
 
+
+	$('#deletevideobtn').on('click', function(ev) {
+		var id = $('#deletevideo').data('id');
+		$.ajax({
+			url: $wpapi + 'deleteObject',
+			data: {
+				type: 'video',
+				id: id
+			}
+		}).done(function(res) {
+			//console.log('res', res);
+			window.location.reload();
+		});
+	});
+
+	$('#nodeletevideo').on('click', function(ev) {
+		$('#viewvideomodal').modal('show');
+	});
+	$('#deletevideo').on('click', function(ev) {
+		var id = $(this).data('id');
+		console.log('here ',id);
+		$('#viewvideomodal').modal('hide');
+		$('#videonamedelete').html($('#viewvideomodal').find('.modal-title').html());
+		$('#deletevideomodal').modal('show');
+
+		return false;
+
+	});
+
+
 	$('#addvideobtn').on('click', function(ev) {
 		var params = $('#addvideoform').formParams();
 		if (params.headingvideo == '' || params.videolink == '') {
@@ -63,6 +93,20 @@ $(document).ready(function(ev) {
 			$('#viewvideomodal').find('#base').html('YWAM Base: <a href="/base/' + res.basename + '">' + res.base + '</a>');
 			$('#viewvideomodal').find('#from').html('From: <a href="' + res.video_link + '">' + res.video_link + '</a>');
 			$('#viewvideomodal').find('#videourl').val(res.video_link);
+
+				if (res.owner) {
+				$('#viewvideomodal').find('#deletevideo').data('id', res.ID);
+				$('#viewvideomodal').find('#editvideo').data('id', res.ID);
+
+				$('#viewvideomodal').find('#deletevideo').show();
+				$('#viewvideomodal').find('#editvideo').show();
+
+			} else {
+
+				$('#viewvideomodal').find('#deletevideo').hide();
+				$('#viewvideomodal').find('#editvideo').hide();
+			}
+
 			$('#viewvideomodal').modal('show');
 		});
 		return false;

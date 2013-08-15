@@ -1,4 +1,24 @@
-<?php $current_user = wp_get_current_user(); ?>
+ <?php $current_user = wp_get_current_user(); ?>
+
+  <!-- Delete Event -->
+  <div class="modal fade delete" id="deleteeventmodal" tabindex='-1'>
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">Delete Event</h4>
+        </div>
+        <div class="modal-body">
+           Are you sure you want to delete <span id="eventnamedelete"> </span>? 
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal" id="nodeleteevent">No</button>
+          <button type="button" class="btn btn-primary" id="deleteeventbtn">Yes, Delete this Event</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+
 
   <!-- Add Event Modal -->
   <div class="modal fade" id="addeventmodal" tabindex='-1'>

@@ -52,6 +52,11 @@ function loadFutureEvents($uid){
 
 	return execute($query);
 }
+function deleteObject($type,$id){
+	$pods = pods($type,$id);
+	$pods->delete();
+	return array('id'=>$id);
+}
 function loadObject($type,$id){
 	$current_user = wp_get_current_user();
 	$uid = $current_user->ID;
@@ -81,13 +86,14 @@ function loadObject($type,$id){
 		$current_user = wp_get_current_user();
 		$is_attending = is_attending($current_user->ID,$id);
 		$total = $pods->field('attending');
-		$total = sizeof($total);
+		if($total=='') $total = 0;
+		else $total = sizeof($total);
 		$attending = $pods->field('attending');
 
 		$html = '';
 		foreach($attending as $person):
-			$user = pods('user',$person['ID']);
-			$img = $user->field('avatar.guid');
+			$userk = pods('user',$person['ID']);
+			$img = $userk->field('avatar.guid');
 			if($img == '')
 			$img = get_bloginfo('template_url').'/images/default_user.jpg';
 			$html .='<li class="col-lg-2 singleattending" data-id="'.$person['ID'].'" rel="tooltip" title="'.$person['display_name'].'"><a rel="tooltip" title="'.$person['display_name'].'" href="'.get_bloginfo('siteurl').'/profile/?yid='.$person['ID'].'"><img src="'.$img.'" style="width:100%;"/></a></li>';
@@ -114,7 +120,7 @@ function loadObject($type,$id){
 			 'current_attending'=>$is_attending,
 			 'total'=> $total,
 			 'attending'=>$html,
-			 'owner'=> $pods->field('post_author')==$uid?true:false,
+			 'owner'=> $pods->field('post_author')==$current_user->ID?true:false,
 			 'date' => date('F jS, Y - g a',strtotime($pods->field('starting_date').' '.$pods->field('time_event')))
 		);
 

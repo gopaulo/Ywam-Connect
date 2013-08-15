@@ -1,11 +1,32 @@
 <?php $current_user = wp_get_current_user(); ?>
 
+ <!-- Delete Video -->
+  <div class="modal fade delete" id="deletevideomodal" tabindex='-1'>
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">Delete Video</h4>
+        </div>
+        <div class="modal-body">
+           Are you sure you want to delete <span id="videonamedelete"> </span>? 
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal" id="nodeletevideo">No</button>
+          <button type="button" class="btn btn-primary" id="deletevideobtn">Yes, Delete this Video</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
 
  <!-- View Modal -->
   <div class="modal fade" id="viewvideomodal" tabindex='-1'>
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
+          <a href="#" class="btn btn-danger btn-small"  id="deletevideo" data-id="0"> <i class="icon-trash"> </i> Delete Video </a>
+        <a href="#" class="btn btn-warning  btn-small" id="editvideo" data-id="0"><i class="icon-edit"> </i> Edit Video </a>
+      
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
           <h4 class="modal-title"></h4>
         </div>
