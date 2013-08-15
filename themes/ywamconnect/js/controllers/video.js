@@ -94,7 +94,7 @@ $(document).ready(function(ev) {
 			$('#viewvideomodal').find('#from').html('From: <a href="' + res.video_link + '">' + res.video_link + '</a>');
 			$('#viewvideomodal').find('#videourl').val(res.video_link);
 
-				if (res.owner) {
+			if (res.owner) {
 				$('#viewvideomodal').find('#deletevideo').data('id', res.ID);
 				$('#viewvideomodal').find('#editvideo').data('id', res.ID);
 

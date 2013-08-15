@@ -23,6 +23,34 @@ $(document).ready(function(ev) {
 	});
 
 
+	$('#deleteministrybtn').on('click', function(ev) {
+		var id = $('#deleteministry').data('id');
+		$.ajax({
+			url: $wpapi + 'deleteObject',
+			data: {
+				type: 'ministry',
+				id: id
+			}
+		}).done(function(res) {
+			//console.log('res', res);
+			window.location.reload();
+		});
+	});
+
+	$('#nodeleteministry').on('click', function(ev) {
+		$('#viewministrymodal').modal('show');
+	});
+	$('#deleteministry').on('click', function(ev) {
+		var id = $(this).data('id');
+		console.log('here ', id);
+		$('#viewministrymodal').modal('hide');
+		$('#ministrynamedelete').html($('#viewministrymodal').find('.modal-title').html());
+		$('#deleteministrymodal').modal('show');
+
+		return false;
+
+	});
+
 
 	$('.viewministry').on('click', function(ev) {
 		var _this = this;
@@ -52,11 +80,25 @@ $(document).ready(function(ev) {
 
 			if (res.video_link.url == '') {
 				$('#viewministrymodal').find('#videotitle').hide();
-			} else{
+			} else {
 				$('#viewministrymodal').find('#videotitle').show();
 				$('#viewministrymodal').find('#ministryVideo').html(res.video_link.url);
 			}
 			$('#viewministrymodal').find('ul#peopleFollowing').html(res.following);
+
+			if (res.owner) {
+				$('#viewministrymodal').find('#deleteministry').data('id', res.ID);
+				$('#viewministrymodal').find('#editministry').data('id', res.ID);
+
+				$('#viewministrymodal').find('#deleteministry').show();
+				$('#viewministrymodal').find('#editministry').show();
+
+			} else {
+
+				$('#viewministrymodal').find('#deleteministry').hide();
+				$('#viewministrymodal').find('#editministry').hide();
+			}
+
 			$('#viewministrymodal').modal('show');
 		});
 		return false;

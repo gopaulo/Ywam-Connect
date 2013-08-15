@@ -1,4 +1,24 @@
 <?php $current_user = wp_get_current_user(); ?>
+
+<!-- Delete Ministry -->
+  <div class="modal fade delete" id="deleteministrymodal" tabindex='-1'>
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">Delete Ministry</h4>
+        </div>
+        <div class="modal-body">
+           Are you sure you want to delete <span id="ministrynamedelete"> </span>? 
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal" id="nodeleteministry">No</button>
+          <button type="button" class="btn btn-primary" id="deleteministrybtn">Yes, Delete this Ministry</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+
   <!-- Modal -->
   <div class="modal fade" id="addministrymodal" tabindex='-1'>
     <div class="modal-dialog">
@@ -125,6 +145,9 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
+             <a href="#" class="btn btn-danger btn-small"  id="deleteministry" data-id="0"> <i class="icon-trash"> </i> Delete Ministry </a>
+        <a href="#" class="btn btn-warning  btn-small" id="editministry" data-id="0"><i class="icon-edit"> </i> Edit Ministry </a>
+      
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
           <h4 class="modal-title">@Event Name</h4>
         </div>
