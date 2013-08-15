@@ -48,7 +48,8 @@ margin-bottom: 20px;
 }
 
 li.singleattending, li.singlefollowing {
- height: 35px;
+ 
+ padding: 3px;
  background: #ccc;
 }
 #imageevent, #imageministry {

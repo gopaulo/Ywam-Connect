@@ -53,6 +53,9 @@ function loadFutureEvents($uid){
 	return execute($query);
 }
 function loadObject($type,$id){
+	$current_user = wp_get_current_user();
+	$uid = $current_user->ID;
+
 	$output = false;
 	if($type == 'video'){
 		$pods = pods('video',$id);
@@ -67,7 +70,8 @@ function loadObject($type,$id){
 			'post_content'=>$pods->field('post_content'),
 			 'video_link'=>$pods->display('video_link'),
  			 'base'=>$pods->display('base'),
-			 'basename'=>$pods->field('base.post_name')
+			 'basename'=>$pods->field('base.post_name'),
+			 'owner'=> $pods->field('post_author')==$uid?true:false,
 		);
 
 	}else if($type=='event'){
@@ -82,8 +86,11 @@ function loadObject($type,$id){
 
 		$html = '';
 		foreach($attending as $person):
-			$img = '';
-			$html .='<li class="col-lg-2 singleattending" data-id="'.$person['ID'].'" rel="tooltip" title="'.$person['display_name'].'"><a href="'.get_bloginfo('siteurl').'/profile/?yid='.$person['ID'].'">'.$img.'</a></li>';
+			$user = pods('user',$person['ID']);
+			$img = $user->field('avatar.guid');
+			if($img == '')
+			$img = get_bloginfo('template_url').'/images/default_user.jpg';
+			$html .='<li class="col-lg-2 singleattending" data-id="'.$person['ID'].'" rel="tooltip" title="'.$person['display_name'].'"><a rel="tooltip" title="'.$person['display_name'].'" href="'.get_bloginfo('siteurl').'/profile/?yid='.$person['ID'].'"><img src="'.$img.'" style="width:100%;"/></a></li>';
 		endforeach;
 		$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($id), 'large');
 		$thumb= $thumb[0]; 
@@ -107,6 +114,7 @@ function loadObject($type,$id){
 			 'current_attending'=>$is_attending,
 			 'total'=> $total,
 			 'attending'=>$html,
+			 'owner'=> $pods->field('post_author')==$uid?true:false,
 			 'date' => date('F jS, Y - g a',strtotime($pods->field('starting_date').' '.$pods->field('time_event')))
 		);
 
@@ -150,6 +158,7 @@ function loadObject($type,$id){
 			 'image'=>$thumb,
 			 'total'=> $total,
 			 'following'=>$html,
+			 'owner'=> $pods->field('post_author')==$uid?true:false,
 			 'date' => date('F jS, Y',strtotime($pods->field('starting_date')))
 		);
 	}
@@ -248,6 +257,24 @@ function get_followers($bid) {
 		and um.meta_value=".$bid;
 
   return execute($query); 
+}
+function get_future_event_list_for_base($base,$categoryvalue) {
+
+	  $query = "select  p.ID, p.post_title, p.post_name, u.ID as uid, u.display_name as author, p.post_date from wp_posts as p
+				inner join  wp_postmeta as pm on pm.post_id = p.ID 
+				inner join wp_postmeta as pd on pd.post_id = p.ID 
+				inner join  wp_term_relationships as tr on tr.object_id = p.ID
+				inner join wp_term_taxonomy as tt on tt.term_taxonomy_id = tr.term_taxonomy_id 
+				inner join wp_terms as ter on ter.term_id = tt.term_id
+				inner join wp_users as u on u.ID = p.post_author					
+				where pm.meta_key ='base' and pm.meta_value =".$base."
+				and p.post_type='event'
+				and pd.meta_key ='starting_date'
+				and pd.meta_value >= CURDATE() 
+				 and tt.taxonomy = 'event_category' 
+					and tt.term_id = ".$categoryvalue;
+		return execute($query);
+
 }
 function get_list_for_base($base,$type,$category=false,$categoryvalue=false) {
 

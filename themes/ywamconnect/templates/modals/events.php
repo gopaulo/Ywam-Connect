@@ -1,7 +1,7 @@
 <?php $current_user = wp_get_current_user(); ?>
 
   <!-- Add Event Modal -->
-  <div class="modal fade" id="addeventmodal">
+  <div class="modal fade" id="addeventmodal" tabindex='-1'>
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -169,10 +169,13 @@
   </div><!-- /.modal -->
 
    <!-- View Event Modal -->
-  <div class="modal fade" id="vieweventmodal">
+  <div class="modal fade" id="vieweventmodal" tabindex='-1'>
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
+          <a href="#" class="btn btn-danger btn-small"  id="deleteevent" data-id="0"> <i class="icon-trash"> </i> Delete Event </a>
+        <a href="#" class="btn btn-warning  btn-small" id="editevent" data-id="0"><i class="icon-edit"> </i> Edit Event </a>
+      
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
           <h4 class="modal-title">@Event Name</h4>
         </div>

@@ -44,7 +44,7 @@ $(document).ready(function(ev) {
 				$(_this).removeClass('btn-danger');
 				$(_this).addClass('btn-success');
 				$(_this).html('Yes');
-				$('ul#peopleAttending li.singleattending[data-id="'+res.uid+'"]').fadeOut();
+				$('ul#peopleAttending li.singleattending[data-id="' + res.uid + '"]').fadeOut();
 				//$('#attendbtn').html('<a href="#" class="btn btn-small btn-success attend" data-action="attendEvent" data-id="'+eid+'"> Yes </a>');
 			} else {
 				nmb++;
@@ -103,7 +103,13 @@ $(document).ready(function(ev) {
 
 	})
 
+	$('#deleteevent').on('click',function(ev){
+		var id = $(this).data('id');
 
+		console.log('delete',id);
+		return false;
+
+	});
 	$('.viewevent').on('click', function(ev) {
 		var _this = this;
 		$('#promovideo').html('');
@@ -130,6 +136,19 @@ $(document).ready(function(ev) {
 
 			$('#vieweventmodal').find('a.attend[data-action="attendEvent"]').data('id', res.ID);
 			$('#vieweventmodal').find('a.unattend[data-action="unAttendEvent"]').data('id', res.ID);
+
+			if (res.owner) {
+				$('#vieweventmodal').find('#deleteevent').data('id', res.ID);
+				$('#vieweventmodal').find('#editevent').data('id', res.ID);
+
+				$('#vieweventmodal').find('#deleteevent').show();
+				$('#vieweventmodal').find('#editevent').show();
+
+			} else {
+
+				$('#vieweventmodal').find('#deleteevent').hide();
+				$('#vieweventmodal').find('#editevent').hide();
+			}
 			$('#vieweventmodal').find('#number').html(res.total);
 
 			if (res.current_attending) {
@@ -139,6 +158,7 @@ $(document).ready(function(ev) {
 			}
 			$('#vieweventmodal').find('#promovideo').html(res.video_link.url);
 			$('#vieweventmodal').find('ul#peopleAttending').html(res.attending);
+			$('[rel="tooltip"]').tooltip();
 			$('#vieweventmodal').modal('show');
 		});
 		return false;

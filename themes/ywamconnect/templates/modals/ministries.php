@@ -1,6 +1,6 @@
 <?php $current_user = wp_get_current_user(); ?>
   <!-- Modal -->
-  <div class="modal fade" id="addministrymodal">
+  <div class="modal fade" id="addministrymodal" tabindex='-1'>
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -120,7 +120,7 @@
   </div><!-- /.modal -->
 
  <!-- View Ministry Modal -->
-   <div class="modal fade" id="viewministrymodal">
+   <div class="modal fade" id="viewministrymodal" tabindex='-1'>
 
     <div class="modal-dialog">
       <div class="modal-content">

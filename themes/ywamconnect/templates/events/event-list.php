@@ -5,7 +5,7 @@
   $bid = $_GET['bid'];
   $base = get_post($bid);
   $termfull = get_term_by('slug',$term,'event_category');
-  $events = get_list_for_base($bid,'event','event_category',$termfull->term_id);
+  $events = get_future_event_list_for_base($bid,$termfull->term_id);
  ?>
 <a href="#addeventmodal" data-toggle="modal" class="pull-right addbtn"> Add Event </a>
 

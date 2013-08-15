@@ -36,6 +36,7 @@ $(document).ready(function(ev) {
 			};
 			$.ajax({
 				url: $wpapi + 'oEmbedYC',
+				type: 'post',
 				data: obj
 			}).done(function(res) {
 				console.log('res', res);
@@ -81,6 +82,7 @@ $(document).ready(function(ev) {
 		};
 		$.ajax({
 			url: $wpapi + 'oEmbedYC',
+			type: 'post',
 			data: obj
 		}).done(function(res) {
 

@@ -2,7 +2,7 @@
 
 
  <!-- View Modal -->
-  <div class="modal fade" id="viewvideomodal">
+  <div class="modal fade" id="viewvideomodal" tabindex='-1'>
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -26,7 +26,7 @@
   </div><!-- /.modal -->
 
   <!-- ADD Modal -->
-  <div class="modal fade" id="addvideomodal">
+  <div class="modal fade" id="addvideomodal" tabindex='-1'>
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
