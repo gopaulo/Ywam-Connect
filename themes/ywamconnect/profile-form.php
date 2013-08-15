@@ -22,11 +22,15 @@ $user = pods('user',$uid);
 			 <p><?= $userinfo->user_description; ?> </p>
 		</div>
 		<div class="col-lg-5">
+		<?php 
+		$bases = $user->field('bases');
+		if(sizeof($bases)>0) {
+			?>
 			<h4> <?= $userinfo->first_name;?> is Following </h4>
 			 <ul class="profilelist">
 			 	<?php
 			 	$i =0;
-			 	 $bases = $user->field('bases');
+			 	 
 			 	 foreach($bases as $base):
 			 	 	if($i > 4) break;
 			 	 	$i++;
@@ -36,24 +40,31 @@ $user = pods('user',$uid);
 				 <?php if(sizeof($bases) > 4): ?> 
 				  <li> <a href="#"> <strong> See all </strong></a></li> 
 				<?php endif; ?>
-			 </ul>
+			 </ul><?php } ?>
+			 <?php 
+			 	 $events = loadFutureEvents($uid);
+			 	 if(sizeof($events) > 0){ 
+			 	 ?>
 			<h4> <?= $userinfo->first_name;?> is attending these upcoming events </h4>
 			<ul class="profilelist">
 			<?php
 			 	$i =0;
-			 	 $events = loadFutureEvents($uid);
 			 	 foreach($events as $event):
 			 	 	if($i > 4) break;
 			 	 	$i++;
 			 	  ?>
 				 <li> <a href="<?= get_bloginfo('siteurl');?>/event/<?= $event->post_name;?>"> <?= $event->post_title;?></a></li>
-			<?php endforeach; ?>			
-			 </ul>
+			<?php endforeach; ?>				
+			 </ul> <?php } 
+
+			  $ministries = $user->field('ministries');
+
+			  if(!empty($ministries)) { ?>
 			<h4> <?= $userinfo->first_name;?> and Ministries </h4>
 			<ul class="profilelist">
 				<?php
 			 	$i =0;
-			 	 $ministries = $user->field('ministries');
+			 	
 			 	 foreach($ministries as $ministry):
 			 	 	if($i > 4) break;
 			 	 	$i++;
@@ -63,7 +74,7 @@ $user = pods('user',$uid);
 				 <?php if(sizeof($ministries) > 4): ?> 
 				  <li> <a href="#"> <strong> See all </strong></a></li> 
 				<?php endif; ?>
-			 </ul>
+			 </ul> <?php } ?>
 			<h4> Friends</h4>	
 			<div style="width:90%">
 		 		<?php  get_template_part('templates/users/friends','list'); ?>

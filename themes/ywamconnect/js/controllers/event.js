@@ -8,22 +8,6 @@ $(document).ready(function(ev) {
 
 
 	});
-	$('.unattend').on('click', function(ev) {
-		var eid = $(this).data('id');
-		console.log('attending event', eid);
-		$.ajax({
-			url: $wpapi + 'unAttendEvent',
-			data: {
-				eid: eid
-			}
-		}).done(function(res) {
-			var nmb = $('#vieweventmodal').find('#number').html();
-			$('#vieweventmodal').find('#number').html(nmb - 1);
-			$('#attendbtn').fadeOut();
-			$('#attendbtn').html('<a href="#" class="btn btn-small btn-success attend" data-action="attendEvent" data-id="' + eid + '"> Yes </a>');
-			$('#attendbtn').fadeIn();
-		});
-	});
 
 	$('.attend').on('click', function(ev) {
 		var _this = this;
@@ -44,7 +28,9 @@ $(document).ready(function(ev) {
 				$(_this).removeClass('btn-danger');
 				$(_this).addClass('btn-success');
 				$(_this).html('Yes');
-				$('ul#peopleAttending li.singleattending[data-id="' + res.uid + '"]').fadeOut();
+				$('ul#peopleAttending li.singleattending[data-id="' + res.uid + '"]').fadeOut('fast', function(k) {
+					$(this).remove();
+				});
 				//$('#attendbtn').html('<a href="#" class="btn btn-small btn-success attend" data-action="attendEvent" data-id="'+eid+'"> Yes </a>');
 			} else {
 				nmb++;
@@ -52,8 +38,10 @@ $(document).ready(function(ev) {
 				$(_this).removeClass('btn-success');
 				$(_this).addClass('btn-danger');
 				$(_this).html('No');
+				console.log('res', res);
 				$('ul#peopleAttending').prepend(res.html);
 				$('ul#peopleAttending li').fadeIn();
+				$('[rel="tooltip"]').tooltip();
 				//$('#attendbtn').html('<a href="#" class="btn btn-small btn-danger attend" data-action="unAttendEvent" data-id="'+eid+'"> No </a>');
 			}
 			$('#vieweventmodal').find('#number').html(nmb);
@@ -154,9 +142,9 @@ $(document).ready(function(ev) {
 			$('#vieweventmodal').find('#imageevent').html('<img src="' + res.image + '" style="width:100%">');
 			$('#vieweventmodal').find('#promovideo').html(res.video_link.url);
 
-			$('#vieweventmodal').find('a.attend[data-action="attendEvent"]').data('id', res.ID);
-			$('#vieweventmodal').find('a.unattend[data-action="unAttendEvent"]').data('id', res.ID);
-
+			$('#vieweventmodal').find('.attend[data-action="attendEvent"]').data('id', res.ID);
+			$('#vieweventmodal').find('.attend[data-action="unAttendEvent"]').data('id', res.ID);
+			console.log('no button', $('#vieweventmodal').find('.attend[data-action="unAttendEvent"]'));
 			if (res.owner) {
 				$('#vieweventmodal').find('#deleteevent').data('id', res.ID);
 				$('#vieweventmodal').find('#editevent').data('id', res.ID);
@@ -172,9 +160,9 @@ $(document).ready(function(ev) {
 			$('#vieweventmodal').find('#number').html(res.total);
 
 			if (res.current_attending) {
-				$('#vieweventmodal').find('a.attend[data-action="attendEvent"]').hide();
+				$('#vieweventmodal').find('.attend[data-action="attendEvent"]').hide();
 			} else {
-				$('#vieweventmodal').find('a.unattend[data-action="unAttendEvent"]').hide();
+				$('#vieweventmodal').find('.attend[data-action="unAttendEvent"]').hide();
 			}
 			$('#vieweventmodal').find('#promovideo').html(res.video_link.url);
 			$('#vieweventmodal').find('ul#peopleAttending').html(res.attending);

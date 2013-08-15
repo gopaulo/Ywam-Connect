@@ -206,22 +206,32 @@ function unfollowMinistry(){
 function attendEvent() {
  global $json_api;
   extract($json_api->query->get(array('eid')));
-	 $output = array();
-	 $current_user = wp_get_current_user();
-	 add_to_user('attending',$current_user->ID,$eid);
-	 $output['uid'] = $current_user->ID;
-	 return $output;
+  $output = array();
+  $current_user = wp_get_current_user();
+  add_to_user('attending',$current_user->ID,$eid);
+  $output['uid'] = $current_user->ID;
+  $user = pods('user',$current_user->ID);
+  $avatar = $user->field('avatar.guid');
+  if($avatar == '')
+    $avatar = get_bloginfo('template_url').'/images/default_user.jpg';
+  $output['html'] ='<li class="col-lg-2 singleattending" data-id="'.$current_user->ID.'" rel="tooltip" title="'.$current_user->display_name.'"><img src="'.$avatar.'" style="width: 100%;"/></li>';
+
+  return $output;
 }
 
 function unAttendEvent(){
  global $json_api;
 	  extract($json_api->query->get(array('eid')));
-	 $output = array();
-	 $current_user = wp_get_current_user();
-	 remove_from_user('attending',$current_user->ID,$eid);
-	  $output['uid'] = $current_user->ID;
-	  $img =  '';
-	 $output['html'] ='<li class="col-lg-2 singleattending" data-id="'.$current_user->ID.'" rel="tooltip" title="'.$current_user->display_name.'">'.$img.'</li>';
+    $output = array();
+    $current_user = wp_get_current_user();
+    remove_from_user('attending',$current_user->ID,$eid);
+    $output['uid'] = $current_user->ID;
+    $user = pods('user',$current_user->ID);
+    $avatar = $user->field('avatar.guid');
+    if($avatar == '')
+      $avatar = get_bloginfo('template_url').'/images/default_user.jpg';
+    $output['html'] ='<li class="col-lg-2 singleattending" data-id="'.$current_user->ID.'" rel="tooltip" title="'.$current_user->display_name.'"><img src="'.$avatar.'" style="width: 100%;"/></li>';
+
 	 return $output;
 }
 }

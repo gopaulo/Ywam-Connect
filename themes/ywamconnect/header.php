@@ -88,7 +88,15 @@
            	 <a href="<?php bloginfo('siteurl');?>/locations" style="padding:0px;margin:0px;"><img id="world" src="<?php bloginfo('template_url'); ?>/images/world.png"/></a>
            	</li>
               <li class="dropdown">
-                <a href="#" class="dropdown-toggle headerprofile" data-toggle="dropdown"><img  src="<?php bloginfo('template_url');?>/images/default_user.jpg"><b class="caret"></b></a>
+              <?php
+              $currrent = wp_get_current_user();
+              $uid = $currrent->ID;
+              $user = pods('user',$uid);
+              $avatar = $user->field('avatar.guid');
+              if($avatar == '')
+              $avatar = get_bloginfo('template_url').'/images/default_user.jpg';
+              ?>
+                <a href="#" class="dropdown-toggle headerprofile" data-toggle="dropdown"><img  src="<?= $avatar; ?>"><b class="caret"></b></a>
                 <ul class="dropdown-menu">
                   <li><a href="<?php bloginfo('siteurl');?>/profile">My Profile</a></li>
                   <li><a href="<?php bloginfo('siteurl');?>/lostpassword">Change Password</a></li>

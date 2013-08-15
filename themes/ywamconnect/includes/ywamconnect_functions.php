@@ -45,8 +45,10 @@
 function loadFutureEvents($uid){
 	$query = "select * from wp_posts as p
 			inner join wp_postmeta as pm on p.ID = pm.post_id
-			where p.post_author =".$uid."
+			inner join wp_usermeta as um on um.user_id = p.post_author 
+			where p.post_author =".$uid." 
 			and p.post_type ='event'
+			and um.meta_key='attending'
 			and pm.meta_key='starting_date'
 			and pm.meta_value >= CURDATE()";
 
