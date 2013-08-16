@@ -63,11 +63,43 @@ $(document).ready(function(ev) {
 		console.log('trigger', trig);
 		$('#' + trig).trigger('click');
 	});
+
+	$('#editeventbtn').on('click', function(ev) {
+		var params = $('#editeventform').formParams();
+		console.log('params', params);
+		$.ajax({
+			url: $wpapi + 'editEvent',
+			data: params
+		}).done(function(res) {
+			console.log('add event res', res);
+			if (params.image != '') {
+				$.ajaxFileUpload({
+					url: $wpapi + 'uploadBanner',
+					secureuri: false,
+					data: {
+						eid: res.eid
+					},
+					dataType: 'json',
+					fileElementId: 'bannerevent',
+					success: function(data, status) {
+						//console.log('data', data, status);
+					},
+					error: function(data, status, e) {
+						//console.log('error', data, status, e);
+						window.location.reload();
+					}
+				});
+			} else window.location.reload();
+		});
+
+	})
+
+
 	$('#addeventbtn').on('click', function(ev) {
 		var params = $('#addeventform').formParams();
 		console.log('params', params);
 		$.ajax({
-			url: $wpapi + 'saveEditEvent',
+			url: $wpapi + 'editEvent',
 			data: params
 		}).done(function(res) {
 			console.log('add event res', res);
@@ -117,6 +149,59 @@ $(document).ready(function(ev) {
 		console.log('delete', id);
 		return false;
 
+	});
+	$('#editevent').on('click', function(ev) {
+		var id = $(this).data('id');
+
+		$.ajax({
+			url: $wpapi + 'loadObject',
+			data: {
+				type: 'event',
+				id: $(this).data('id')
+			}
+		}).done(function(res) {
+			console.log('ed,t', res);
+			$('#editeventmodal').find('#headingevent').val(res.post_title);
+			$('#editeventmodal').find('.modal-title').html(res.post_title);
+			$('#editeventmodal').find('#cost').val(res.cost);
+
+
+			var time_event = res.time_event;
+			time_event = time_event.replace(':', '');
+			$('#editeventmodal').find('#time_event').val(time_event);
+
+			var start = res.starting_date;
+			start = start.split('/'); //m-d-Y
+			$('#editeventmodal').find('#start_day').val(start[1].replace(/^0+/, ''));
+			$('#editeventmodal').find('#start_month').val(start[0].replace(/^0+/, ''));
+			$('#editeventmodal').find('#start_year').val(start[2]);
+
+
+			var end = res.ending_date;
+			end = end.split('/'); //m-d-Y
+			$('#editeventmodal').find('#endint_day').val(end[1].replace(/^0+/, ''));
+			$('#editeventmodal').find('#ending_month').val(end[0].replace(/^0+/, ''));
+			$('#editeventmodal').find('#ending_year').val(end[2]);
+
+			$('#editeventmodal').find('#id').val(res.ID);
+
+			$('#editeventmodal').find('#category').val(res.category);
+			$('#editeventmodal').find('#description').val(res.post_content);
+			$('#editeventmodal').find('#postedby').val(res.username);
+			$('#editeventmodal').find('#website').val(res.website);
+			$('#editeventmodal').find('#imageevent').html('<img src="' + res.image + '" style="width:100%">');
+			$('#editeventmodal').find('#videolink').val(res.raw_link);
+			$('#editeventmodal').find('#uid').val(res.ownerid);
+			$('#editeventmodal').find('#bid').val(res.bid);
+			$('#editeventmodal').find('img.previewevent').attr('src', res.image);
+
+
+
+			$('#editeventmodal').find('#promovideo').html(res.video_link.url);
+			$('[rel="tooltip"]').tooltip();
+			$('#editeventmodal').modal('show');
+
+		});
 	});
 	$('.viewevent').on('click', function(ev) {
 		var _this = this;

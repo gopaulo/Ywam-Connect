@@ -86,6 +86,26 @@ function unfriend() {
 	 return $output;
 }
 
+
+function editVideo() {
+  $output = array();
+  global $json_api;
+  extract($json_api->query->get(array('id','bid','category','headingvideo','videolink','description'))); 
+  $current_user = wp_get_current_user();
+  $uid = $current_user->ID;
+
+  $parms = array(
+    'post_title'=> $headingvideo,
+    'post_content'=>$description,
+    'video_link'=>$videolink,
+    'base'=>$bid);
+   $pods = pods('video',$id);
+    $pods->save($parms);
+   wp_set_post_terms($id,$category,'video_category',false);
+   $output['id']= $id;
+  return $output;
+}
+
 function saveEditVideo() {
   $output = array();
   global $json_api;
@@ -132,7 +152,30 @@ function saveEditMinistry() {
   return $output;
 }
 
+function editEvent() {
+  $output = array();
+  global $json_api;
+  extract($json_api->query->get(array('id','uid','bid','category','cost','videolink','description','heading','website','start_day','start_month','start_year','time','ending_day','ending_month','ending_year'))); 
+  $params = array(
+    'base'=>$bid,
+    'post_title'=>$heading,
+    'post_content'=>$description,
+    'video_link'=>$videolink,
+    'starting_date'=> $start_month.'/'.$start_day.'/'.$start_year,
+    'time_event'=> $time,
+    'ending_date'=>$ending_month.'/'.$ending_day.'/'.$ending_year,
+    'cost'=>$cost,
+    'website'=>$website,
+    'post_author'=>$uid
+  );
+  $pods = pods('event',$id);
+  $pods->save($params);
+  wp_set_post_terms($id,$category,'event_category',false);
+  
+  $output['eid'] = $id;
 
+  return $output;
+}
 
 function saveEditEvent() {
  $output = array();

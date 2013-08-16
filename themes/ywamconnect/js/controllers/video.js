@@ -29,7 +29,7 @@ $(document).ready(function(ev) {
 	});
 	$('#deletevideo').on('click', function(ev) {
 		var id = $(this).data('id');
-		console.log('here ',id);
+		console.log('here ', id);
 		$('#viewvideomodal').modal('hide');
 		$('#videonamedelete').html($('#viewvideomodal').find('.modal-title').html());
 		$('#deletevideomodal').modal('show');
@@ -37,6 +37,24 @@ $(document).ready(function(ev) {
 		return false;
 
 	});
+
+
+
+	$('#editvideobtn').on('click', function(ev) {
+		var params = $('#editvideoform').formParams();
+		if (params.headingvideo == '' || params.videolink == '') {
+			//error -> empty video
+		} else {
+			console.log('params', params);
+			$.ajax({
+				url: $wpapi + 'editVideo',
+				data: params
+			}).done(function(res) {
+				//console.log('res', res);
+				window.location.reload();
+			});
+		}
+	})
 
 
 	$('#addvideobtn').on('click', function(ev) {
@@ -49,8 +67,7 @@ $(document).ready(function(ev) {
 				url: $wpapi + 'saveEditVideo',
 				data: params
 			}).done(function(res) {
-				console.log('add video res', res);
-				//window.location.reload();
+				window.location.reload();
 			});
 		}
 	})
@@ -74,6 +91,39 @@ $(document).ready(function(ev) {
 			})
 		}
 	});
+
+	$('#editvideo').on('click', function(ev) {
+		var _this = this;
+		$('#editvideomodal').find('#videoframe').html('');
+		$('#editvideomodal').find('#videoframe').hide();
+		var id = $(this).data('id');
+
+		$.ajax({
+			url: $wpapi + 'loadObject',
+			data: {
+				type: 'video',
+				id: $(this).data('id')
+			}
+		}).done(function(res) {
+			console.log('loaded', res);
+			$('#editvideomodal').find('.modal-title').html(res.post_title);
+			$('#editvideomodal').find('#headingvideo').val(res.post_title);
+			$('#editvideomodal').find('#description').val(res.post_content);
+			$('#editvideomodal').find('#bid').val(res.bid);
+			$('#editvideomodal').find('#uid').val(res.ownerid);
+			$('#editvideomodal').find('#videolink').val(res.video_link);
+			$('#editvideomodal').find('.previewevent').html(res.embed.url);
+			$('#editvideomodal').find('#id').val(res.ID);
+
+
+			$('#editvideomodal').find('#category').val(res.category);
+
+
+			$('#editvideomodal').modal('show');
+		});
+		return false;
+	});
+
 	$('.viewvideo').on('click', function(ev) {
 		var _this = this;
 		$('#videoframe').html('');

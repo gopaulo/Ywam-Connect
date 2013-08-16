@@ -71,13 +71,17 @@ function loadObject($type,$id){
 		//videolink
 		//base
 		//basename
+		$category = get_the_terms($id,'video_category');
 		$output = array(
 			'ID'=>$id,
+			'ownerid'=>$pods->field('post_author'),
 			'post_title'=> $pods->display('post_title'),
 			'post_content'=>$pods->field('post_content'),
 			 'video_link'=>$pods->display('video_link'),
+			 'embed'=>oEmbedYC($pods->display('video_link'),280),
  			 'base'=>$pods->display('base'),
 			 'basename'=>$pods->field('base.post_name'),
+			 'category'=>$category[0]->term_id,
 			 'owner'=> $pods->field('post_author')==$uid?true:false,
 		);
 
@@ -106,12 +110,14 @@ function loadObject($type,$id){
 			$thumb = get_bloginfo('template_url').'/images/default_event.jpg';
 		}
 		$thumb = get_bloginfo('template_url').'/includes/timthumb.php?src='.$thumb.'&w=570&h=250';
-
+ 		$category = get_the_terms($id,'event_category');
 		$output = array(
 			'ID'=>$id,
 			'post_title'=> $pods->display('post_title'),
 			'post_content'=>$pods->field('post_content'),
+			'raw_link'=>$pods->display('video_link'),
 			 'video_link'=>oEmbedYC($pods->display('video_link'),270),
+			 'bid'=>$pods->field('base.ID'),
  			 'base'=>$pods->display('base'),
 			 'basename'=>$pods->field('base.post_name'),
 			 'cost'=>$pods->field('cost')==''?'This event is free':$pods->field('cost'),
@@ -122,6 +128,11 @@ function loadObject($type,$id){
 			 'current_attending'=>$is_attending,
 			 'total'=> $total,
 			 'attending'=>$html,
+			 'category'=>$category[0]->term_id,
+			 'starting_date'=>$pods->display('starting_date'),
+			 'ending_date'=>$pods->display('ending_date'),
+			 'time_event'=>$pods->display('time_event'),
+			 'ownerid'=>$current_user->ID,
 			 'owner'=> $pods->field('post_author')==$current_user->ID?true:false,
 			 'date' => date('F jS, Y - g a',strtotime($pods->field('starting_date').' '.$pods->field('time_event')))
 		);

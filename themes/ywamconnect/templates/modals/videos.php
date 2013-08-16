@@ -117,3 +117,78 @@
       </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
   </div><!-- /.modal -->
+
+
+
+  <!-- Video Modal -->
+  <div class="modal fade" id="editvideomodal" tabindex='-1'>
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">Edit Video</h4>
+        </div>
+        <div class="modal-body">
+         <form id="editvideoform">
+              <div class="row">
+                <div class="col-lg-4">
+                  <div class="form-group">
+                      <label for="headingvideo">Heading:</label>
+                      <input type="text" class="form-control" data-original="Add Video" name="headingvideo" id="headingvideo" placeholder="Heading">
+                   </div>
+           
+                    <div class="form-group">
+                      <label for="videolink">Video Link:</label>
+                      <input type="text" class="form-control" name="videolink" id="videolink" placeholder="">
+                   </div>
+                    <label >Category</label>
+                       <div class="form-group">
+                        <select class="form-control" name="category" id="category">
+                        <?php 
+                         $terms = get_terms('video_category',array('hide_empty'=>false));
+                         foreach ($terms as $term): 
+                        ?>
+                          <option value="<?=$term->term_id;?>" data-slug="<?=$term->slug;?>"><?=$term->name;?></option>
+                        <?php endforeach; ?>
+                      </select>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                      <span class="help-block" style="margin-top:95px;">Example: http://www.youtube.com/watch?v=WZWv1ckUmwM or http://vimeo.com/30414460</span>
+                </div>
+                <div class="col-lg-4">
+                   <div class="previewevent" style="margin-bottom:10px;">
+                     <img src="<?php bloginfo('template_url');?>/images/default_video.jpg" style="width:100%;">
+                    </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-12">
+                  <label for="description">Description:</label>
+                  <textarea class="form-control" rows="4" id="description" name="description" style="margin-bottom:10px;"></textarea>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-4">
+                </div>
+                <div class="col-lg-4">
+                </div>
+                <div class="col-lg-4">
+                  <div class="form-group">
+                      <label for="postedby">Posted by:</label>
+                       <input type="hidden" name="uid" value="<?= $current_user->ID;?>">
+                       <input type="hidden" name="bid" value="<?= $_GET['bid'];?>">
+                       <input type="hidden" name="id" id="id" value="">
+                  <input type="text" class="form-control" name="postedby" id="postedby" value="<?=$current_user->display_name;?>" disabled>
+                   </div>
+                </div>
+              </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-info" id="editvideobtn">Save Changes</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
