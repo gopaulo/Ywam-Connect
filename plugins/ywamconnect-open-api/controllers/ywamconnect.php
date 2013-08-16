@@ -126,6 +126,31 @@ function saveEditVideo() {
   return $output;
 }
 
+function editMinistry() {
+ $output = array();
+  global $json_api;
+  extract($json_api->query->get(array('id','uid','bid','videolink','description','facebook','twitter','heading','website','start_day','start_month','start_year','email','phone'))); 
+  $params = array(
+    'base'=>$bid,
+    'post_title'=>$heading,
+    'facebook'=>$facebook,
+    'twitter'=>$twitter,
+    'post_content'=>$description,
+    'phone'=>$phone,
+    'email'=>$email,
+    'video_link'=>$videolink,
+    'starting_date'=> $start_month.'/'.$start_day.'/'.$start_year,
+    'website'=>$website,
+    'post_author'=>$uid
+  );
+  $pods = pods('ministry',$id);
+  $pods->save($params);
+
+  $output['eid'] = $id;
+
+  return $output;
+}
+
 function saveEditMinistry() {
  $output = array();
   global $json_api;

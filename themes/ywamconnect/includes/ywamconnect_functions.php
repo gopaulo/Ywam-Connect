@@ -150,8 +150,11 @@ function loadObject($type,$id){
 
 		$html = '';
 		foreach($following as $person):
-			$img = '';
-			$html .='<li class="col-lg-2 singlefollowing" data-id="'.$person['ID'].'" rel="tooltip" title="'.$person['display_name'].'"><a href="'.get_bloginfo('siteurl').'/profile/?yid='.$person['ID'].'">'.$img.'</a></li>';
+			$userk = pods('user',$person['ID']);
+			$img = $userk->field('avatar.guid');
+			if($img == '')
+			$img = get_bloginfo('template_url').'/images/default_user.jpg';
+			$html .='<li class="col-lg-2 singleattending" data-id="'.$person['ID'].'" rel="tooltip" title="'.$person['display_name'].'"><a rel="tooltip" title="'.$person['display_name'].'" href="'.get_bloginfo('siteurl').'/profile/?yid='.$person['ID'].'"><img src="'.$img.'" style="width:100%;"/></a></li>';
 		endforeach;
 		$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($id), 'large');
 		$thumb= $thumb[0]; 
@@ -164,8 +167,10 @@ function loadObject($type,$id){
 			'ID'=>$id,
 			'post_title'=> $pods->display('post_title'),
 			'post_content'=>$pods->field('post_content'),
+			 'raw_link'=>$pods->display('video_link'),
 			 'video_link'=>oEmbedYC($pods->display('video_link'),270),
  			 'base'=>$pods->display('base'),
+ 			 'bid'=>$pods->display('base.ID'),
 			 'basename'=>$pods->field('base.post_name'),
 			 'email'=>$pods->field('email'),
 			 'userlink'=>get_bloginfo('siteurl').'/profile?yid='.$user->ID,
@@ -173,11 +178,12 @@ function loadObject($type,$id){
 			 'website'=>$pods->field('website'),
 			 'phone'=>$pods->field('phone'),
 			 'facebook'=>$pods->field('facebook'),
-			 'twitter'=>$pods->field('facebook'),
+			 'twitter'=>$pods->field('twitter'),
 			 'image'=>$thumb,
 			 'total'=> $total,
 			 'following'=>$html,
 			 'owner'=> $pods->field('post_author')==$uid?true:false,
+			 'starting_date'=>$pods->display('starting_date'),
 			 'date' => date('F jS, Y',strtotime($pods->field('starting_date')))
 		);
 	}
