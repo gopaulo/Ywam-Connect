@@ -106,7 +106,7 @@
                 </ul>
               </li>
               <li>
-             	 <div class="input-group search-header">
+           <div class="input-group search-header">
 					  <input type="text" class="searchbox-header" placeholder="Search YWAM base, YWAMers, Courses...">
 					  <span class="input-group-addon"><i class="icon-search"></i></span>
 					</div>
