@@ -260,6 +260,11 @@ a.accordion-toggle > i {
 .feed_user {
    font-weight: bold;
 }
+.feed { font-size: 0.8em;}
+.feed_time {
+text-align: left;
+  display: block;
+}
 .feed_user small {
   font-weight: normal;
   color: #888;
@@ -358,6 +363,7 @@ input {
 }
 li.feed_single {
   padding-left: 0px;
+  border-bottom: 1px solid #ccc;
 }
 #newsfeed_list {
   margin-top: 7px;
@@ -378,7 +384,7 @@ textarea#postfeed {
   border: 1px solid #ccc;
   resize: none;
   height: 80px;
-  margin-bottom: 10px;  
+
 }
 #newsfeed_post {
    width: 100%;
@@ -396,6 +402,7 @@ textarea#postfeed {
 #logo {
 	margin-top: 0px;
 	width: 100%;
+  max-width: 200px;
 }
 
 input.searchbox-header  {

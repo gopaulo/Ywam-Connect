@@ -9,7 +9,9 @@ $user = pods('user',$uid);
 
 $avatar = $user->field('avatar.guid');
 if($avatar == '')
-$avatar = get_bloginfo('template_url').'/images/default_user.jpg';
+	$avatar = get_bloginfo('template_url').'/images/default_user.jpg';
+$avatar = get_bloginfo('template_url').'/includes/timthumb.php?src='.$avatar.'&w=105&h=105'
+
 ?>
 <div id="countryFlag">
 	<img src="<?php bloginfo('template_url');?>/images/flags/flat/48/<?= $user->field('home_country');?>.png"/> <br/>

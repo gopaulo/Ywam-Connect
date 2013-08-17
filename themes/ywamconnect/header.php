@@ -95,6 +95,7 @@
               $avatar = $user->field('avatar.guid');
               if($avatar == '')
               $avatar = get_bloginfo('template_url').'/images/default_user.jpg';
+              $avatar = get_bloginfo('template_url').'/includes/timthumb.php?src='.$avatar.'&w=40&h=40'
               ?>
                 <a href="#" class="dropdown-toggle headerprofile" data-toggle="dropdown"><img  src="<?= $avatar; ?>"><b class="caret"></b></a>
                 <ul class="dropdown-menu">

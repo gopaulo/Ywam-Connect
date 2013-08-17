@@ -25,7 +25,7 @@ add_filter('json_api_controllers', 'add_ywamconnectcontroller');
 
 function add_ywamconnectcontroller($controllers) {
   // Corresponds to the class JSON_API_MyController_Controller
-  $controllers[] = 'YwamConnect';
+  $controllers = array('YwamConnect','YcFeed');
   return $controllers;
 }
 
@@ -35,4 +35,11 @@ add_filter('json_api_ywamconnect_controller_path', 'ywamconnect_controller_path'
 function ywamconnect_controller_path($default_path) {
   $dir = plugin_dir_path( __FILE__ );
   return $dir.'/controllers/ywamconnect.php';
+}
+
+add_filter('json_api_ycfeed_controller_path', 'ycfeed_controller_path');
+
+function ycfeed_controller_path($default_path) {
+  $dir = plugin_dir_path( __FILE__ );
+  return $dir.'/controllers/ycfeed.php';
 }

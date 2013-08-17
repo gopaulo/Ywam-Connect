@@ -54,6 +54,36 @@ function loadFutureEvents($uid){
 
 	return execute($query);
 }
+
+function loadFeeds($threshold=5, $idexclusion_list='', $uid,$bid=false,$mid=false,$cid=false){
+	//threshold are in days as to how far back to reload
+	$user = pods('user',$uid);
+ 	//user friends
+	$query = 
+	"select feed.id, feed.created, feed.feed, feed.location, feed.link, feed.postedby, friend.display_name from wp_usermeta as um
+	inner join wp_pods_feed as feed on feed.postedby = um.meta_value
+	inner join wp_users as friend on friend.ID= feed.postedby 
+	where um.meta_key = 'friends'
+	and (um.user_id=".$uid." or feed.postedby =".$uid.")
+	and feed.created BETWEEN DATE_SUB(NOW(),INTERVAL 7 DAY) AND NOW()";
+	
+	if(!empty($idexclusion_list))
+		$query.=" and feed.id not in (".implode(',',$idexclusion_list).")";
+
+	$query.=" AND feed.feed != '' AND feed.feed IS NOT NULL 
+	ORDER BY RAND()
+	LIMIT ".$threshold;
+
+  	if($bid){
+ 		//base followers
+ 	}
+ 	if($mid){
+ 		//ministry followers 
+ 	}
+
+ 	return execute($query);
+
+}
 function deleteObject($type,$id){
 	$pods = pods($type,$id);
 	$pods->delete();
