@@ -29,30 +29,35 @@ $avatar = get_bloginfo('template_url').'/includes/timthumb.php?src='.$avatar.'&w
 <div class="profiledivider"> </div>
 <p class="profilep"> <span class="profilelabel"> Attended DTS: </span>  <?php
 $courses = $user->field('courses');
+if(!empty($courses))
 foreach($courses as $course):
 	echo '<span class="course"><a href="'.get_bloginfo('siteurl').'/course/'.$course['post_name'].'">'.$course['post_title'].'</a> </span>';
 endforeach;
 ?>  </p>
 <p class="profilep"> <span class="profilelabel"> Interests: </span> <?php
 $interests = $user->field('interests');
+if(!empty($interests))
 foreach($interests as $interest):
 	echo '<span class="interests"><a href="'.get_bloginfo('siteurl').'/view?interest='.$interest['id'].'">'.$interest['name'].'</a> </span>';
 endforeach;
 ?> </p>
 <p class="profilep"> <span class="profilelabel"> Skills: </span> <?php
 $skills = $user->field('skills');
+if(!empty($skills))
 foreach($skills as $skill):
 	echo '<span class="skills"><a href="'.get_bloginfo('siteurl').'/view?skill='.$skill['id'].'">'.$skill['name'].'</a> </span>';
 endforeach;
 ?>  </p>
 <p class="profilep"> <span class="profilelabel"> Sphere of Engagement: </span> <?php
 $spheres = $user->field('spheres');
+if(!empty($spheres))
 foreach($spheres as $sphere):
 	echo '<span class="spheres"><a href="'.get_bloginfo('siteurl').'/view?sphere='.$sphere['id'].'">'.$sphere['name'].'</a> </span>';
 endforeach;
 ?> </p>
 <p class="profilep"> <span class="profilelabel"> Occupation: </span> <?php
 $occupations = $user->field('occupation');
+if(!empty($occupations))
 foreach($occupations as $occupation):
 	echo '<span class="occupations"><a href="'.get_bloginfo('siteurl').'/view?occupation='.$occupation['id'].'">'.$occupation['name'].'</a> </span>';
 endforeach;
