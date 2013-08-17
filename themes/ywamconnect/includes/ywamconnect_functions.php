@@ -4,10 +4,12 @@
 
 	$query = "select ter.name, ter.slug, count(p.ID) as total from wp_posts as p
 			inner join  wp_postmeta as pm on pm.post_id = p.ID
+			inner join wp_postmeta as pd on pd.post_id = p.ID 
 			inner join  wp_term_relationships as tr on tr.object_id = p.ID
 			inner join wp_term_taxonomy as tt on tt.term_taxonomy_id = tr.term_taxonomy_id 
 			inner join wp_terms as ter on ter.term_id = tt.term_id
-			where pm.meta_key ='base' and pm.meta_value =".$base." 
+			where pm.meta_key ='base' and pm.meta_value = ".$base."
+			AND pd.meta_key ='starting_date' and  pd.meta_value >= CURDATE()
 			and tt.taxonomy = '".$category."' group by ter.term_id";
 	return execute($query);
 }
@@ -118,6 +120,7 @@ function loadObject($type,$id){
 		$category = get_the_terms($id,'video_category');
 		$output = array(
 			'ID'=>$id,
+			'post_name'=> $pods->display('post_name'),
 			'ownerid'=>$pods->field('post_author'),
 			'fb'=>$fb,
 			'post_title'=> $pods->display('post_title'),
@@ -160,6 +163,7 @@ function loadObject($type,$id){
 		$output = array(
 			'ID'=>$id,
 			'post_title'=> $pods->display('post_title'),
+			'post_name'=> $pods->display('post_name'),
 			'permalink'=>get_bloginfo('siteurl').'/video/'.$pods->field('post_name'),
 			'fb'=>$fb,
 			'post_content'=>apply_filters('the_content',$pods->display('post_content')),
