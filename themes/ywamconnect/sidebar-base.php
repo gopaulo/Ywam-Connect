@@ -57,10 +57,15 @@ $locationdesc.='</div>';
 <? if($website): ?> Web: <a href="<?= $website;?>"> <?= $website; ?> </a> <br/> <?php endif;?> 
 <? if($phone): ?> Phone:  <?= $phone; ?>  <br/> <?php endif;?> 
 </p>
-<? if(false): //$facebook): ?>
-<p> Follow us on Facebook: <br/>
-<div class="fb-follow" data-href="<?=$facebook;?>" data-width="250" data-show-faces="true"></div> </p>
-<?php endif;?> 
+<? if($facebook == '') $facebook = urlencode(get_bloginfo('siteurl').'/base/'.$basepods->field('post_name'));
+else $facebook = urlencode($facebook);
+ //$facebook):
+   $fb ='<iframe src="//www.facebook.com/plugins/like.php?href='.$facebook.'&amp;width=170&amp;height=90&amp;colorscheme=light&amp;layout=standard&amp;action=like&amp;show_faces=true&amp;send=true&amp;appId=490359931029564" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:170px; height:90px;" allowTransparency="true"></iframe>';
+//  $fb = '<iframe src="//www.facebook.com/plugins/follow.php?href='.urlencode(get_bloginfo('siteurl').'/base/'.$basepods->field('post_name')).'&amp;height=80&amp;colorscheme=light&amp;layout=standard&amp;show_faces=true&amp;appId=490359931029564" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:250px; height:80px;" allowTransparency="true"></iframe>';
+ ?>
+<p style="font-size:75%; margin-bottom:5px; font-weight:bold;"> Like <?= $basepods->display('post_title'); ?> on Facebook: </p>
+<?= $fb; ?>
+
 <hr/>
 
 

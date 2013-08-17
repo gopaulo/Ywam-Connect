@@ -145,6 +145,11 @@ $(document).ready(function(ev) {
 			}
 		}).done(function(res) {
 			console.log('loaded', res);
+
+			var el = document.getElementById('facebook-jssdk');
+			$('#viewvideomodal').find('.fbplace').html(res.fb)
+			if (!el) loadSDK();
+
 			$('#viewvideomodal').find('.modal-title').html(res.post_title);
 			$('#viewvideomodal').find('#description').html('Description: ' + res.post_content);
 			$('#viewvideomodal').find('#base').html('YWAM Base: <a href="/base/' + res.basename + '">' + res.base + '</a>');

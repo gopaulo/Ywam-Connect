@@ -134,6 +134,11 @@ $(document).ready(function(ev) {
 			$('#viewministrymodal').find('#imageministry').html('<img src="' + res.image + '" style="width:100%">');
 			$('#viewministrymodal').find('#ministryvideo').html(res.video_link.url);
 
+
+			var el = document.getElementById('facebook-jssdk');
+			$('#viewministrymodal').find('.fbplace').html(res.fb)
+			if (!el) loadSDK();
+
 			$('#viewministrymodal').find('#number').html(res.total);
 
 			if (res.video_link.url == '') {

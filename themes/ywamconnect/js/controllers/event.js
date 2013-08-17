@@ -121,7 +121,7 @@ $(document).ready(function(ev) {
 				},
 				error: function(data, status, e) {
 					//console.log('error', data, status, e);
-				window.location.reload();
+					window.location.reload();
 				}
 			});
 		});
@@ -171,6 +171,7 @@ $(document).ready(function(ev) {
 			$('#editeventmodal').find('#headingevent').val(res.post_title);
 			$('#editeventmodal').find('.modal-title').html(res.post_title);
 			$('#editeventmodal').find('#cost').val(res.cost);
+
 
 
 			var time_event = res.time_event;
@@ -234,6 +235,10 @@ $(document).ready(function(ev) {
 			$('#vieweventmodal').find('#website').val(res.website);
 			$('#vieweventmodal').find('#imageevent').html('<img src="' + res.image + '" style="width:100%">');
 			$('#vieweventmodal').find('#promovideo').html(res.video_link.url);
+
+			var el = document.getElementById('facebook-jssdk');
+			$('#vieweventmodal').find('.fbplace').html(res.fb)
+			if (!el) loadSDK();
 
 			$('#vieweventmodal').find('.attend[data-action="attendEvent"]').data('id', res.ID);
 			$('#vieweventmodal').find('.attend[data-action="unAttendEvent"]').data('id', res.ID);

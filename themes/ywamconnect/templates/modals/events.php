@@ -198,6 +198,7 @@
       
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
           <h4 class="modal-title">@Event Name</h4>
+            <div class="fbplace"></div>
         </div>
         <div class="modal-body">
             <div class="col-lg-8">

@@ -149,7 +149,8 @@
         <a href="#" class="btn btn-warning  btn-small" id="editministry" data-id="0"><i class="icon-edit"> </i> Edit Ministry </a>
       
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h4 class="modal-title">@Event Name</h4>
+          <h4 class="modal-title">@Ministry Name</h4>
+            <div class="fbplace"></div>
         </div>
           <div class="modal-body">
               <div class="col-lg-8">

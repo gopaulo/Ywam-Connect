@@ -2,7 +2,7 @@
 <!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
 <!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
 <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--><html <?php language_attributes(); ?>> <!--<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html <?php language_attributes(); ?>  xmlns:fb="http://ogp.me/ns/fb#"> <!--<![endif]-->
 <head>
 
 	<!-- Basic Page Needs
@@ -69,7 +69,33 @@
 
 </head>
 <body <?php body_class(); ?>>
+ 
+<div id="fb-root"></div>
+<script>
+  window.fbAsyncInit = function() {
+    // init the FB JS SDK
+    FB.init({
+      appId      : '490359931029564',                        // App ID from the app dashboard
+    //  channelUrl : '//WWW.YOUR_DOMAIN.COM/channel.html', // Channel file for x-domain comms
+      status     : true,                                 // Check Facebook Login status
+      xfbml      : true                                  // Look for social plugins on the page
+    });
 
+    // Additional initialization code such as adding Event Listeners goes here
+  };
+
+ function loadSDK(){
+   // Load the SDK asynchronously
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/all.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+ }
+ loadSDK();
+</script>
 <header>
 <div class="navbar navbar-fixed-top navbar-inverse">
   <a class="navbar-brand" href="<?php bloginfo('siteurl');?>" style="padding:0px;margin:0px;"><img id="logo" src="<?php bloginfo('template_url');?>/images/ywamconnect_logo.png"/></a>
