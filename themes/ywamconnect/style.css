@@ -131,15 +131,14 @@ h6.search-filters {
   text-shadow: none;
 }
 
-.green {
-  background: #8dd908;
-
-}
-.red {
-  background: #ff0000;
-}
-
+.green { background: #7dba25;}
+.red { background: #ff0000;}
 .orange { background: #f60;}
+.yellow { background: #f6d30f;}
+.petroleum { background: #00ffc6;}
+.purple { background: #ab5adf;}
+.gray { background: #666;}
+
 .searchtag {
   height: 15px;
   display: inline-block;
@@ -161,6 +160,22 @@ padding: 0px;
 position: relative;
 top: -1px;
 left: 1px;
+}
+small.libraryHead-filter {
+  float:right;
+  color: #333;
+  font-size: 1.2em;
+  text-transform: none;
+}
+
+div.librarysideframe {
+  width: 100%;
+  background:#ededed;
+  height: 150px;
+}
+small.libraryHead-filter .chosenType {
+  font-weight: bold;
+  font-size: 120%;
 }
 small.lineHead-filter {
   float:right;
@@ -467,6 +482,7 @@ textarea#postfeed {
 
 input.searchbox-header  {
   width: 100%;
+  font-size: 0.9em;
   height: 38px;
 
 }
@@ -484,6 +500,7 @@ input.searchbox-header  {
 }
 input.coursesearch {
     width: 100%;
+      font-size: 0.9em;
   height: 38px;
 }
 
