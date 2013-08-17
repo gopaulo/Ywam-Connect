@@ -172,6 +172,10 @@ div.librarysideframe {
   width: 100%;
   background:#ededed;
   height: 150px;
+  overflow: auto;
+overflow-y: hidden;
+-ms-overflow-y: hidden;
+
 }
 small.libraryHead-filter .chosenType {
   font-weight: bold;
@@ -213,9 +217,23 @@ h4.basetitle {
   margin-top: 0px;
 }
 
-ul#course-search-filters {
+ul#course-search-filters , ul#course-search-filters-authors{
   list-style: none;
   padding-left: 0px;
+}
+
+ul#author-list {
+  list-style: none;
+  padding-left: 0px;
+}
+ul#course-search-filters-authors{ 
+  margin-bottom:10px;
+}
+ul#course-search-filters-authors li {
+  display: inline;
+  margin: 0px;
+  padding:0px;
+  font-size:0.74em; 
 }
 #sidebar-left {
   position: relative;

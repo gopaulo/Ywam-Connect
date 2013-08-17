@@ -41,6 +41,7 @@ $locationdesc.='</div>';
  $current_user = wp_get_current_user();
 
 ?>
+<input type="hidden" id="masterbase" value="<?= $bid; ?>">
 <? if($country): ?> <div id="countryFlag"> <img src="<?php bloginfo('template_url');?>/images/flags/flat/48/<?= $country;?>.png"/> </div> <?php endif; ?>
 <?=  $_SESSION['collapsed'];?>
 <h4 class="basetitle"><a href="<?php bloginfo('siteurl');?>/base/<?= $base->post_name;?>"><?=$base->post_title; ?></a> </h4>

@@ -13,6 +13,7 @@ $(document).ready(function(ev) {
 	$('#deletevideobtn').on('click', function(ev) {
 		var id = $('#deletevideo').data('id');
 		$.ajax({
+			type: "POST",
 			url: $wpapi + 'deleteObject',
 			data: {
 				type: 'video',
@@ -47,6 +48,7 @@ $(document).ready(function(ev) {
 		} else {
 			console.log('params', params);
 			$.ajax({
+				type: "POST",
 				url: $wpapi + 'editVideo',
 				data: params
 			}).done(function(res) {
@@ -59,11 +61,13 @@ $(document).ready(function(ev) {
 
 	$('#addvideobtn').on('click', function(ev) {
 		var params = $('#addvideoform').formParams();
+		params.bid = $('#masterbase').val();
 		if (params.headingvideo == '' || params.videolink == '') {
 			//error -> empty video
 		} else {
 			console.log('params', params);
 			$.ajax({
+				type: "POST",
 				url: $wpapi + 'saveEditVideo',
 				data: params
 			}).done(function(res) {
@@ -82,6 +86,7 @@ $(document).ready(function(ev) {
 				height: height
 			};
 			$.ajax({
+				type: "POST",
 				url: $wpapi + 'oEmbedYC',
 				type: 'post',
 				data: obj
@@ -99,6 +104,7 @@ $(document).ready(function(ev) {
 		var id = $(this).data('id');
 
 		$.ajax({
+			type: "POST",
 			url: $wpapi + 'loadObject',
 			data: {
 				type: 'video',
@@ -131,6 +137,7 @@ $(document).ready(function(ev) {
 		var id = $(this).data('id');
 
 		$.ajax({
+			type: "POST",
 			url: $wpapi + 'loadObject',
 			data: {
 				type: 'video',

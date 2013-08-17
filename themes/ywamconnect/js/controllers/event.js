@@ -15,6 +15,7 @@ $(document).ready(function(ev) {
 		var action = $(this).data('action');
 		console.log('attending event', eid);
 		$.ajax({
+			type: "POST",
 			url: $wpapi + action,
 			data: {
 				eid: eid
@@ -68,6 +69,7 @@ $(document).ready(function(ev) {
 		var params = $('#editeventform').formParams();
 		console.log('params', params);
 		$.ajax({
+			type: "POST",
 			url: $wpapi + 'editEvent',
 			data: params
 		}).done(function(res) {
@@ -97,9 +99,12 @@ $(document).ready(function(ev) {
 
 	$('#addeventbtn').on('click', function(ev) {
 		var params = $('#addeventform').formParams();
+		params.bid = $('#masterbase').val();
 		console.log('params', params);
+
 		$.ajax({
-			url: $wpapi + 'editEvent',
+			type: "POST",
+			url: $wpapi + 'saveEditEvent',
 			data: params
 		}).done(function(res) {
 			console.log('add event res', res);
@@ -116,7 +121,7 @@ $(document).ready(function(ev) {
 				},
 				error: function(data, status, e) {
 					//console.log('error', data, status, e);
-					window.location.reload();
+				window.location.reload();
 				}
 			});
 		});
@@ -126,6 +131,7 @@ $(document).ready(function(ev) {
 	$('#deleteeventbtn').on('click', function(ev) {
 		var id = $('#deleteevent').data('id');
 		$.ajax({
+			type: "POST",
 			url: $wpapi + 'deleteObject',
 			data: {
 				type: 'event',
@@ -154,6 +160,7 @@ $(document).ready(function(ev) {
 		var id = $(this).data('id');
 
 		$.ajax({
+			type: "POST",
 			url: $wpapi + 'loadObject',
 			data: {
 				type: 'event',
@@ -210,6 +217,7 @@ $(document).ready(function(ev) {
 		var id = $(this).data('id');
 
 		$.ajax({
+			type: "POST",
 			url: $wpapi + 'loadObject',
 			data: {
 				type: 'event',

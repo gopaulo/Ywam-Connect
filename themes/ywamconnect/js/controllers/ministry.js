@@ -26,6 +26,7 @@ $(document).ready(function(ev) {
 	$('#deleteministrybtn').on('click', function(ev) {
 		var id = $('#deleteministry').data('id');
 		$.ajax({
+			type: "POST",
 			url: $wpapi + 'deleteObject',
 			data: {
 				type: 'ministry',
@@ -60,6 +61,7 @@ $(document).ready(function(ev) {
 		var id = $(this).data('id');
 
 		$.ajax({
+			type: "POST",
 			url: $wpapi + 'loadObject',
 			data: {
 				type: 'ministry',
@@ -114,6 +116,7 @@ $(document).ready(function(ev) {
 		var id = $(this).data('id');
 
 		$.ajax({
+			type: "POST",
 			url: $wpapi + 'loadObject',
 			data: {
 				type: 'ministry',
@@ -164,6 +167,7 @@ $(document).ready(function(ev) {
 		var params = $('#editministryform').formParams();
 		console.log('params', params);
 		$.ajax({
+			type: "POST",
 			url: $wpapi + 'editMinistry',
 			data: params
 		}).done(function(res) {
@@ -193,8 +197,10 @@ $(document).ready(function(ev) {
 
 	$('#addministrybtn').on('click', function(ev) {
 		var params = $('#addministryform').formParams();
+		params.bid = $('#masterbase').val();
 		console.log('params', params);
 		$.ajax({
+			type: "POST",
 			url: $wpapi + 'saveEditMinistry',
 			data: params
 		}).done(function(res) {
@@ -228,6 +234,7 @@ $(document).ready(function(ev) {
 
 		$(this).fadeOut('slow');
 		$.ajax({
+			type: "POST",
 			url: $wpapi + action,
 			data: {
 				mid: $(this).data('id')

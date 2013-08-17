@@ -24,11 +24,17 @@
 	<input type="hidden" name="year" value="2013">
 	<h6 class="search-filters"> Authors <small class="libraryHead-filter"> <a href="#" class="chosenType" data-type="first_name"> First</a> / <a href="#" data-type="last_name"> Last</a> name</small> </h6>
 	<hr class="nomargin"/>
-	<ul id="course-search-filters">
-
+	<ul id="course-search-filters-authors">
+	 <?php foreach(range('A','Z') as $letter): ?>
+	 	<li><a href="#" class="authorFilter" data-value="<?= $letter;?>"> <?=$letter;?> </a> </li>
+	 <?php endforeach; ?>
 	</ul>
-
-	<div class="divider"> </div>
-
-	<h4 class="course-results-title"> Search Results </h4><hr class="nomargin"/>
+ 	<ul id="author-list">
+ 	<li class="single-author">
+ 	<div class="row">
+ 	<div class="col-lg-3"><img src="<?= get_bloginfo('template_url');?>/images/default_author.jpg" class="speakerpic" /></div>
+ 	<div class="col-lg-9"> <p class="speaker_name nomargin"> Loren Cunningham </p> <a href="#" class="speaker-website"> http://loren.com </a> </div>
+ 	</div>
+ 	</li>
+ 	</ul>
 </form>
