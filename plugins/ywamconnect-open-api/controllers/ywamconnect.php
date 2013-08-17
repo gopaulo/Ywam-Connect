@@ -253,21 +253,32 @@ function unfollowBase(){
 
 
 function followMinistry() {
- global $json_api;
-  extract($json_api->query->get(array('mid')));
-	 $output = array();
-	 $current_user = wp_get_current_user();
-	 add_to_user('ministries',$current_user->ID,$mid);
+    global $json_api;
+    extract($json_api->query->get(array('mid')));
+    $output = array();
+    $current_user = wp_get_current_user();
+    add_to_user('ministries',$current_user->ID,$mid);
+
+    $userk = pods('user',$current_user->ID);
+    $img = $userk->field('avatar.guid');
+    if($img == '')
+    $img = get_bloginfo('template_url').'/images/default_user.jpg';
+    $html .='<li class="col-lg-2 singleattending" data-id="'.$current_user->ID.'" rel="tooltip" title="'.$current_user->display_name.'"><a rel="tooltip" title="'.$current_user->display_name.'" href="'.get_bloginfo('siteurl').'/profile/?yid='.$current_user->ID.'"><img src="'.$img.'" style="width:100%;"/></a></li>';
+    $output['uid']= $current_user->ID;
+    $output['html']= $html;
 	 return $output;
 }
 
 function unfollowMinistry(){
- global $json_api;
-	  extract($json_api->query->get(array('mid')));
-	 $output = array();
-	 $current_user = wp_get_current_user();
-	 remove_from_user('ministries',$current_user->ID,$mid);
-	 return $output;
+    global $json_api;
+    extract($json_api->query->get(array('mid')));
+    $output = array();
+    $current_user = wp_get_current_user();
+    remove_from_user('ministries',$current_user->ID,$mid);
+
+    $output['uid']= $current_user->ID;
+    
+    return $output;
 }
 
 

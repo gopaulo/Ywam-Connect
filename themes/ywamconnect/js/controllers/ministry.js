@@ -237,6 +237,9 @@ $(document).ready(function(ev) {
 			action = 'followMinistry';
 		else action = 'unfollowMinistry';
 
+		var nmb = $('#number_page').html();
+		if (nmb == '') nmb = 0;
+
 		$(this).fadeOut('slow');
 		$.ajax({
 			type: "POST",
@@ -245,6 +248,7 @@ $(document).ready(function(ev) {
 				mid: $(this).data('id')
 			}
 		}).done(function(res) {
+			console.log('follow', res);
 			if (action == 'followMinistry') {
 				$(_this).data('follow', '0');
 
@@ -258,11 +262,18 @@ $(document).ready(function(ev) {
 				$(_this).find('i').addClass('icon-heart-empty');
 
 				$(_this).find('span').html('Unfollow ' + $(_this).data('name'));
+				nmb++;
+
+				$('ul#peopleFollowing').prepend(res.html);
+
+				$('[rel="tooltip"]').tooltip();
+
 			} else {
 				$(_this).data('follow', '1');
 
 				$(_this).removeClass('btn-default');
 				$(_this).addClass('btn-info');
+				nmb--;
 
 				$(_this).removeClass('unfollow');
 				$(_this).addClass('follow');
@@ -270,8 +281,12 @@ $(document).ready(function(ev) {
 				$(_this).find('i').removeClass('icon-heart-empty');
 				$(_this).find('i').addClass('icon-heart');
 
+				$('li.singleattending[data-id="' + res.uid + '"]').fadeOut('slow').remove();
+
 				$(_this).find('span').html('Follow ' + $(_this).data('name'));
+
 			}
+			$('#number_page').html(nmb);
 			$(_this).fadeIn('slow');
 		});
 		ev.stopPropagation();

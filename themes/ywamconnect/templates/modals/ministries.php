@@ -160,6 +160,7 @@
                     <p class="profilep"> <span class="profilelabel"> Website: </span> <span id="website">  </span> </p>
                     <p class="profilep"> <span class="profilelabel"> Phone: </span> <span id="phone">  </span> </p>
                     <p class="profilep"> <span class="profilelabel"> Posted By: </span> <span id="postedby">  </span> </p>
+                    <h4> About </h4>
                     <p class="profilep" id="description"> </p>
               </div>
               <div class="col-lg-4">

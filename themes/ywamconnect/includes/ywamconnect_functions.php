@@ -113,7 +113,7 @@ function loadObject($type,$id){
 		//base
 		//basename
 		//$fb = '<fb:like href="'.get_bloginfo('siteurl').'/video/'.$pods->field('post_name')" width="450" show_faces="true" send="true"></fb:like>';
-		$fb ='<iframe src="//www.facebook.com/plugins/like.php?href='.urlencode(get_bloginfo('siteurl').'/video/'.$pods->field('post_name')).'&amp;width=450&amp;height=40&amp;colorscheme=light&amp;layout=standard&amp;action=like&amp;show_faces=true&amp;send=true&amp;appId=490359931029564" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:40px;" allowTransparency="true"></iframe>';
+		$fb ='<iframe src="//www.facebook.com/plugins/like.php?href='.urlencode(get_bloginfo('siteurl').'/video/'.$pods->field('post_name')).'&amp;width=450&amp;height=65&amp;colorscheme=light&amp;layout=standard&amp;action=like&amp;show_faces=true&amp;send=true&amp;appId=490359931029564" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:65px;" allowTransparency="true"></iframe>';
 	//	$fb = '<div class="fb-like" data-href="'.get_bloginfo('siteurl').'/video/'.$pods->field('post_name').'" data-width="450" data-show-faces="true" data-send="true"></div>';
 		$category = get_the_terms($id,'video_category');
 		$output = array(
@@ -121,7 +121,7 @@ function loadObject($type,$id){
 			'ownerid'=>$pods->field('post_author'),
 			'fb'=>$fb,
 			'post_title'=> $pods->display('post_title'),
-			'post_content'=>$pods->field('post_content'),
+			'post_content'=>apply_filters('the_content',$pods->display('post_content')),
 			 'video_link'=>$pods->display('video_link'),
 			 'embed'=>oEmbedYC($pods->display('video_link'),280),
  			 'base'=>$pods->display('base'),
@@ -156,13 +156,13 @@ function loadObject($type,$id){
 		}
 		$thumb = get_bloginfo('template_url').'/includes/timthumb.php?src='.$thumb.'&w=570&h=250';
  		$category = get_the_terms($id,'event_category');
-		$fb ='<iframe src="//www.facebook.com/plugins/like.php?href='.urlencode(get_bloginfo('siteurl').'/event/'.$pods->field('post_name')).'&amp;width=450&amp;height=40&amp;colorscheme=light&amp;layout=standard&amp;action=like&amp;show_faces=true&amp;send=true&amp;appId=490359931029564" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:40px;" allowTransparency="true"></iframe>';
+		$fb ='<iframe src="//www.facebook.com/plugins/like.php?href='.urlencode(get_bloginfo('siteurl').'/event/'.$pods->field('post_name')).'&amp;width=450&amp;height=65&amp;colorscheme=light&amp;layout=standard&amp;action=like&amp;show_faces=true&amp;send=true&amp;appId=490359931029564" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:65px;" allowTransparency="true"></iframe>';
 		$output = array(
 			'ID'=>$id,
 			'post_title'=> $pods->display('post_title'),
 			'permalink'=>get_bloginfo('siteurl').'/video/'.$pods->field('post_name'),
 			'fb'=>$fb,
-			'post_content'=>$pods->field('post_content'),
+			'post_content'=>apply_filters('the_content',$pods->display('post_content')),
 			'raw_link'=>$pods->display('video_link'),
 			 'video_link'=>oEmbedYC($pods->display('video_link'),270),
 			 'bid'=>$pods->field('base.ID'),
@@ -210,12 +210,13 @@ function loadObject($type,$id){
 			$thumb = get_bloginfo('template_url').'/images/default_ministry.jpg';
 		}
 		$thumb = get_bloginfo('template_url').'/includes/timthumb.php?src='.$thumb.'&w=570&h=250';
-		$fb ='<iframe src="//www.facebook.com/plugins/like.php?href='.urlencode(get_bloginfo('siteurl').'/ministry/'.$pods->field('post_name')).'&amp;width=450&amp;height=40&amp;colorscheme=light&amp;layout=standard&amp;action=like&amp;show_faces=true&amp;send=true&amp;appId=490359931029564" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:40px;" allowTransparency="true"></iframe>';
+		$fb ='<iframe src="//www.facebook.com/plugins/like.php?href='.urlencode(get_bloginfo('siteurl').'/ministry/'.$pods->field('post_name')).'&amp;width=450&amp;height=65&amp;colorscheme=light&amp;layout=standard&amp;action=like&amp;show_faces=true&amp;send=true&amp;appId=490359931029564" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:65px;" allowTransparency="true"></iframe>';
 		$output = array(
 			'ID'=>$id,
 			'post_title'=> $pods->display('post_title'),
 			'fb'=>$fb,
-			'post_content'=>$pods->field('post_content'),
+			'post_name'=> $pods->display('post_name'),
+			'post_content'=>apply_filters('the_content',$pods->display('post_content')),
 			 'raw_link'=>$pods->display('video_link'),
 			 'video_link'=>oEmbedYC($pods->display('video_link'),270),
  			 'base'=>$pods->display('base'),
