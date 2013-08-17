@@ -9,28 +9,35 @@ $(document).ready(function(ev) {
 			data: params
 		}).done(function(res) {
 			//$('#newsfeed_post')[0].reset();
-			console.log('posted', res);
+ 
+			$('#newsfeed_list').prepend(res.html);
+			$('#newsfeed_list > li:first-child').hide().fadeIn('slow');
 			document.getElementById("newsfeed_post").reset();
+
+			$('button.deletefeed').on('click', function(ev) {
+				$('#deletefeedmodal').find('#deletefeedbtn').data('id', $(this).data('id'));
+				$('#deletefeedmodal').modal('show');
+			});
 		});
 	});
 
 	$('#deletefeedbtn').on('click', function(ev) {
 		var fid = $(this).data('id');
-		console.log('delete', fid);
-		$.ajax({
+ 		$.ajax({
 			url: $wpfeedapi + 'delete_feed',
 			data: {
 				fid: fid
 			}
 		}).done(function(res) {
-			console.log('res',res);
-			$('#deletefeedmodal').modal('hide');
-			$('li.feed_single[data-id="' + res.id + '"]').fadeOut();
+ 			$('#deletefeedmodal').modal('hide');
+			$('li.feed_single[data-id="' + res.id + '"]').fadeOut('fast', function(k) {
+				$(this).remove();
+			});
 		});
 
 	});
 
-	$('.deletefeed').on('click', function(ev) {
+	$('button.deletefeed').on('click', function(ev) {
 		$('#deletefeedmodal').find('#deletefeedbtn').data('id', $(this).data('id'));
 		$('#deletefeedmodal').modal('show');
 	});

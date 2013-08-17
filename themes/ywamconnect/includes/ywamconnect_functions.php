@@ -12,6 +12,17 @@
 	return execute($query);
 }
 
+function loadSingleFeed($id){
+	$query = "
+	select feed.id, feed.created, feed.feed, feed.location, feed.link, feed.postedby, friend.display_name 
+from  wp_pods_feed as feed 
+inner join wp_users as friend on friend.ID= feed.postedby 
+where feed.id =".$id."
+group by feed.id";
+
+$feed = execute($query);
+return $feed[0];
+}
  function set_thumb_by_url( $url, $title = null, $postid )
     {
         /* Following assets will already be loaded if in admin */

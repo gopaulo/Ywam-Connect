@@ -44,12 +44,16 @@ class JSON_API_YcFeed_Controller {
  
 
  	$fid = $feed->add($param);
+
+	ob_start();
+	$singlefeed = loadSingleFeed($fid);
+	include(locate_template('/templates/feed/single-feed.php'));
+	$html = ob_get_contents();
+	ob_end_clean(); 
+
  	$output = array(
  	 'fid'=>$fid,
- 	 'feed'=>$postfeed,
- 	 'username'=>$user->display_name,
- 	 'avatar'=>$avatar,
- 	 'uid'=>$uid);
+ 	 'html'=>$html);
 
  	return $output;
   }
