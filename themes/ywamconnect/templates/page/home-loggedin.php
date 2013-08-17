@@ -3,6 +3,8 @@
 
 $params = array('limit'=>-1);
 $bases = pods('base',$params);
+
+
 ?>
 <div class="container">
 <div class="col-lg-2" > 
@@ -31,7 +33,13 @@ $bases = pods('base',$params);
 		 		var markerlist =  amplify.store('markers');
 		 		var marker =  '',
 		 		infowindow =   '';
-		 		<?php while($bases->fetch()): ?>
+		 		<?php while($bases->fetch()): 
+
+		 		$locationdesc = '<div class=\'popupmap\'> <h4><a class=\'popuptitle\' href=\''.get_bloginfo('siteurl').'/base/'.$bases->display('post_name').'\'>';
+				$locationdesc.= $bases->display('post_title').'</a></h4>';
+				$locationdesc.='<p class=\'profilep\'> <span class=\'profilelabel\'> Email: </span> '.$bases->display('email').'</p><p class=\'profilep\'> <span class=\'profilelabel\'> Web: </span> '.$bases->display('website').' </p><p class=\'profilep\'> <span class=\'profilelabel\'> Phone: </span> '.$bases->display('phone').' </p>';
+				$locationdesc.='</div>';?>
+
 			 		 marker = new google.maps.Marker({
 											position: new google.maps.LatLng(<?=$bases->display("latlong"); ?>),
 											//animation: google.maps.Animation.DROP,
@@ -48,7 +56,8 @@ $bases = pods('base',$params);
 					console.log('marker',marker);
 					//markerlist.push(marker_test);
 			 		 infowindow = new google.maps.InfoWindow({
-									content: '<h4><a href="<?= get_bloginfo('siteurl');?>/base/<?= $bases->display('post_name');?>"><?= $bases->display('post_title');?></a></h4><?= str_replace(array("\r","\n"),"",$bases->display("post_content")); ?>'
+
+									content: "<?= $locationdesc; ?>"
 								});
 					google.maps.event.addListener(marker, 'click', function() {
 						console.log('open',marker.bid);
