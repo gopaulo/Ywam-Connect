@@ -8,8 +8,10 @@
  if(isset($_GET['bid'])) { 
   $bid = $_GET['bid'];
   $base = get_post($bid);
-}
-else { 
+} else if(isset($_POST['bid'])) { 
+  $bid = $_POST['bid'];
+  $base = get_post($bid);
+} else { 
 
   $base = $_GET['base'];
   $bid = $base->ID;

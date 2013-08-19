@@ -1,5 +1,12 @@
-<?php $current_user = wp_get_current_user();
+<?php 
+  wp_enqueue_script('eventjs', get_bloginfo('template_url').'/js/controllers/event.js', 'jquery', '1.1', true);
+
+
+
+$current_user = wp_get_current_user();
 $event = loadObject('event',$post->ID);
+
+
  ?>
 
 <div class="container">
@@ -15,7 +22,7 @@ $event = loadObject('event',$post->ID);
                   <p class="profilep"> <span class="profilelabel"> Location: </span> <span id="location"> <?= $event['date']; ?> </span> </p>
                   <p class="profilep"> <span class="profilelabel"> Cost: </span> <span id="cost"><?= $event['cost']; ?>  </span> </p>
                   <p class="profilep"> <span class="profilelabel"> Posted By: </span> <span id="postedby"><?= $event['date']; ?>  </span> </p>
-                  <p class="profilep"> <span class="profilelabel"> More Info: </span> <span id="website"> <?= $event['website']; ?> </span> </p>
+                  <p class="profilep"> <span class="profilelabel"> More Info: </span> <span id="website"><a href="<?= $event['website']; ?>"> <?= $event['website']; ?></a> </span> </p>
                 <div class="divider"> </div>
                  <p class="profilep" id="description"> 
                     <?= $event['post_content']; ?>
@@ -29,8 +36,12 @@ $event = loadObject('event',$post->ID);
                 </ul>
                 <p> Will you attend this event ? 
                 <span id="attendbtn">
-                  <a href="#" class="btn btn-small btn-success attend" data-action="attendEvent" data-id="0"> Yes </a>
-                  <a href="#" class="btn btn-small btn-danger attend" data-action="unAttendEvent" data-id="0"> No </a>
+                <?php if(is_attending($current_user->ID,$post->ID)){ ?>
+                       <a href="#" class="btn btn-small btn-danger attend" data-action="unAttendEvent" data-id="0"> No </a>
+                <?php }else { ?> 
+                      <a href="#" class="btn btn-small btn-success attend" data-action="attendEvent" data-id="0"> Yes </a>
+
+                <?php } ?>
                 </span>  
                 </p>
                 <h4> Promo Video </h4>

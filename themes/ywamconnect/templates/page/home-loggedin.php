@@ -65,6 +65,7 @@ $bases = pods('base',$params);
 							left:'-350px'
 						},300,function(ok){
 							$.ajax({
+								type: "POST",
 								url: $wpapi + 'loadSidebar',
 								data: {
 									bid: marker.bid

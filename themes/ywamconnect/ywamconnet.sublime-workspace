@@ -4,6 +4,154 @@
 		"selected_items":
 		[
 			[
+				"get_b",
+				"get_bloginfo"
+			],
+			[
+				"base",
+				"basepods"
+			],
+			[
+				"ur",
+				"urlencode"
+			],
+			[
+				"text",
+				"text-transform"
+			],
+			[
+				"border",
+				"border-color"
+			],
+			[
+				"video_",
+				"video_category"
+			],
+			[
+				"he",
+				"headingvideo"
+			],
+			[
+				"time",
+				"time_event"
+			],
+			[
+				"viewvideo",
+				"viewvideomodal"
+			],
+			[
+				"del",
+				"deleteevent"
+			],
+			[
+				"display",
+				"display_name"
+			],
+			[
+				"mi",
+				"ministries"
+			],
+			[
+				"cur",
+				"current_user"
+			],
+			[
+				"saveEdt",
+				"saveEditMinistry"
+			],
+			[
+				"dsplay",
+				"display_name"
+			],
+			[
+				"end",
+				"ending_year"
+			],
+			[
+				"ed",
+				"ending_day"
+			],
+			[
+				"ending",
+				"ending_month"
+			],
+			[
+				"start",
+				"start_year"
+			],
+			[
+				"tem",
+				"template_url"
+			],
+			[
+				"vide",
+				"videolink"
+			],
+			[
+				"video",
+				"video_link"
+			],
+			[
+				"mini",
+				"ministry"
+			],
+			[
+				"foll",
+				"follower"
+			],
+			[
+				"marin",
+				"margin-bottom"
+			],
+			[
+				"minstr",
+				"ministry"
+			],
+			[
+				"catego",
+				"categoryvalue"
+			],
+			[
+				"eve",
+				"events"
+			],
+			[
+				"term",
+				"termfull"
+			],
+			[
+				"sidebar",
+				"sidebar-left"
+			],
+			[
+				"side",
+				"sidebar-left"
+			],
+			[
+				"font-",
+				"font-style"
+			],
+			[
+				"back",
+				"background-size"
+			],
+			[
+				"ca",
+				"categories"
+			],
+			[
+				"tex",
+				"text-align"
+			],
+			[
+				"wid",
+				"width"
+			],
+			[
+				"te",
+				"text-decoration"
+			],
+			[
 				"form",
 				"formdata"
 			],
@@ -72,24 +220,8 @@
 				"display"
 			],
 			[
-				"end",
-				"ending_date"
-			],
-			[
-				"term",
-				"term_full"
-			],
-			[
 				"li",
 				"list-style"
-			],
-			[
-				"te",
-				"text-align"
-			],
-			[
-				"marin",
-				"margin-right"
 			],
 			[
 				"regi",
@@ -98,10 +230,6 @@
 			[
 				"Course",
 				"CourseLanguages"
-			],
-			[
-				"back",
-				"background"
 			],
 			[
 				"mar",
@@ -184,10 +312,6 @@
 				"decisionarray"
 			],
 			[
-				"tex",
-				"text-decoration"
-			],
-			[
 				"exit",
 				"exitactiomtmp"
 			],
@@ -206,10 +330,6 @@
 			[
 				"forwad",
 				"forwardstep"
-			],
-			[
-				"text",
-				"text-align"
 			],
 			[
 				"proces",
@@ -304,10 +424,6 @@
 				"Profile"
 			],
 			[
-				"cur",
-				"currentwfid"
-			],
-			[
 				"hasend",
 				"hasEndStep"
 			],
@@ -360,10 +476,6 @@
 				"usr"
 			],
 			[
-				"font-",
-				"font-weight"
-			],
-			[
 				"new",
 				"new_user"
 			],
@@ -402,34 +514,6 @@
 			[
 				"attach",
 				"attachmentname"
-			],
-			[
-				"value",
-				"valuelist"
-			],
-			[
-				"au",
-				"authorize"
-			],
-			[
-				"padding",
-				"padding-left"
-			],
-			[
-				"Control",
-				"controllerName"
-			],
-			[
-				"uofn",
-				"uofnkona_settings"
-			],
-			[
-				"c",
-				"container"
-			],
-			[
-				"e",
-				"element"
 			]
 		]
 	},
@@ -647,11 +731,83 @@
 	},
 	"file_history":
 	[
-		"/Applications/MAMP/htdocs/yc2/wp-content/themes/ywamconnect/index.php",
-		"/Applications/MAMP/htdocs/yc2/wp-content/themes/ywamconnect/functions.php",
-		"/Applications/MAMP/htdocs/yc2/wp-content/themes/ywamconnect/includes/theme-scripts.php",
+		"/Applications/MAMP/htdocs/yc2/wp-content/themes/ywamconnect/sidebar-newsfeed.php",
+		"/Applications/MAMP/htdocs/yc2/wp-content/themes/ywamconnect/templates/events/single.php",
+		"/Applications/MAMP/htdocs/yc2/wp-content/themes/ywamconnect/templates/ministries/single.php",
+		"/Applications/MAMP/htdocs/yc2/wp-content/themes/ywamconnect/templates/events/event-list.php",
+		"/Applications/MAMP/htdocs/yc2/wp-content/themes/ywamconnect/templates/videos/single.php",
+		"/Applications/MAMP/htdocs/yc2/wp-content/themes/ywamconnect/includes/ywamconnect_functions.php",
+		"/Applications/MAMP/htdocs/yc2/wp-content/themes/ywamconnect/templates/map/map.php",
+		"/Applications/MAMP/htdocs/yc2/wp-content/themes/ywamconnect/templates/page/home-loggedin.php",
+		"/Applications/MAMP/htdocs/yc2/wp-content/themes/ywamconnect/sidebar-base.php",
+		"/Applications/MAMP/htdocs/yc2/wp-content/themes/ywamconnect/js/ywamconnect.js",
+		"/Applications/MAMP/htdocs/yc2/wp-content/themes/ywamconnect/templates/ministries/ministries-list.php",
+		"/Applications/MAMP/htdocs/yc2/wp-content/themes/ywamconnect/template-ministries.php",
+		"/Applications/MAMP/htdocs/yc2/wp-content/plugins/ywamconnect-open-api/controllers/ywamconnect.php",
+		"/Applications/MAMP/htdocs/yc2/wp-content/themes/ywamconnect/js/controllers/event.js",
+		"/Applications/MAMP/htdocs/yc2/wp-content/themes/ywamconnect/js/controllers/ministry.js",
+		"/Applications/MAMP/htdocs/yc2/wp-content/themes/ywamconnect/single-event.php",
+		"/Applications/MAMP/htdocs/yc2/wp-content/themes/ywamconnect/templates/modals/ministries.php",
+		"/Applications/MAMP/htdocs/yc2/wp-content/themes/ywamconnect/templates/modals/events.php",
+		"/Applications/MAMP/htdocs/yc2/wp-content/themes/ywamconnect/single-ministry.php",
+		"/Applications/MAMP/htdocs/yc2/wp-content/themes/ywamconnect/single-video.php",
+		"/Applications/MAMP/htdocs/yc2/wp-content/themes/ywamconnect/single-ministry.html",
+		"/Applications/MAMP/htdocs/yc2/wp-content/themes/ywamconnect/footer.php",
+		"/Applications/MAMP/htdocs/yc2/wp-content/themes/ywamconnect/header.php",
+		"/Applications/MAMP/htdocs/yc2/wp-content/themes/ywamconnect/templates/modals/videos.php",
+		"/Applications/MAMP/htdocs/yc2/wp-content/themes/ywamconnect/js/controllers/video.js",
 		"/Applications/MAMP/htdocs/yc2/wp-content/themes/ywamconnect/style.css",
+		"/Applications/MAMP/htdocs/yc2/wp-content/themes/ywamconnect/sidebar-library-left.php",
+		"/Applications/MAMP/htdocs/yc2/wp-content/themes/ywamconnect/sidebar-library-right.php",
+		"/Applications/MAMP/htdocs/yc2/wp-content/themes/ywamconnect/sidebar-user.php",
+		"/Applications/MAMP/htdocs/yc2/wp-content/themes/ywamconnect/js/newsfeed.js",
+		"/Applications/MAMP/htdocs/yc2/wp-content/plugins/ywamconnect-open-api/controllers/ycfeed.php",
+		"/Applications/MAMP/htdocs/yc2/wp-content/themes/ywamconnect/templates/feed/single-feed.php",
+		"/Applications/MAMP/htdocs/yc2/wp-content/themes/ywamconnect/sidebar-search-courses.php",
+		"/Applications/MAMP/htdocs/yc2/wp-content/themes/ywamconnect/single-base.php",
+		"/Applications/MAMP/htdocs/yc2/wp-content/themes/ywamconnect/template-location.php",
+		"/Applications/MAMP/htdocs/yc2/wp-content/themes/ywamconnect/template-library.php",
+		"/Applications/MAMP/htdocs/yc2/wp-content/themes/ywamconnect/template-search-courses.php",
+		"/Applications/MAMP/htdocs/yc2/wp-content/themes/ywamconnect/template-test.php",
+		"/Applications/MAMP/htdocs/yc2/wp-content/themes/ywamconnect/profile-form.php",
+		"/Applications/MAMP/htdocs/yc2/wp-content/themes/ywamconnect/templates/videos/videos-list.php",
+		"/Applications/MAMP/htdocs/yc2/wp-content/themes/ywamconnect/includes/theme-scripts.php",
+		"/Applications/MAMP/htdocs/yc2/wp-content/themes/ywamconnect/templates/modals/bases.php",
+		"/Applications/MAMP/htdocs/yc2/wp-content/themes/ywamconnect/templates/users/followers-list.php",
+		"/Applications/MAMP/htdocs/yc2/wp-content/themes/ywamconnect/templates/users/friends-list.php",
+		"/Applications/MAMP/htdocs/yc2/wp-content/themes/ywamconnect/functions.php",
 		"/Applications/MAMP/conf/apache/extra/httpd-vhosts.conf",
+		"/Applications/MAMP/htdocs/yc2/wp-content/themes/ywamconnect/js/jquery.ajaxfileupload.js",
+		"/Applications/MAMP/htdocs/yc2/wp-content/themes/ywamconnect/js/controllers/base.js",
+		"/Applications/MAMP/htdocs/yc2/wp-content/themes/ywamconnect/taxonomy-video_category.php",
+		"/Applications/MAMP/htdocs/yc2/wp-content/plugins/json-api/singletons/query.php",
+		"/Applications/MAMP/htdocs/yc2/wp-content/themes/ywamconnect/includes/doajaxfileupload.php",
+		"/Users/paulovieira/Downloads/AjaxFileUploaderV2.1/doajaxfileupload.php",
+		"/Applications/MAMP/htdocs/yc2/wp-content/plugins/oEmbedFeatured.php",
+		"/Applications/MAMP/htdocs/yc2/wp-content/themes/ywamconnect/js/controllers/followers.js",
+		"/Applications/MAMP/htdocs/yc2/wp-content/themes/ywamconnect/template-followers.php",
+		"/Applications/MAMP/htdocs/yc2/wp-content/themes/ywamconnect/taxonomy-event_category.php",
+		"/Applications/MAMP/htdocs/yc2/wp-content/themes/ywamconnect/template-profile.php",
+		"/Applications/MAMP/htdocs/yc2/wp-content/themes/ywamconnect/profile-form-original.php",
+		"/Applications/MAMP/htdocs/yc2/wp-content/themes/ywamconnect/templates/page/login-page.php",
+		"/Applications/MAMP/htdocs/yc2/wp-content/themes/ywamconnect/templates/users/photo-list.php",
+		"/Applications/MAMP/htdocs/yc2/wp-content/themes/ywamconnect/templates/page/page-login.php",
+		"/Applications/MAMP/htdocs/yc2/wp-content/themes/ywamconnect/templates/page/home-loggedout.php",
+		"/Applications/MAMP/htdocs/yc2/wp-content/themes/ywamconnect/templates/page/default-page.php",
+		"/Applications/MAMP/htdocs/yc2/wp-content/themes/ywamconnect/taxonomy-event-category.php",
+		"/Applications/MAMP/htdocs/yc2/wp-content/themes/ywamconnect/template-home.php",
+		"/Applications/MAMP/htdocs/yc2/wp-content/themes/ywamconnect/js/clusterer2.js",
+		"/Applications/MAMP/htdocs/yc2/wp-content/themes/ywamconnect/page.php",
+		"/Applications/MAMP/htdocs/yc2/wp-content/themes/ywamconnect/login-form.php",
+		"/Applications/MAMP/htdocs/yc2/wp-content/themes/ywamconnect/template-login.php",
+		"/Applications/MAMP/htdocs/yc2/wp-content/themes/ywamconnect/sidebar-home.php",
+		"/Applications/MAMP/htdocs/yc2/wp-content/themes/ywamconnect/template_home.php",
+		"/Applications/MAMP/htdocs/yc2/wp-content/themes/ywamconnect/images/js/ywamconnect.js",
+		"/Applications/MAMP/htdocs/yc2/wp-content/themes/ywamconnect/templates/modals/all.php",
+		"/Applications/MAMP/htdocs/yc2/wp-content/themes/ywamconnect/sidebar-page-left.php",
+		"/Applications/MAMP/htdocs/yc2/wp-content/themes/ywamconnect/index.php",
+		"/Applications/MAMP/htdocs/yc2/wp-content/themes/ywamconnect/templates/page/widebar.php",
+		"/Applications/MAMP/htdocs/yc2/wp-content/themes/ywamconnect/css/slate.css",
 		"/Applications/MAMP/htdocs/ywamconnect/wp-config.php",
 		"/Applications/MAMP/htdocs/ywamconnect/wp-content/themes/ywamconnect/libs/upload.php",
 		"/Applications/MAMP/htdocs/ywamconnect/wp-content/themes/ywamconnect/functions.php",
@@ -702,79 +858,7 @@
 		"/Applications/MAMP/htdocs/ywamconnect/wp-content/themes/ywamconnect/_inc/js/plugins/lifestream/jquery.lifestream.js",
 		"/Applications/MAMP/htdocs/ywamconnect/wp-content/themes/ywamconnect/registration/login.php",
 		"/Applications/MAMP/htdocs/phillipians.uofkna.edu/uofnsystem/modules/subsystems/workflowsys/controllers/workflow/forms/forma/course-information.ejs",
-		"/Applications/MAMP/htdocs/phillipians.uofkna.edu/uofnsystem/modules/subsystems/workflowsys/controllers/workflow/forms/forma/start.ejs",
-		"/Applications/MAMP/htdocs/phillipians.uofkna.edu/uofnsystem/modules/subsystems/workflowsys/controllers/workflow/forms/forma/init.ejs",
-		"/Applications/MAMP/htdocs/phillipians.uofkna.edu/uofnsystem/modules/subsystems/forma/controllers/dashboard/dashboard.js",
-		"/Applications/MAMP/htdocs/phillipians.uofkna.edu/uofnsystem/modules/subsystems/dashboard/dashboard.js",
-		"/Applications/MAMP/htdocs/phillipians.uofkna.edu/uofnsystem/modules/subsystems/management/controllers/domains/views/edit_domains.ejs",
-		"/Applications/MAMP/htdocs/phillipians.uofkna.edu/uofnsystem/modules/subsystems/management/controllers/domains/views/create_domains.ejs",
-		"/Applications/MAMP/htdocs/phillipians.uofkna.edu/uofnsystem/modules/subsystems/userprofile/views/userprofile.ejs",
-		"/Applications/MAMP/htdocs/phillipians.uofkna.edu/uofnsystem/modules/subsystems/userprofile/userprofile.js",
-		"/Applications/MAMP/htdocs/phillipians.uofkna.edu/uofnsystem/modules/subsystems/workflowsys/controllers/workflow/forms/forma/course-information/course-phase.ejs",
-		"/Applications/MAMP/htdocs/phillipians.uofkna.edu/uofnsystem/modules/models/forma.js",
-		"/Applications/MAMP/htdocs/phillipians.uofkna.edu/uofnsystem/modules/subsystems/workflowsys/controllers/form/form.js",
-		"/Applications/MAMP/htdocs/phillipians.uofkna.edu/uofnsystem/modules/subsystems/forma/controllers/form/form.js",
-		"/Applications/MAMP/htdocs/phillipians.uofkna.edu/uofnsystem/modules/subsystems/workflowsys/controllers/workflow/forms/form.ejs",
-		"/Applications/MAMP/htdocs/4kintegration/v1/index.php",
-		"/Applications/MAMP/htdocs/phillipians.uofkna.edu/uofnsystem/modules/config/settings.js",
-		"/Applications/MAMP/htdocs/phillipians.uofkna.edu/uofnsystem/modules/assets/css/uofnsystem.css",
-		"/Applications/MAMP/htdocs/phillipians.uofkna.edu/uofnsystem/modules/subsystems/management/controllers/users/views/users.ejs",
-		"/Applications/MAMP/htdocs/phillipians.uofkna.edu/uofnsystem/modules/subsystems/views/usermenu.ejs",
-		"/Applications/MAMP/htdocs/phillipians.uofkna.edu/uofnsystem/modules/subsystems/management/controllers/menu/views/menu.ejs",
-		"/Applications/MAMP/htdocs/phillipians.uofkna.edu/uofnsystem/modules/subsystems/login/login.js",
-		"/Applications/MAMP/htdocs/phillipians.uofkna.edu/uofnsystem/modules/subsystems/forma/views/forma.ejs",
-		"/Applications/MAMP/htdocs/phillipians.uofkna.edu/uofnsystem/modules/subsystems/login/views/login.ejs",
-		"/Applications/MAMP/htdocs/phillipians.uofkna.edu/uofnsystem/modules/subsystems/management/management.js",
-		"/Applications/MAMP/htdocs/phillipians.uofkna.edu/uofnsystem/modules/subsystems/management/controllers/definition/views/definition.ejs",
-		"/Applications/MAMP/htdocs/phillipians.uofkna.edu/uofnsystem/modules/subsystems/management/view/management.ejs",
-		"/Applications/MAMP/htdocs/phillipians.uofkna.edu/uofnsystem/modules/subsystems/management/controllers/menu/views/tabs.ejs",
-		"/Applications/MAMP/htdocs/phillipians.uofkna.edu/uofnsystem/modules/subsystems/faq/controllers/menu/views/tabs.ejs",
-		"/Applications/MAMP/htdocs/phillipians.uofkna.edu/uofnsystem/modules/assets/plugins/bootstrap/js/forma.html",
-		"/Applications/MAMP/htdocs/phillipians.uofkna.edu/uofnsystem/modules/models/regions.js",
-		"/Applications/MAMP/htdocs/phillipians.uofkna.edu/uofnsystem/modules/subsystems/workflowsys/controllers/dashboard/dashboard.js",
-		"/Applications/MAMP/htdocs/phillipians.uofkna.edu/uofnsystem/modules/subsystems/forma/forma.js",
-		"/Applications/MAMP/htdocs/phillipians.uofkna.edu/uofnsystem/modules/subsystems/forma/controllers/menu/views/menu.ejs",
-		"/Applications/MAMP/htdocs/phillipians.uofkna.edu/uofnsystem/modules/subsystems/forma/controllers/menu/menu.js",
-		"/Applications/MAMP/htdocs/phillipians.uofkna.edu/uofnsystem/modules/subsystems/workflowsys/controllers/dashboard/views/dashboard.ejs",
-		"/Applications/MAMP/htdocs/phillipians.uofkna.edu/uofnsystem/modules/subsystems/workflowsys/controllers/dashboard/views/single_approval.ejs",
-		"/Applications/MAMP/htdocs/phillipians.uofkna.edu/uofnsystem/modules/subsystems/views/subsystems_menu.ejs",
-		"/Applications/MAMP/htdocs/phillipians.uofkna.edu/uofnsystem/api/cfm/approval.cfc",
-		"/Applications/MAMP/htdocs/phillipians.uofkna.edu/uofnsystem/api/cfm/wf_type.cfc",
-		"/Applications/MAMP/htdocs/phillipians.uofkna.edu/uofnsystem/modules/subsystems/workflowsys/workflowsys.js",
-		"/Applications/MAMP/htdocs/phillipians.uofkna.edu/uofnsystem/modules/subsystems/forma/config/settings.js",
-		"/Applications/MAMP/htdocs/phillipians.uofkna.edu/uofnsystem/api/cfm/forma.cfc",
-		"/Applications/MAMP/htdocs/phillipians.uofkna.edu/uofnsystem/modules/assets/css/realm.css",
-		"/Applications/MAMP/htdocs/phillipians.uofkna.edu/uofnsystem/documentation/forma-example.json",
-		"/Applications/MAMP/htdocs/phillipians.uofkna.edu/uofnsystem/modules/models/models.js",
-		"/Applications/MAMP/htdocs/phillipians.uofkna.edu/uofnsystem/modules/models/languages.js",
-		"/Applications/MAMP/htdocs/phillipians.uofkna.edu/uofnsystem/modules/subsystems/workflowsys/controllers/workflow/forms/forma/course-phases.ejs",
-		"/Applications/MAMP/htdocs/phillipians.uofkna.edu/uofnsystem/api/cfm/language.cfc",
-		"/Applications/MAMP/htdocs/phillipians.uofkna.edu/uofnsystem/modules/subsystems/workflowsys/controllers/workflow/forms/forma/course-phases/topic.ejs",
-		"/Applications/MAMP/htdocs/phillipians.uofkna.edu/uofnsystem/modules/subsystems/workflowsys/controllers/workflow/forms/forma/course-phases/2.ejs",
-		"/Applications/MAMP/htdocs/phillipians.uofkna.edu/uofnsystem/modules/subsystems/workflowsys/controllers/workflow/forms/forma/course-phases/3.ejs",
-		"/Applications/MAMP/htdocs/phillipians.uofkna.edu/uofnsystem/modules/subsystems/workflowsys/controllers/workflow/forms/forma/course-phases/4.ejs",
-		"/Applications/MAMP/htdocs/phillipians.uofkna.edu/uofnsystem/modules/subsystems/workflowsys/controllers/workflow/forms/forma/school-leader.ejs",
-		"/Applications/MAMP/htdocs/phillipians.uofkna.edu/uofnsystem/modules/subsystems/workflowsys/controllers/workflow/forms/forma/school-leader/education-background.ejs",
-		"/Users/paulovieira/Desktop/class.htm",
-		"/Applications/MAMP/htdocs/phillipians.uofkna.edu/uofnsystem/modules/subsystems/management/controllers/user/views/list_user.ejs",
-		"/Applications/MAMP/htdocs/phillipians.uofkna.edu/uofnsystem/modules/subsystems/workflowsys/controllers/approvals/views/load_approvals.ejs",
-		"/Applications/MAMP/htdocs/phillipians.uofkna.edu/uofnsystem/modules/subsystems/workflowsys/controllers/approvals/views/list_approvals.ejs",
-		"/Applications/MAMP/htdocs/phillipians.uofkna.edu/uofnsystem/modules/subsystems/dashboard/views/dashboard.ejs",
-		"/Applications/MAMP/htdocs/phillipians.uofkna.edu/uofnsystem/modules/subsystems/workflowsys/view/js/functions.js",
-		"/Applications/MAMP/htdocs/phillipians.uofkna.edu/uofnsystem/modules/subsystems/workflowsys/controllers/steps/views/stepprofiles.ejs",
-		"/Applications/MAMP/htdocs/phillipians.uofkna.edu/uofnsystem/modules/subsystems/workflowsys/controllers/steps/views/load_step.ejs",
-		"/Applications/MAMP/htdocs/phillipians.uofkna.edu/uofnsystem/modules/subsystems/workflowsys/controllers/steps/steps.js",
-		"/Applications/MAMP/htdocs/phillipians.uofkna.edu/uofnsystem/modules/subsystems/workflowsys/controllers/workflow/workflow.js",
-		"/Applications/MAMP/htdocs/phillipians.uofkna.edu/uofnsystem/modules/subsystems/workflowsys/controllers/wfdefinition/views/wfdefinition.ejs",
-		"/Applications/MAMP/htdocs/phillipians.uofkna.edu/uofnsystem/modules/subsystems/workflowsys/controllers/workflow/views/list_workflow.ejs",
-		"/Applications/MAMP/htdocs/phillipians.uofkna.edu/uofnsystem/modules/subsystems/workflowsys/controllers/steps/views/list_steps.ejs",
-		"/Applications/MAMP/htdocs/phillipians.uofkna.edu/uofnsystem/modules/subsystems/workflowsys/controllers/steps/views/step_row.ejs",
-		"/Applications/MAMP/htdocs/phillipians.uofkna.edu/uofnsystem/modules/subsystems/management/controllers/bases/bases.js",
-		"/Applications/MAMP/htdocs/phillipians.uofkna.edu/uofnsystem/modules/subsystems/management/controllers/colleges/colleges.js",
-		"/Applications/MAMP/htdocs/phillipians.uofkna.edu/uofnsystem/modules/subsystems/management/controllers/countries/countries.js",
-		"/Applications/MAMP/htdocs/phillipians.uofkna.edu/uofnsystem/modules/subsystems/management/controllers/coursetypes/coursetypes.js",
-		"/Applications/MAMP/htdocs/phillipians.uofkna.edu/uofnsystem/modules/subsystems/management/controllers/domains/domains.js",
-		"/Applications/MAMP/htdocs/phillipians.uofkna.edu/uofnsystem/modules/subsystems/management/controllers/profile/profile.js"
+		"/Applications/MAMP/htdocs/phillipians.uofkna.edu/uofnsystem/modules/subsystems/workflowsys/controllers/workflow/forms/forma/start.ejs"
 	],
 	"find":
 	{
@@ -920,6 +1004,71 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"loadSidebar",
+			"oEmbedYC",
+			"display",
+			"is_atten",
+			"get_category_for_base",
+			"descri",
+			"Descr",
+			"ollow",
+			"follow",
+			"80px",
+			"viewevent",
+			"oEmbedYC",
+			"oEmbed",
+			"addvideo",
+			"uppercase",
+			"Search",
+			".feed_time",
+			"$wpapi =",
+			"viewminis",
+			"editMinistry",
+			"video_link",
+			"ending_date",
+			"editevent",
+			"Yes",
+			".data('id",
+			"attend",
+			"video",
+			"('show",
+			"deleteevent",
+			"Delete",
+			"loadObje",
+			"pm",
+			"modal fade",
+			".data('id",
+			"+ 'oEmbedYC",
+			"display_name",
+			"Search",
+			"imags",
+			"saveEditMini",
+			"vieweventmodal",
+			"is_attending",
+			"is_fr",
+			".attend",
+			"aatend",
+			"view",
+			"get_list_for_base",
+			"getScript",
+			"saveEditEvent",
+			"complee",
+			"success",
+			"json",
+			"Add Event",
+			"Add Vide",
+			"modal-title",
+			"sidebar",
+			".well",
+			"newsfeed",
+			"profile",
+			"profillist",
+			"people_bg",
+			" get_metadata('base',$base->ID,",
+			"logo",
+			"#logo",
+			"login",
+			"widebarinside",
 			"file",
 			"$.wp_api",
 			"imageUpload",
@@ -982,72 +1131,7 @@
 			"get_event",
 			";\n",
 			"cate",
-			"<form",
-			"#heading",
-			"heading",
-			"Heading",
-			"editvideo",
-			"editV",
-			".find",
-			"get_video",
-			"loadEditVideo",
-			"loadModalVi",
-			"editvideo",
-			"edit",
-			"label",
-			"textarea",
-			"input",
-			"wid",
-			"_viewvideo",
-			"locat",
-			"span11",
-			"span10",
-			"span9",
-			"span8",
-			"span7",
-			"span6",
-			"span5",
-			"span3",
-			"span1",
-			"span2",
-			"span12",
-			"span3",
-			"span4",
-			"class=\"row-fluid\"",
-			"stylesheet",
-			"enqueue",
-			"modal",
-			"bid",
-			"add_video",
-			"add Vid",
-			"videolink",
-			"heading",
-			".loadvideo",
-			"view",
-			"footer",
-			"form",
-			"Add V",
-			"ADD",
-			"page-id-50",
-			"page-id",
-			"body.page-id-50 div.full-width, body.page-id-52 div.full-width, body.page-id-53 div.full-width",
-			":hover",
-			"button",
-			"modal-title",
-			"get_vid",
-			"loadModalVideo",
-			"get_vide",
-			"deletevideo",
-			".close",
-			"embed",
-			"get_video",
-			"loadModalVideo",
-			"loadModal",
-			".md-content h3",
-			".js",
-			"enque",
-			"get_embed",
-			"Add Video"
+			"<form"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1055,6 +1139,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			" $basepods->display(",
 			"select ",
 			"col-lg-11",
 			"col-lg-10",
@@ -1181,8 +1266,7 @@
 			"#ff751b",
 			"\"_\")",
 			"replace(/:/g,\"_\");",
-			"{touchbehavior:true, zindex: -1, bouncescroll: true}",
-			"{touchbehavior:true, zindex: -1}"
+			"{touchbehavior:true, zindex: -1, bouncescroll: true}"
 		],
 		"reverse": false,
 		"show_context": true,
@@ -1249,516 +1333,516 @@
 		"selected_items":
 		[
 			[
-				"up",
-				"ywamconnect/libs/upload.php"
+				"nd",
+				"sidebar-newsfeed.php"
 			],
 			[
-				"upload",
-				"ywamconnect/libs/upload.php"
-			],
-			[
-				"func",
-				"ywamconnect/functions.php"
-			],
-			[
-				"funion",
-				"bp-fun/functions.php"
-			],
-			[
-				"ywam",
-				"ywamconnect/_inc/js/ywamconnect.js"
-			],
-			[
-				"ministrie",
-				"ywamconnect/template-ministries.php"
-			],
-			[
-				"ywa",
-				"ywamconnect/_inc/js/ywamconnect.js"
-			],
-			[
-				"modals",
-				"ywamconnect/libs/modals.php"
-			],
-			[
-				"modal",
-				"ywamconnect/libs/modals.php"
-			],
-			[
-				"short",
-				"ywamconnect/libs/shortcodes.php"
-			],
-			[
-				"base.",
-				"bp-fun/_inc/css/base.css"
-			],
-			[
-				"styl",
-				"ywamconnect/style.css"
-			],
-			[
-				"v",
-				"ywamconnect/taxonomy-video_category.php"
-			],
-			[
-				"style.cs",
-				"ywamconnect/style.css"
-			],
-			[
-				"evn_",
-				"ywamconnect/taxonomy-event_category.php"
-			],
-			[
-				"funct",
-				"ywamconnect/functions.php"
-			],
-			[
-				"style",
-				"ywamconnect/style.css"
-			],
-			[
-				"ywamcon",
-				"ywamconnect/_inc/js/ywamconnect.js"
-			],
-			[
-				"component",
-				"ywamconnect/_inc/js/plugins/ModalWindowEffects/css/component.css"
-			],
-			[
-				"modals.p",
-				"ywamconnect/libs/modals.php"
-			],
-			[
-				"functions",
-				"ywamconnect/functions.php"
-			],
-			[
-				"function",
-				"bp-fun/functions.php"
-			],
-			[
-				"base.css",
-				"bp-fun/_inc/css/base.css"
-			],
-			[
-				"base.cs",
-				"bp-fun/_inc/css/base.css"
-			],
-			[
-				"video",
-				"ywamconnect/taxonomy-video_category.php"
-			],
-			[
-				"footer",
-				"ywamconnect/footer.php"
-			],
-			[
-				"home",
-				"ywamconnect/index-home.php"
-			],
-			[
-				"init",
-				"ywamconnect/libs/init.php"
-			],
-			[
-				"header",
-				"ywamconnect/header.php"
-			],
-			[
-				"heade",
-				"ywamconnect/header.php"
-			],
-			[
-				"fun",
-				"ywamconnect/functions.php"
-			],
-			[
-				"even",
-				"ywamconnect/taxonomy-event_category.php"
-			],
-			[
-				"style.css",
-				"ywamconnect/style.css"
-			],
-			[
-				"event",
-				"ywamconnect/taxonomy-event_category.php"
-			],
-			[
-				"header.",
-				"ywamconnect/header.php"
-			],
-			[
-				"shortc",
-				"ywamconnect/libs/shortcodes.php"
-			],
-			[
-				"login",
-				"ywamconnect/login-form.php"
-			],
-			[
-				"bp-defa",
-				"bp-fun/_inc/css/bp-default.css"
-			],
-			[
-				"follow",
-				"ywamconnect/followers.php"
-			],
-			[
-				"style.",
-				"ywamconnect/style.css"
-			],
-			[
-				"component.",
-				"ywamconnect/_inc/js/plugins/ModalWindowEffects/css/component.css"
-			],
-			[
-				"compone",
-				"ywamconnect/_inc/js/plugins/expandSearchBar/component.css"
-			],
-			[
-				"ywamc",
-				"ywamconnect/_inc/js/ywamconnect.js"
-			],
-			[
-				"base",
-				"ywamconnect/single-base.php"
-			],
-			[
-				"event_",
-				"ywamconnect/taxonomy-event_category.php"
-			],
-			[
-				"funciton",
-				"ywamconnect/functions.php"
-			],
-			[
-				"follo",
-				"ywamconnect/followers.php"
-			],
-			[
-				"fol",
-				"ywamconnect/followers.php"
-			],
-			[
-				"follower",
-				"ywamconnect/followers.php"
-			],
-			[
-				"fnction",
-				"bp-fun/functions.php"
-			],
-			[
-				"single-eve",
-				"ywamconnect/single-event.php"
+				"sidebar",
+				"sidebar-base.php"
 			],
 			[
 				"map",
-				"ywamconnect/template-map.php"
+				"templates/map/map.php"
 			],
 			[
-				"single-base",
-				"ywamconnect/single-base.php"
+				"ywa",
+				"js/ywamconnect.js"
 			],
 			[
-				"baes.",
-				"ywamconnect/single-base.php"
+				"minis",
+				"templates/ministries/single.php"
 			],
 			[
-				"footer.",
-				"ywamconnect/footer.php"
+				"video",
+				"templates/videos/single.php"
 			],
 			[
-				"shortcode",
-				"ywamconnect/libs/shortcodes.php"
+				"evet",
+				"templates/events/event-list.php"
 			],
 			[
-				"maincolum",
-				"bp-fun/lib/templates/wp-template/main-column.php"
-			],
-			[
-				"index",
-				"bp-fun/index-home.php"
-			],
-			[
-				"componen",
-				"ywamconnect/_inc/js/plugins/ModalWindowEffects/css/component.css"
-			],
-			[
-				"moda",
-				"ywamconnect/_inc/js/plugins/ModalWindowEffects/js/modalEffects.js"
-			],
-			[
-				"modale",
-				"ywamconnect/_inc/js/plugins/ModalWindowEffects/js/modalEffects.js"
-			],
-			[
-				"tax",
-				"ywamconnect/taxonomy-event_category.php"
-			],
-			[
-				"effec",
-				"ywamconnect/_inc/js/plugins/ModalWindowEffects/js/modalEffects.js"
-			],
-			[
-				"polyfill",
-				"ywamconnect/_inc/js/plugins/ModalWindowEffects/js/css-filters-polyfill.js"
-			],
-			[
-				"index.htm",
-				"ywamconnect/_inc/js/plugins/ModalWindowEffects/index.html"
-			],
-			[
-				"event_ca",
-				"ywamconnect/taxonomy-event_category.php"
+				"fun",
+				"includes/ywamconnect_functions.php"
 			],
 			[
 				"single",
-				"ywamconnect/single-event.php"
+				"templates/events/single.php"
 			],
 			[
-				"default.css",
-				"ywamconnect/_inc/js/plugins/ModalWindowEffects/css/default.css"
+				"event",
+				"templates/events/event-list.php"
 			],
 			[
-				"footer.php",
-				"ywamconnect/footer.php"
+				"modal",
+				"templates/modals/events.php"
 			],
 			[
-				"index.html",
-				"ywamconnect/_inc/js/plugins/ModalWindowEffects/index.html"
-			],
-			[
-				"polyfil",
-				"ywamconnect/_inc/js/plugins/ModalWindowEffects/js/css-filters-polyfill.js"
-			],
-			[
-				"vide",
-				"ywamconnect/taxonomy-video_category.php"
-			],
-			[
-				"sing",
-				"ywamconnect/single-base.php"
-			],
-			[
-				"shor",
-				"ywamconnect/libs/shortcodes.php"
-			],
-			[
-				"taxo",
-				"ywamconnect/taxonomy-event_category.php"
-			],
-			[
-				"sty",
-				"ywamconnect/style.css"
-			],
-			[
-				"bp-css",
-				"bp-fun/_inc/css/bp-css.css"
-			],
-			[
-				"uisear",
-				"ywamconnect/_inc/js/plugins/expandSearchBar/uisearch.js"
-			],
-			[
-				"funcion",
-				"ywamconnect/functions.php"
-			],
-			[
-				"shortco",
-				"ywamconnect/libs/shortcodes.php"
-			],
-			[
-				"index-ho",
-				"bp-fun/index-home.php"
-			],
-			[
-				"syl",
-				"ywamconnect/style.css"
-			],
-			[
-				"stle",
-				"ywamconnect/style.css"
-			],
-			[
-				"inde",
-				"bp-fun/index.php"
-			],
-			[
-				"pag",
-				"ywamconnect/page.php"
-			],
-			[
-				"page",
-				"ywamconnect/page.php"
-			],
-			[
-				"head",
-				"ywamconnect/header.php"
-			],
-			[
-				"course-infor",
-				"modules/subsystems/workflowsys/controllers/workflow/forms/forma/course-information.ejs"
-			],
-			[
-				"course-in",
-				"modules/subsystems/workflowsys/controllers/workflow/forms/forma/course-information.ejs"
-			],
-			[
-				"start.ejs",
-				"modules/subsystems/workflowsys/controllers/workflow/forms/forma/start.ejs"
-			],
-			[
-				"init.ejs",
-				"modules/subsystems/workflowsys/controllers/workflow/forms/forma/init.ejs"
-			],
-			[
-				"forma",
-				"modules/models/forma.js"
-			],
-			[
-				"dashboard",
-				"modules/subsystems/forma/controllers/dashboard/dashboard.js"
-			],
-			[
-				"form.js",
-				"modules/subsystems/workflowsys/controllers/form/form.js"
-			],
-			[
-				"userprofile",
-				"modules/subsystems/userprofile/userprofile.js"
-			],
-			[
-				"userprofil",
-				"modules/subsystems/userprofile/views/userprofile.ejs"
-			],
-			[
-				"create_domain",
-				"modules/subsystems/management/controllers/domains/views/create_domains.ejs"
-			],
-			[
-				"edit_doma",
-				"modules/subsystems/management/controllers/domains/views/edit_domains.ejs"
-			],
-			[
-				"dashboar",
-				"modules/subsystems/forma/controllers/dashboard/dashboard.js"
-			],
-			[
-				"form.ejs",
-				"modules/subsystems/workflowsys/controllers/workflow/forms/form.ejs"
-			],
-			[
-				"forma.js",
-				"modules/models/forma.js"
-			],
-			[
-				"course-phae",
-				"modules/subsystems/workflowsys/controllers/workflow/forms/forma/course-information/course-phase.ejs"
+				"ywam",
+				"js/ywamconnect.js"
 			],
 			[
 				"",
-				"modules/subsystems/forma/controllers/form/form.js"
+				"templates/modals/ministries.php"
 			],
 			[
-				"uof",
-				"modules/assets/css/uofnsystem.css"
+				"mini",
+				"templates/modals/ministries.php"
 			],
 			[
-				"sett",
-				"modules/config/settings.js"
+				"sinel",
+				"templates/ministries/single.php"
 			],
 			[
-				"forma.ejs",
-				"modules/subsystems/forma/views/forma.ejs"
+				"single-m",
+				"single-ministry.php"
 			],
 			[
-				"user.ejs",
-				"modules/subsystems/management/controllers/users/views/users.ejs"
+				"footer",
+				"footer.php"
 			],
 			[
-				"definition.s",
-				"modules/subsystems/management/controllers/definition/views/definition.ejs"
+				"eve",
+				"js/controllers/event.js"
 			],
 			[
-				"management",
-				"modules/subsystems/management/view/management.ejs"
+				"ministr",
+				"templates/modals/ministries.php"
 			],
 			[
-				"manageme",
-				"modules/subsystems/management/management.js"
+				"event.p",
+				"templates/modals/events.php"
 			],
 			[
-				"uofn",
-				"modules/assets/css/uofnsystem.css"
+				"event.js",
+				"js/controllers/event.js"
 			],
 			[
-				"userme",
-				"modules/subsystems/views/usermenu.ejs"
+				"hea",
+				"header.php"
 			],
 			[
-				"menu.ejs",
-				"modules/subsystems/management/controllers/menu/views/menu.ejs"
+				"video.js",
+				"js/controllers/video.js"
 			],
 			[
-				"subsyste",
-				"modules/subsystems/views/subsystems_menu.ejs"
+				"head",
+				"header.php"
 			],
 			[
-				"dashboard.",
-				"modules/subsystems/workflowsys/controllers/dashboard/dashboard.js"
+				"vde",
+				"templates/modals/videos.php"
 			],
 			[
-				"menu.js",
-				"modules/subsystems/forma/controllers/menu/menu.js"
+				"sidebar-base",
+				"sidebar-base.php"
 			],
 			[
-				"dashboard.ejs",
-				"modules/subsystems/workflowsys/controllers/dashboard/views/dashboard.ejs"
+				"even.js",
+				"js/controllers/event.js"
 			],
 			[
-				"dashboard.js",
-				"modules/subsystems/forma/controllers/dashboard/dashboard.js"
-			],
-			[
-				"single_approva",
-				"modules/subsystems/workflowsys/controllers/dashboard/views/single_approval.ejs"
-			],
-			[
-				"settings",
-				"modules/subsystems/forma/config/settings.js"
+				"library-",
+				"sidebar-library-left.php"
 			],
 			[
 				"s",
-				"modules/config/settings.js"
+				"sidebar-library-right.php"
 			],
 			[
-				"setting",
-				"modules/config/settings.js"
+				"style",
+				"style.css"
 			],
 			[
-				"workflow",
-				"modules/subsystems/workflowsys/workflowsys.js"
+				"logged",
+				"templates/page/home-loggedin.php"
 			],
 			[
-				"single_appro",
-				"modules/subsystems/workflowsys/controllers/dashboard/views/single_approval.ejs"
+				"locati",
+				"template-location.php"
 			],
 			[
-				"dashba",
-				"modules/subsystems/workflowsys/controllers/dashboard/views/dashboard.ejs"
+				"map.",
+				"templates/map/map.php"
 			],
 			[
-				"realm.",
-				"modules/assets/css/realm.css"
+				"library-righ",
+				"sidebar-library-right.php"
 			],
 			[
-				"course-phase",
-				"modules/subsystems/workflowsys/controllers/workflow/forms/forma/course-information/course-phase.ejs"
+				"library-l",
+				"sidebar-library-left.php"
 			],
 			[
-				"models.",
-				"modules/models/models.js"
+				"lib",
+				"template-library.php"
+			],
+			[
+				"sidebar-se",
+				"sidebar-search-courses.php"
+			],
+			[
+				"search-",
+				"template-search-courses.php"
+			],
+			[
+				"se",
+				"sidebar-search-courses.php"
+			],
+			[
+				"search",
+				"template-search-courses.php"
+			],
+			[
+				"course",
+				"template-search-courses.php"
+			],
+			[
+				"event.j",
+				"js/controllers/event.js"
+			],
+			[
+				"feed.j",
+				"js/newsfeed.js"
+			],
+			[
+				"sinle",
+				"single-base.php"
+			],
+			[
+				"stle",
+				"style.css"
+			],
+			[
+				"sigle",
+				"templates/feed/single-feed.php"
+			],
+			[
+				"new",
+				"sidebar-newsfeed.php"
+			],
+			[
+				"sidebarb",
+				"sidebar-base.php"
+			],
+			[
+				"sideb",
+				"sidebar-user.php"
+			],
+			[
+				"profile",
+				"profile-form.php"
+			],
+			[
+				"profil",
+				"profile-form.php"
+			],
+			[
+				"header",
+				"header.php"
+			],
+			[
+				"test",
+				"template-test.php"
+			],
+			[
+				"signe",
+				"templates/feed/single-feed.php"
+			],
+			[
+				"newsfeed",
+				"js/newsfeed.js"
+			],
+			[
+				"sty",
+				"style.css"
+			],
+			[
+				"news",
+				"sidebar-newsfeed.php"
+			],
+			[
+				"yw",
+				"js/ywamconnect.js"
+			],
+			[
+				"ministry.s",
+				"js/controllers/ministry.js"
+			],
+			[
+				"evet.j",
+				"js/controllers/event.js"
+			],
+			[
+				"pro",
+				"profile-form.php"
+			],
+			[
+				"side",
+				"sidebar-user.php"
+			],
+			[
+				"even",
+				"js/controllers/event.js"
+			],
+			[
+				"mni",
+				"templates/modals/ministries.php"
+			],
+			[
+				"vide",
+				"js/controllers/video.js"
+			],
+			[
+				"video.",
+				"js/controllers/video.js"
+			],
+			[
+				"videos",
+				"templates/modals/videos.php"
+			],
+			[
+				"e",
+				"js/controllers/event.js"
+			],
+			[
+				"fu",
+				"includes/ywamconnect_functions.php"
+			],
+			[
+				"scrip",
+				"includes/theme-scripts.php"
+			],
+			[
+				"f",
+				"includes/ywamconnect_functions.php"
+			],
+			[
+				"even.j",
+				"js/controllers/event.js"
+			],
+			[
+				"st",
+				"style.css"
+			],
+			[
+				"syle",
+				"style.css"
+			],
+			[
+				"base",
+				"templates/modals/bases.php"
+			],
+			[
+				"user",
+				"sidebar-user.php"
+			],
+			[
+				"follow",
+				"templates/users/followers-list.php"
+			],
+			[
+				"friend",
+				"templates/users/friends-list.php"
+			],
+			[
+				"loca",
+				"template-location.php"
+			],
+			[
+				"te",
+				"template-test.php"
+			],
+			[
+				"vdeo",
+				"templates/videos/videos-list.php"
+			],
+			[
+				"evet.js",
+				"js/controllers/event.js"
+			],
+			[
+				"events",
+				"templates/modals/events.php"
+			],
+			[
+				"func",
+				"includes/ywamconnect_functions.php"
+			],
+			[
+				"video.j",
+				"js/controllers/video.js"
+			],
+			[
+				"event-li",
+				"templates/events/event-list.php"
+			],
+			[
+				"logge",
+				"templates/page/home-loggedin.php"
+			],
+			[
+				"base.js",
+				"js/controllers/base.js"
+			],
+			[
+				"vid",
+				"templates/modals/videos.php"
+			],
+			[
+				"ajax",
+				"js/jquery.ajaxfileupload.js"
+			],
+			[
+				"aja",
+				"js/jquery.ajaxfileupload.js"
+			],
+			[
+				"do",
+				"includes/doajaxfileupload.php"
+			],
+			[
+				"doa",
+				"includes/doajaxfileupload.php"
+			],
+			[
+				"doaj",
+				"includes/doajaxfileupload.php"
+			],
+			[
+				"aj",
+				"js/jquery.ajaxfileupload.js"
+			],
+			[
+				"vieo",
+				"js/controllers/video.js"
+			],
+			[
+				"bas.js",
+				"js/controllers/base.js"
+			],
+			[
+				"tes",
+				"template-test.php"
+			],
+			[
+				"tet",
+				"template-test.php"
+			],
+			[
+				"scr",
+				"includes/theme-scripts.php"
+			],
+			[
+				"vie",
+				"templates/videos/videos-list.php"
+			],
+			[
+				"stl",
+				"style.css"
+			],
+			[
+				"follo",
+				"templates/users/followers-list.php"
+			],
+			[
+				"folo",
+				"js/controllers/followers.js"
+			],
+			[
+				"followers.j",
+				"js/controllers/followers.js"
+			],
+			[
+				"list",
+				"templates/events/event-list.php"
+			],
+			[
+				"followrs-li",
+				"templates/users/followers-list.php"
+			],
+			[
+				"base.j",
+				"js/controllers/base.js"
+			],
+			[
+				"style.",
+				"style.css"
+			],
+			[
+				"home",
+				"templates/page/home-loggedin.php"
+			],
+			[
+				"functions",
+				"includes/ywamconnect_functions.php"
+			],
+			[
+				"styl",
+				"style.css"
+			],
+			[
+				"sine",
+				"single-base.php"
+			],
+			[
+				"location",
+				"template-location.php"
+			],
+			[
+				"prof",
+				"template-profile.php"
+			],
+			[
+				"tm",
+				"template-ministries.php"
+			],
+			[
+				"logg",
+				"templates/page/home-loggedin.php"
+			],
+			[
+				"syl",
+				"style.css"
+			],
+			[
+				"profile-for",
+				"profile-form.php"
+			],
+			[
+				"frien",
+				"templates/users/friends-list.php"
+			],
+			[
+				"photo",
+				"templates/users/photo-list.php"
+			],
+			[
+				"template",
+				"template-followers.php"
+			],
+			[
+				"foot",
+				"footer.php"
+			],
+			[
+				"login",
+				"templates/page/login-page.php"
+			],
+			[
+				"si",
+				"sidebar-base.php"
+			],
+			[
+				"bases",
+				"templates/modals/bases.php"
+			],
+			[
+				"modals",
+				"templates/modals/bases.php"
+			],
+			[
+				"defal",
+				"templates/page/default-page.php"
 			]
 		],
 		"width": 0.0

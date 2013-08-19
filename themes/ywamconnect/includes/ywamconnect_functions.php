@@ -3,14 +3,18 @@
  function get_category_for_base($base,$category) {
 
 	$query = "select ter.name, ter.slug, count(p.ID) as total from wp_posts as p
-			inner join  wp_postmeta as pm on pm.post_id = p.ID
-			inner join wp_postmeta as pd on pd.post_id = p.ID 
-			inner join  wp_term_relationships as tr on tr.object_id = p.ID
+			inner join  wp_postmeta as pm on pm.post_id = p.ID";
+	if($category == 'event_category')
+			$query .=" inner join wp_postmeta as pd on pd.post_id = p.ID ";
+
+			$query.=" inner join  wp_term_relationships as tr on tr.object_id = p.ID
 			inner join wp_term_taxonomy as tt on tt.term_taxonomy_id = tr.term_taxonomy_id 
 			inner join wp_terms as ter on ter.term_id = tt.term_id
-			where pm.meta_key ='base' and pm.meta_value = ".$base."
-			AND pd.meta_key ='starting_date' and  pd.meta_value >= CURDATE()
-			and tt.taxonomy = '".$category."' group by ter.term_id";
+			where pm.meta_key ='base' and pm.meta_value = ".$base;
+		if($category == 'event_category')
+			$query .=" AND pd.meta_key ='starting_date' and  pd.meta_value >= CURDATE()";
+
+			$query.=" and tt.taxonomy = '".$category."' group by ter.term_id";
 	return execute($query);
 }
 
@@ -113,6 +117,8 @@ function loadObject($type,$id){
 		//post_content
 		//videolink
 		//base
+		$uid = $pods->field('post_author');
+		$user = get_user_by('id',$uid);
 		//basename
 		//$fb = '<fb:like href="'.get_bloginfo('siteurl').'/video/'.$pods->field('post_name')" width="450" show_faces="true" send="true"></fb:like>';
 		$fb ='<iframe src="//www.facebook.com/plugins/like.php?href='.urlencode(get_bloginfo('siteurl').'/video/'.$pods->field('post_name')).'&amp;width=450&amp;height=65&amp;colorscheme=light&amp;layout=standard&amp;action=like&amp;show_faces=true&amp;send=true&amp;appId=490359931029564" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:65px;" allowTransparency="true"></iframe>';
@@ -122,7 +128,9 @@ function loadObject($type,$id){
 			'ID'=>$id,
 			'post_name'=> $pods->display('post_name'),
 			'ownerid'=>$pods->field('post_author'),
+			'owner'=>$pods->field('post_author'),
 			'fb'=>$fb,
+			 'username'=>$user->display_name,
 			'post_title'=> $pods->display('post_title'),
 			'post_content'=>apply_filters('the_content',$pods->display('post_content')),
 			 'video_link'=>$pods->display('video_link'),
